@@ -4,6 +4,27 @@
     box-sizing: border-box;
 }
 
+/* RTL Support */
+[dir="rtl"] {
+    direction: rtl;
+}
+
+[dir="rtl"] .line-item-row {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .invoice-parties {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .text-right {
+    text-align: left !important;
+}
+
+[dir="rtl"] .text-left {
+    text-align: right !important;
+}
+
 :root {
     --primary-color: #4f46e5;
     --primary-hover: #4338ca;
@@ -42,12 +63,67 @@ body {
     text-align: center;
     color: white;
     margin-bottom: 2rem;
+    position: relative;
 }
 
 .app-header h1 {
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
+}
+
+/* Language Selector Styling */
+.language-selector {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1000;
+}
+
+[dir="rtl"] .language-selector {
+    right: auto;
+    left: 1rem;
+}
+
+.language-selector select {
+    padding: 0.5rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    color: var(--text-primary);
+    outline: none;
+}
+
+.language-selector select:hover {
+    background: rgba(255, 255, 255, 1);
+    border-color: var(--primary-color);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.language-selector select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+@media (max-width: 768px) {
+    .language-selector {
+        position: relative;
+        margin-bottom: 1rem;
+        right: 0;
+        text-align: center;
+    }
+
+    .language-selector select {
+        width: 100%;
+        max-width: 300px;
+    }
+}
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 

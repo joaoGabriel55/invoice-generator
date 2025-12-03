@@ -115,10 +115,10 @@ function saveFormData() {
         console.log('Form data saved to localStorage');
 
         // Show visual feedback
-        showSaveStatus('✓ Saved', '#28a745');
+        showSaveStatus(i18n.t('form.saved'), '#28a745');
     } catch (error) {
         console.error('Error saving to localStorage:', error);
-        showSaveStatus('✗ Save failed', '#dc3545');
+        showSaveStatus(i18n.t('form.saveFailed'), '#dc3545');
     }
 }
 
@@ -132,7 +132,7 @@ function showSaveStatus(message, color) {
 
         // Reset after 2 seconds
         setTimeout(() => {
-            statusElement.textContent = '💾 Auto-save enabled';
+            statusElement.textContent = i18n.t('form.autoSaveEnabled');
             statusElement.style.color = '#6c757d';
         }, 2000);
     }
@@ -220,8 +220,8 @@ function loadFormData() {
                 newItem.className = 'line-item';
                 newItem.innerHTML = `
                     <div class="line-item-row">
-                        <input type="text" class="item-description" placeholder="e.g., Description" value="${item.description || ''}">
-                        <input type="number" class="item-amount" placeholder="0.00" step="0.01" min="0" value="${item.amount || '0'}">
+                        <input type="text" class="item-description" data-i18n-placeholder="form.placeholderDescription" placeholder="${i18n.t('form.placeholderDescription')}" value="${item.description || ''}">
+                        <input type="number" class="item-amount" data-i18n-placeholder="form.placeholderAmount" placeholder="${i18n.t('form.placeholderAmount')}" step="0.01" min="0" value="${item.amount || '0'}">
                         <button type="button" class="btn-remove" onclick="removeLineItem(this)">✕</button>
                     </div>
                 `;
@@ -237,7 +237,7 @@ function loadFormData() {
 
 // Clear saved form data
 function clearSavedData() {
-    if (confirm('Are you sure you want to clear all saved data? This will reset the form to default values.')) {
+    if (confirm(i18n.t('alerts.confirmClear'))) {
         try {
             localStorage.removeItem(STORAGE_KEY);
             console.log('Saved data cleared');
@@ -277,32 +277,32 @@ function clearSavedData() {
             lineItemsContainer.innerHTML = `
                 <div class="line-item">
                     <div class="line-item-row">
-                        <input type="text" class="item-description" placeholder="e.g., Monthly service" value="Consulting Services">
-                        <input type="number" class="item-amount" placeholder="0.00" step="0.01" min="0" value="1500">
+                        <input type="text" class="item-description" data-i18n-placeholder="form.placeholderDescription" placeholder="${i18n.t('form.placeholderDescription')}" value="Consulting Services">
+                        <input type="number" class="item-amount" data-i18n-placeholder="form.placeholderAmount" placeholder="${i18n.t('form.placeholderAmount')}" step="0.01" min="0" value="1500">
                         <button type="button" class="btn-remove" onclick="removeLineItem(this)">✕</button>
                     </div>
                 </div>
                 <div class="line-item">
                     <div class="line-item-row">
-                        <input type="text" class="item-description" placeholder="e.g., Additional service" value="Design Work">
-                        <input type="number" class="item-amount" placeholder="0.00" step="0.01" min="0" value="750">
+                        <input type="text" class="item-description" data-i18n-placeholder="form.placeholderAdditional" placeholder="${i18n.t('form.placeholderAdditional')}" value="Design Work">
+                        <input type="number" class="item-amount" data-i18n-placeholder="form.placeholderAmount" placeholder="${i18n.t('form.placeholderAmount')}" step="0.01" min="0" value="750">
                         <button type="button" class="btn-remove" onclick="removeLineItem(this)">✕</button>
                     </div>
                 </div>
                 <div class="line-item">
                     <div class="line-item-row">
-                        <input type="text" class="item-description" placeholder="e.g., Reimbursement" value="Travel Expenses">
-                        <input type="number" class="item-amount" placeholder="0.00" step="0.01" min="0" value="250">
+                        <input type="text" class="item-description" data-i18n-placeholder="form.placeholderReimbursement" placeholder="${i18n.t('form.placeholderReimbursement')}" value="Travel Expenses">
+                        <input type="number" class="item-amount" data-i18n-placeholder="form.placeholderAmount" placeholder="${i18n.t('form.placeholderAmount')}" step="0.01" min="0" value="250">
                         <button type="button" class="btn-remove" onclick="removeLineItem(this)">✕</button>
                     </div>
                 </div>
             `;
 
             updatePreview();
-            alert('Saved data has been cleared and form reset to defaults.');
+            alert(i18n.t('alerts.dataCleared'));
         } catch (error) {
             console.error('Error clearing saved data:', error);
-            alert('An error occurred while clearing saved data.');
+            alert(i18n.t('alerts.dataCleared'));
         }
     }
 }
@@ -310,13 +310,13 @@ function clearSavedData() {
 // Add a new line item
 function addLineItem() {
     const lineItems = document.getElementById('lineItems');
-
+    
     const newItem = document.createElement('div');
     newItem.className = 'line-item';
     newItem.innerHTML = `
         <div class="line-item-row">
-            <input type="text" class="item-description" placeholder="e.g., Description">
-            <input type="number" class="item-amount" placeholder="0.00" step="0.01" min="0" value="0">
+            <input type="text" class="item-description" data-i18n-placeholder="form.placeholderDescription" placeholder="${i18n.t('form.placeholderDescription')}" />
+            <input type="number" class="item-amount" data-i18n-placeholder="form.placeholderAmount" placeholder="${i18n.t('form.placeholderAmount')}" step="0.01" min="0" />
             <button type="button" class="btn-remove" onclick="removeLineItem(this)">✕</button>
         </div>
     `;
@@ -337,7 +337,7 @@ function removeLineItem(button) {
         updatePreview();
         saveFormData();
     } else {
-        alert('You must have at least one line item.');
+        alert(i18n.t('alerts.minOneLineItem'));
     }
 }
 
@@ -365,7 +365,7 @@ function updatePreview() {
         document.getElementById('billFromAddress2').value || '';
     const zipCode = document.getElementById('billFromZip').value;
     document.getElementById('previewBillFromZip').textContent = 
-        zipCode ? `Zip Code: ${zipCode}` : '';
+        zipCode ? `${i18n.t('preview.zipCodeLabel')} ${zipCode}` : '';
 
     // Update Bill To information
     document.getElementById('previewBillToName').textContent = 
@@ -409,8 +409,8 @@ function updatePreview() {
             hasItems = true;
             const row = document.createElement('tr');
             row.innerHTML = `
-                <td>${description || 'No description'}</td>
-                <td class="text-right">USD ${amount.toFixed(2)}</td>
+                <td>${description || i18n.t('preview.noItems')}</td>
+                <td class="text-right">${i18n.formatCurrency(amount)}</td>
             `;
             previewBody.appendChild(row);
             total += amount;
@@ -419,11 +419,11 @@ function updatePreview() {
 
     // If no items, show placeholder
     if (!hasItems) {
-        previewBody.innerHTML = '<tr><td colspan="2" class="text-center text-muted">No items added yet</td></tr>';
+        previewBody.innerHTML = `<tr><td colspan="2" class="text-center text-muted">${i18n.t('preview.noItems')}</td></tr>`;
     }
 
     // Update total
-    document.getElementById('previewTotal').textContent = `USD ${total.toFixed(2)}`;
+    document.getElementById('previewTotal').textContent = i18n.formatCurrency(total);
 }
 
 // Format date to YYYY-MM-DD
@@ -436,14 +436,22 @@ function formatDate(dateString) {
 }
 
 // Generate PDF
-function generatePDF() {
+function generatePDF(event) {
     // Validate that we have required data
     const invoiceNumber = document.getElementById('invoiceNumber').value;
     const creationDate = document.getElementById('creationDate').value;
     const dueDate = document.getElementById('dueDate').value;
 
-    if (!invoiceNumber || !creationDate || !dueDate) {
-        alert('Please fill in all required fields (Invoice Number, Creation Date, and Due Date).');
+    if (!invoiceNumber) {
+        alert(i18n.t('alerts.noInvoiceNumber'));
+        return;
+    }
+    if (!creationDate) {
+        alert(i18n.t('alerts.noCreationDate'));
+        return;
+    }
+    if (!dueDate) {
+        alert(i18n.t('alerts.noDueDate'));
         return;
     }
 
@@ -459,7 +467,7 @@ function generatePDF() {
     });
 
     if (!hasValidItem) {
-        alert('Please add at least one line item with a description.');
+        alert(i18n.t('alerts.noLineItems'));
         return;
     }
 
@@ -490,9 +498,9 @@ function generatePDF() {
     };
 
     // Show loading indicator (optional - you can add a loading spinner here)
-    const btn = event.target;
+    const btn = event ? event.target : document.querySelector('.btn-success[onclick="generatePDF()"]');
     const originalText = btn.textContent;
-    btn.textContent = '⏳ Generating PDF...';
+    btn.textContent = i18n.t('form.exporting');
     btn.disabled = true;
 
     // Generate PDF
@@ -510,7 +518,7 @@ function generatePDF() {
 
 // Helper function to format currency
 function formatCurrency(amount) {
-    return `USD ${parseFloat(amount).toFixed(2)}`;
+    return i18n.formatCurrency(amount);
 }
 
 // Keyboard shortcuts

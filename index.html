@@ -61,8 +61,8 @@
   <body>
     <div class="container">
       <header class="app-header">
-        <h1>📄 The Invoice</h1>
-        <p class="subtitle">Create professional invoices with ease</p>
+        <h1 data-i18n="header.title">📄 The Invoice</h1>
+        <p class="subtitle" data-i18n="header.subtitle">Create professional invoices with ease</p>
       </header>
 
       <div class="main-content">
@@ -76,16 +76,17 @@
               margin-bottom: 1rem;
             "
           >
-            <h2 style="margin: 0">Invoice Details</h2>
+            <h2 style="margin: 0" data-i18n="form.invoiceDetails">Invoice Details</h2>
             <span
               id="autoSaveStatus"
               style="font-size: 0.875rem; color: #6c757d; font-style: italic"
+              data-i18n="form.autoSaveEnabled"
               >💾 Auto-save enabled</span
             >
           </div>
 
           <div class="form-group">
-            <label for="invoiceNumber">Invoice Number</label>
+            <label for="invoiceNumber" data-i18n="form.invoiceNumber">Invoice Number</label>
             <input
               type="number"
               id="invoiceNumber"
@@ -96,22 +97,22 @@
           </div>
 
           <div class="form-group">
-            <label for="creationDate">Creation Date</label>
+            <label for="creationDate" data-i18n="form.creationDate">Creation Date</label>
             <input type="date" id="creationDate" required />
           </div>
 
           <div class="form-group">
-            <label for="dueDate">Due Date</label>
+            <label for="dueDate" data-i18n="form.dueDate">Due Date</label>
             <input type="date" id="dueDate" required />
           </div>
 
-          <h3>Bill From Information</h3>
+          <h3 data-i18n="form.billFromInfo">Bill From Information</h3>
           <div class="form-group">
-            <label for="billFromName">Name</label>
+            <label for="billFromName" data-i18n="form.name">Name</label>
             <input type="text" id="billFromName" value="John Doe" />
           </div>
           <div class="form-group">
-            <label for="billFromAddress1">Address Line 1</label>
+            <label for="billFromAddress1" data-i18n="form.addressLine1">Address Line 1</label>
             <input
               type="text"
               id="billFromAddress1"
@@ -119,7 +120,7 @@
             />
           </div>
           <div class="form-group">
-            <label for="billFromAddress2">City, State, Country</label>
+            <label for="billFromAddress2" data-i18n="form.addressLine2">City, State, Country</label>
             <input
               type="text"
               id="billFromAddress2"
@@ -127,21 +128,21 @@
             />
           </div>
           <div class="form-group">
-            <label for="billFromZip">Zip Code</label>
+            <label for="billFromZip" data-i18n="form.zipCode">Zip Code</label>
             <input type="text" id="billFromZip" value="10001" />
           </div>
 
-          <h3>Bill To Information</h3>
+          <h3 data-i18n="form.billToInfo">Bill To Information</h3>
           <div class="form-group">
-            <label for="billToName">Name</label>
+            <label for="billToName" data-i18n="form.name">Name</label>
             <input type="text" id="billToName" value="Acme Corporation" />
           </div>
           <div class="form-group">
-            <label for="billToAddress1">Address Line 1</label>
+            <label for="billToAddress1" data-i18n="form.addressLine1">Address Line 1</label>
             <input type="text" id="billToAddress1" value="456 Business Ave" />
           </div>
           <div class="form-group">
-            <label for="billToAddress2">City, State, Zip, Country</label>
+            <label for="billToAddress2" data-i18n="form.billToAddressLine2">City, State, Zip, Country</label>
             <input
               type="text"
               id="billToAddress2"
@@ -149,13 +150,13 @@
             />
           </div>
 
-          <h3>Bank Details</h3>
+          <h3 data-i18n="form.bankDetails">Bank Details</h3>
           <div class="form-group">
-            <label for="beneficiaryName">Beneficiary Name</label>
+            <label for="beneficiaryName" data-i18n="form.beneficiaryName">Beneficiary Name</label>
             <input type="text" id="beneficiaryName" value="John Doe" />
           </div>
           <div class="form-group">
-            <label for="beneficiaryAccount"
+            <label for="beneficiaryAccount" data-i18n="form.beneficiaryAccount"
               >Beneficiary Account Number (IBAN)</label
             >
             <input
@@ -165,15 +166,15 @@
             />
           </div>
           <div class="form-group">
-            <label for="swiftCode">SWIFT Code</label>
+            <label for="swiftCode" data-i18n="form.swiftCode">SWIFT Code</label>
             <input type="text" id="swiftCode" value="BANKUS33XXX" />
           </div>
           <div class="form-group">
-            <label for="bankName">Bank Name</label>
+            <label for="bankName" data-i18n="form.bankName">Bank Name</label>
             <input type="text" id="bankName" value="First National Bank" />
           </div>
           <div class="form-group">
-            <label for="bankAddress">Bank Address</label>
+            <label for="bankAddress" data-i18n="form.bankAddress">Bank Address</label>
             <input
               type="text"
               id="bankAddress"
@@ -181,13 +182,13 @@
             />
           </div>
 
-          <h3>Intermediary Bank Details (Optional)</h3>
+          <h3 data-i18n="form.intermediaryBankDetails">Intermediary Bank Details (Optional)</h3>
           <div class="form-group">
-            <label for="intermediarySwift">Swift/BIC Code</label>
+            <label for="intermediarySwift" data-i18n="form.intermediarySwift">Swift/BIC Code</label>
             <input type="text" id="intermediarySwift" value="CHASUS33XXX" />
           </div>
           <div class="form-group">
-            <label for="intermediaryBankName">Bank Name</label>
+            <label for="intermediaryBankName" data-i18n="form.intermediaryBankName">Bank Name</label>
             <input
               type="text"
               id="intermediaryBankName"
@@ -195,19 +196,21 @@
             />
           </div>
 
-          <h3>Line Items</h3>
+          <h3 data-i18n="form.lineItems">Line Items</h3>
           <div id="lineItems">
             <div class="line-item">
               <div class="line-item-row">
                 <input
                   type="text"
                   class="item-description"
+                  data-i18n-placeholder="form.placeholderDescription"
                   placeholder="e.g., Monthly service"
                   value="Consulting Services"
                 />
                 <input
                   type="number"
                   class="item-amount"
+                  data-i18n-placeholder="form.placeholderAmount"
                   placeholder="0.00"
                   step="0.01"
                   min="0"
@@ -227,12 +230,14 @@
                 <input
                   type="text"
                   class="item-description"
+                  data-i18n-placeholder="form.placeholderAdditional"
                   placeholder="e.g., Additional service"
                   value="Design Work"
                 />
                 <input
                   type="number"
                   class="item-amount"
+                  data-i18n-placeholder="form.placeholderAmount"
                   placeholder="0.00"
                   step="0.01"
                   min="0"
@@ -252,12 +257,14 @@
                 <input
                   type="text"
                   class="item-description"
+                  data-i18n-placeholder="form.placeholderReimbursement"
                   placeholder="e.g., Reimbursement"
                   value="Travel Expenses"
                 />
                 <input
                   type="number"
                   class="item-amount"
+                  data-i18n-placeholder="form.placeholderAmount"
                   placeholder="0.00"
                   step="0.01"
                   min="0"
@@ -274,12 +281,12 @@
             </div>
           </div>
 
-          <button type="button" class="btn-secondary" onclick="addLineItem()">
+          <button type="button" class="btn-secondary" onclick="addLineItem()" data-i18n="form.addLineItem">
             + Add Line Item
           </button>
 
           <div class="form-actions">
-            <button type="button" class="btn-success" onclick="generatePDF()">
+            <button type="button" class="btn-success" onclick="generatePDF(event)" data-i18n="form.exportPDF">
               📥 Export PDF
             </button>
             <button
@@ -287,6 +294,7 @@
               class="btn-secondary"
               onclick="clearSavedData()"
               style="background-color: #dc3545; color: white"
+              data-i18n="form.clearSavedData"
             >
               🗑️ Clear Saved Data
             </button>
@@ -295,11 +303,11 @@
 
         <!-- Invoice Preview -->
         <div class="preview-section">
-          <h2>Preview</h2>
+          <h2 data-i18n="preview.title">Preview</h2>
           <div id="invoicePreview" class="invoice-preview">
             <div class="invoice-content">
               <div class="invoice-header">
-                <h1 class="invoice-title">INVOICE</h1>
+                <h1 class="invoice-title" data-i18n="preview.invoice">INVOICE</h1>
                 <p class="invoice-number">
                   Invoice #<span id="previewInvoiceNumber">1</span>
                 </p>
@@ -307,7 +315,7 @@
 
               <div class="invoice-parties">
                 <div class="party">
-                  <h3>Bill From:</h3>
+                  <h3 data-i18n="preview.billFrom">Bill From:</h3>
                   <p class="party-name" id="previewBillFromName">John Doe</p>
                   <p id="previewBillFromAddress1">123 Main Street, Suite 100</p>
                   <p id="previewBillFromAddress2">New York, NY, USA</p>
@@ -315,7 +323,7 @@
                 </div>
 
                 <div class="party">
-                  <h3>Bill To:</h3>
+                  <h3 data-i18n="preview.billTo">Bill To:</h3>
                   <p class="party-name" id="previewBillToName">
                     Acme Corporation
                   </p>
@@ -326,11 +334,11 @@
 
               <div class="invoice-dates">
                 <div class="date-item">
-                  <span class="date-label">Creation date:</span>
+                  <span class="date-label" data-i18n="preview.creationDate">Creation date:</span>
                   <span id="previewCreationDate">-</span>
                 </div>
                 <div class="date-item">
-                  <span class="date-label">Due date:</span>
+                  <span class="date-label" data-i18n="preview.dueDate">Due date:</span>
                   <span id="previewDueDate">-</span>
                 </div>
               </div>
@@ -339,20 +347,20 @@
                 <table>
                   <thead>
                     <tr>
-                      <th>Description</th>
-                      <th class="text-right">Amount</th>
+                      <th data-i18n="preview.description">Description</th>
+                      <th class="text-right" data-i18n="preview.amount">Amount</th>
                     </tr>
                   </thead>
                   <tbody id="previewLineItems">
                     <tr>
-                      <td colspan="2" class="text-center text-muted">
+                      <td colspan="2" class="text-center text-muted" data-i18n="preview.noItems">
                         No items added yet
                       </td>
                     </tr>
                   </tbody>
                   <tfoot>
                     <tr class="total-row">
-                      <td><strong>Total</strong></td>
+                      <td><strong data-i18n="preview.total">Total</strong></td>
                       <td class="text-right">
                         <strong id="previewTotal">USD 0.00</strong>
                       </td>
@@ -362,28 +370,28 @@
               </div>
 
               <div class="bank-details">
-                <h3>Pay to the banking details below:</h3>
+                <h3 data-i18n="preview.payToDetails">Pay to the banking details below:</h3>
                 <div class="bank-info">
                   <p>
-                    <strong>Beneficiary name:</strong>
+                    <strong data-i18n="preview.beneficiaryName">Beneficiary name:</strong>
                     <span id="previewBeneficiaryName">John Doe</span>
                   </p>
                   <p>
-                    <strong>Beneficiary Account Number (IBAN):</strong>
+                    <strong data-i18n="preview.beneficiaryAccount">Beneficiary Account Number (IBAN):</strong>
                     <span id="previewBeneficiaryAccount"
                       >US00 1234 5678 9012 3456 78</span
                     >
                   </p>
                   <p>
-                    <strong>SWIFT Code:</strong>
+                    <strong data-i18n="preview.swiftCode">SWIFT Code:</strong>
                     <span id="previewSwiftCode">BANKUS33XXX</span>
                   </p>
                   <p>
-                    <strong>Bank Name:</strong>
+                    <strong data-i18n="preview.bankName">Bank Name:</strong>
                     <span id="previewBankName">First National Bank</span>
                   </p>
                   <p>
-                    <strong>Bank Address:</strong>
+                    <strong data-i18n="preview.bankAddress">Bank Address:</strong>
                     <span id="previewBankAddress"
                       >789 Financial Plaza, New York, NY 10005</span
                     >
@@ -391,19 +399,19 @@
                 </div>
 
                 <div class="intermediary-bank">
-                  <p class="intermediary-note">
+                  <p class="intermediary-note" data-i18n="preview.intermediaryNote">
                     (Optional information, always use it together with the bank
                     details above)
                   </p>
                   <p class="intermediary-title">
-                    <strong>Intermediary bank details:</strong>
+                    <strong data-i18n="preview.intermediaryTitle">Intermediary bank details:</strong>
                   </p>
                   <p>
-                    <strong>Swift/BIC Code:</strong>
+                    <strong data-i18n="preview.intermediarySwift">Swift/BIC Code:</strong>
                     <span id="previewIntermediarySwift">CHASUS33XXX</span>
                   </p>
                   <p>
-                    <strong>Bank Name:</strong>
+                    <strong data-i18n="preview.intermediaryBankName">Bank Name:</strong>
                     <span id="previewIntermediaryBankName"
                       >Global Transfer Bank, N.A</span
                     >
@@ -417,6 +425,7 @@
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="i18n.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
