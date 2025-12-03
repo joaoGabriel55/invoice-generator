@@ -208,7 +208,8 @@ body {
 
 .form-group input[type="text"],
 .form-group input[type="number"],
-.form-group input[type="date"] {
+.form-group input[type="date"],
+.form-group select {
     width: 100%;
     padding: 0.75rem;
     border: 2px solid var(--border-color);
@@ -218,10 +219,26 @@ body {
     background: var(--bg-primary);
 }
 
-.form-group input:focus {
+.form-group input:focus, select:focus {
     outline: none;
     border-color: var(--primary-color);
     box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+select,
+::picker(select) {
+  appearance: base-select;
+}
+* {
+  box-sizing: border-box;
+}
+
+select::picker-icon {
+  color: #999999;
+  transition: 0.4s rotate;
+}
+select:open::picker-icon {
+  rotate: 180deg;
 }
 
 #lineItems {
@@ -349,7 +366,7 @@ body {
 }
 
 .invoice-content {
-    padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+    padding: 1rem 1.5rem 1rem 1.5rem;
     background: white;
     max-width: 800px;
     margin: 0 auto;
@@ -358,8 +375,8 @@ body {
 
 .invoice-header {
     text-align: center;
-    margin-bottom: 0.75rem;
-    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
     border-bottom: 3px solid var(--primary-color);
     page-break-after: avoid;
 }
@@ -382,7 +399,7 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
-    margin-bottom: 0.75rem;
+    margin-bottom: 1rem;
     page-break-inside: avoid;
 }
 
@@ -413,8 +430,8 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 0.75rem;
-    margin-bottom: 0.75rem;
-    padding: 0.5rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
     background: var(--bg-secondary);
     border-radius: 8px;
     page-break-inside: avoid;
@@ -441,7 +458,7 @@ body {
 }
 
 .invoice-items {
-    margin-bottom: 0.75rem;
+    margin-bottom: 1rem;
 }
 
 .invoice-items table {
@@ -505,13 +522,15 @@ body {
 }
 
 .bank-details {
-    margin-top: 0.75rem;
-    padding: 0.75rem;
+    margin-top: 1rem;
+    padding: 1rem;
     background: var(--bg-secondary);
     border-radius: 8px;
     border-left: 4px solid var(--primary-color);
     page-break-before: auto;
     page-break-inside: avoid;
+    page-break-after: avoid;
+    break-inside: avoid;
 }
 
 .bank-details h3 {
@@ -523,6 +542,8 @@ body {
 
 .bank-info {
     margin-bottom: 0.75rem;
+    page-break-inside: avoid;
+    break-inside: avoid;
 }
 
 .bank-info p,
@@ -543,6 +564,8 @@ body {
     margin-top: 0.75rem;
     padding-top: 0.75rem;
     border-top: 2px dashed var(--border-color);
+    page-break-inside: avoid;
+    break-inside: avoid;
 }
 
 .intermediary-note {
@@ -654,9 +677,9 @@ body {
         max-height: none;
         border: none;
     }
-    
+
     .invoice-content {
-        padding: 0.5rem 1rem;
+        padding: 1rem 1.5rem;
     }
 }
 
@@ -668,11 +691,25 @@ body {
 /* Ensure no orphaned content creates blank pages */
 .invoice-content > *:last-child {
     margin-bottom: 0 !important;
-    padding-bottom: 0 !important;
+    padding-bottom: 0.5rem !important;
 }
 
 .bank-details:last-child,
 .invoice-footer:last-child {
     margin-bottom: 0 !important;
     padding-bottom: 0.5rem !important;
+}
+
+/* Additional PDF-specific rules to prevent content cutoff */
+@media print {
+    .bank-details,
+    .bank-info,
+    .intermediary-bank {
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+    }
+    
+    .invoice-content {
+        padding: 1.5rem 2rem !important;
+    }
 }

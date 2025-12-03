@@ -14,6 +14,7 @@
     "saved": "✓ 已保存",
     "saveFailed": "✗ 保存失败",
     "invoiceNumber": "发票编号",
+    "currency": "货币",
     "creationDate": "创建日期",
     "dueDate": "到期日期",
     "billFromInfo": "开票方信息",

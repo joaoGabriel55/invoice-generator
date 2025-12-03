@@ -6,6 +6,21 @@ document.addEventListener('DOMContentLoaded', function() {
     // Try to load saved data first
     loadFormData();
 
+    // Set default currency based on locale if no saved data exists
+    const savedData = localStorage.getItem(STORAGE_KEY);
+    if (!savedData) {
+        // Wait a bit for i18n to initialize, then set default currency
+        setTimeout(() => {
+            const currencySelect = document.getElementById('currency');
+            if (currencySelect && typeof i18n !== 'undefined') {
+                const defaultCurrency = i18n.t('currency');
+                if (currencySelect.querySelector(`option[value="${defaultCurrency}"]`)) {
+                    currencySelect.value = defaultCurrency;
+                }
+            }
+        }, 100);
+    }
+
     // If no saved dates, set default dates
     if (!document.getElementById('creationDate').value) {
         const today = new Date();
@@ -24,6 +39,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Add event listeners for real-time updates and saving
     document.getElementById('invoiceNumber').addEventListener('input', function() {
+        updatePreview();
+        saveFormData();
+    });
+
+    document.getElementById('currency').addEventListener('change', function() {
         updatePreview();
         saveFormData();
     });
@@ -79,6 +99,7 @@ document.addEventListener('DOMContentLoaded', function() {
 function saveFormData() {
     const data = {
         invoiceNumber: document.getElementById('invoiceNumber').value,
+        currency: document.getElementById('currency').value,
         creationDate: document.getElementById('creationDate').value,
         dueDate: document.getElementById('dueDate').value,
         // Bill From fields
@@ -152,6 +173,10 @@ function loadFormData() {
         // Restore basic fields
         if (data.invoiceNumber) {
             document.getElementById('invoiceNumber').value = data.invoiceNumber;
+        }
+
+        if (data.currency) {
+            document.getElementById('currency').value = data.currency;
         }
 
         if (data.creationDate) {
@@ -310,7 +335,7 @@ function clearSavedData() {
 // Add a new line item
 function addLineItem() {
     const lineItems = document.getElementById('lineItems');
-    
+
     const newItem = document.createElement('div');
     newItem.className = 'line-item';
     newItem.innerHTML = `
@@ -357,40 +382,40 @@ function updatePreview() {
         dueDate ? formatDate(dueDate) : '-';
 
     // Update Bill From information
-    document.getElementById('previewBillFromName').textContent = 
+    document.getElementById('previewBillFromName').textContent =
         document.getElementById('billFromName').value || 'N/A';
-    document.getElementById('previewBillFromAddress1').textContent = 
+    document.getElementById('previewBillFromAddress1').textContent =
         document.getElementById('billFromAddress1').value || '';
-    document.getElementById('previewBillFromAddress2').textContent = 
+    document.getElementById('previewBillFromAddress2').textContent =
         document.getElementById('billFromAddress2').value || '';
     const zipCode = document.getElementById('billFromZip').value;
-    document.getElementById('previewBillFromZip').textContent = 
+    document.getElementById('previewBillFromZip').textContent =
         zipCode ? `${i18n.t('preview.zipCodeLabel')} ${zipCode}` : '';
 
     // Update Bill To information
-    document.getElementById('previewBillToName').textContent = 
+    document.getElementById('previewBillToName').textContent =
         document.getElementById('billToName').value || 'N/A';
-    document.getElementById('previewBillToAddress1').textContent = 
+    document.getElementById('previewBillToAddress1').textContent =
         document.getElementById('billToAddress1').value || '';
-    document.getElementById('previewBillToAddress2').textContent = 
+    document.getElementById('previewBillToAddress2').textContent =
         document.getElementById('billToAddress2').value || '';
 
     // Update Bank Details
-    document.getElementById('previewBeneficiaryName').textContent = 
+    document.getElementById('previewBeneficiaryName').textContent =
         document.getElementById('beneficiaryName').value || 'N/A';
-    document.getElementById('previewBeneficiaryAccount').textContent = 
+    document.getElementById('previewBeneficiaryAccount').textContent =
         document.getElementById('beneficiaryAccount').value || 'N/A';
-    document.getElementById('previewSwiftCode').textContent = 
+    document.getElementById('previewSwiftCode').textContent =
         document.getElementById('swiftCode').value || 'N/A';
-    document.getElementById('previewBankName').textContent = 
+    document.getElementById('previewBankName').textContent =
         document.getElementById('bankName').value || 'N/A';
-    document.getElementById('previewBankAddress').textContent = 
+    document.getElementById('previewBankAddress').textContent =
         document.getElementById('bankAddress').value || 'N/A';
 
     // Update Intermediary Bank Details
-    document.getElementById('previewIntermediarySwift').textContent = 
+    document.getElementById('previewIntermediarySwift').textContent =
         document.getElementById('intermediarySwift').value || 'N/A';
-    document.getElementById('previewIntermediaryBankName').textContent = 
+    document.getElementById('previewIntermediaryBankName').textContent =
         document.getElementById('intermediaryBankName').value || 'N/A';
 
     // Update line items
@@ -476,10 +501,24 @@ function generatePDF(event) {
 
     // Get the invoice content
     const element = document.querySelector('.invoice-content');
+    const previewContainer = document.querySelector('.invoice-preview');
+
+    // Store original styles
+    const originalMaxHeight = previewContainer.style.maxHeight;
+    const originalOverflow = previewContainer.style.overflow;
+    const originalPadding = element.style.padding;
+
+    // Temporarily adjust styles for better PDF rendering
+    previewContainer.style.maxHeight = 'none';
+    previewContainer.style.overflow = 'visible';
+    element.style.padding = '1.5rem 2rem';
+
+    // Calculate actual content height
+    const actualHeight = element.scrollHeight;
 
     // Configure PDF options
     const opt = {
-        margin: [0.2, 0.2, 0.2, 0.2],
+        margin: [0.4, 0.4, 0.4, 0.4],
         filename: `invoice_${invoiceNumber}_${new Date().toISOString().split('T')[0]}.pdf`,
         image: { type: 'jpeg', quality: 0.98 },
         html2canvas: {
@@ -487,7 +526,9 @@ function generatePDF(event) {
             useCORS: true,
             letterRendering: true,
             logging: false,
-            windowHeight: element.scrollHeight
+            windowHeight: actualHeight,
+            scrollY: 0,
+            scrollX: 0
         },
         jsPDF: {
             unit: 'in',
@@ -495,29 +536,41 @@ function generatePDF(event) {
             orientation: 'portrait',
             compress: true
         },
-        pagebreak: { 
-            mode: 'css',
-            avoid: ['tr', '.party', '.date-item', '.bank-details', '.invoice-header']
+        pagebreak: {
+            mode: ['avoid-all', 'css'],
+            avoid: ['.bank-details', '.bank-info', '.intermediary-bank', '.invoice-header', '.invoice-parties', '.invoice-dates']
         }
     };
 
-    // Show loading indicator (optional - you can add a loading spinner here)
+    // Show loading indicator
     const btn = event ? event.target : document.querySelector('.btn-success[onclick="generatePDF()"]');
     const originalText = btn.textContent;
     btn.textContent = i18n.t('form.exporting');
     btn.disabled = true;
 
-    // Generate PDF
-    html2pdf().set(opt).from(element).save().then(function() {
-        btn.textContent = originalText;
-        btn.disabled = false;
-        console.log('PDF generated successfully');
-    }).catch(function(error) {
-        btn.textContent = originalText;
-        btn.disabled = false;
-        console.error('Error generating PDF:', error);
-        alert('An error occurred while generating the PDF. Please try again.');
-    });
+    // Generate PDF with a small delay to ensure DOM is ready
+    setTimeout(() => {
+        html2pdf().set(opt).from(element).save().then(function() {
+            // Restore original styles
+            previewContainer.style.maxHeight = originalMaxHeight;
+            previewContainer.style.overflow = originalOverflow;
+            element.style.padding = originalPadding;
+
+            btn.textContent = originalText;
+            btn.disabled = false;
+            console.log('PDF generated successfully');
+        }).catch(function(error) {
+            // Restore original styles on error
+            previewContainer.style.maxHeight = originalMaxHeight;
+            previewContainer.style.overflow = originalOverflow;
+            element.style.padding = originalPadding;
+
+            btn.textContent = originalText;
+            btn.disabled = false;
+            console.error('Error generating PDF:', error);
+            alert('Error generating PDF. Please try again.');
+        });
+    }, 100);
 }
 
 // Helper function to format currency

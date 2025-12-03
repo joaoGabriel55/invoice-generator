@@ -14,6 +14,7 @@
     "saved": "✓ تم الحفظ",
     "saveFailed": "✗ فشل الحفظ",
     "invoiceNumber": "رقم الفاتورة",
+    "currency": "العملة",
     "creationDate": "تاريخ الإنشاء",
     "dueDate": "تاريخ الاستحقاق",
     "billFromInfo": "معلومات المُصدِر",

@@ -14,6 +14,7 @@
     "saved": "✓ Salvato",
     "saveFailed": "✗ Salvataggio fallito",
     "invoiceNumber": "Numero Fattura",
+    "currency": "Valuta",
     "creationDate": "Data di Creazione",
     "dueDate": "Data di Scadenza",
     "billFromInfo": "Informazioni Mittente",

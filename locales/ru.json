@@ -14,6 +14,7 @@
     "saved": "✓ Сохранено",
     "saveFailed": "✗ Сохранение не удалось",
     "invoiceNumber": "Номер счета",
+    "currency": "Валюта",
     "creationDate": "Дата создания",
     "dueDate": "Срок оплаты",
     "billFromInfo": "Информация об отправителе",

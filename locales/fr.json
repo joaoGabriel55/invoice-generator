@@ -14,6 +14,7 @@
     "saved": "✓ Sauvegardé",
     "saveFailed": "✗ Échec de la sauvegarde",
     "invoiceNumber": "Numéro de Facture",
+    "currency": "Devise",
     "creationDate": "Date de Création",
     "dueDate": "Date d'Échéance",
     "billFromInfo": "Informations de l'Émetteur",

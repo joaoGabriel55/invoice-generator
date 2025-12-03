@@ -108,6 +108,12 @@ class I18n {
 
   // Get current currency
   getCurrency() {
+    // First, try to get the selected currency from the currency select element
+    const currencySelect = document.getElementById("currency");
+    if (currencySelect && currencySelect.value) {
+      return currencySelect.value;
+    }
+    // Fallback to locale-based currency
     return this.t("currency");
   }
 
@@ -235,6 +241,15 @@ class I18n {
       const newLocale = e.target.value;
       await this.setLocale(newLocale);
       this.updateUI();
+
+      // Update currency select to the locale's default currency if no currency is selected yet
+      const currencySelect = document.getElementById("currency");
+      if (currencySelect && !localStorage.getItem('invoiceGeneratorData')) {
+        const defaultCurrency = this.t("currency");
+        if (currencySelect.querySelector(`option[value="${defaultCurrency}"]`)) {
+          currencySelect.value = defaultCurrency;
+        }
+      }
 
       // Trigger preview update if the function exists
       if (typeof updatePreview === "function") {

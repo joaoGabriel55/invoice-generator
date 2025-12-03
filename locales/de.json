@@ -14,6 +14,7 @@
     "saved": "✓ Gespeichert",
     "saveFailed": "✗ Speichern fehlgeschlagen",
     "invoiceNumber": "Rechnungsnummer",
+    "currency": "Währung",
     "creationDate": "Erstellungsdatum",
     "dueDate": "Fälligkeitsdatum",
     "billFromInfo": "Rechnungssteller-Informationen",

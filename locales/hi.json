@@ -14,6 +14,7 @@
     "saved": "✓ सेव हो गया",
     "saveFailed": "✗ सेव विफल रहा",
     "invoiceNumber": "चालान संख्या",
+    "currency": "मुद्रा",
     "creationDate": "निर्माण तिथि",
     "dueDate": "देय तिथि",
     "billFromInfo": "प्रेषक की जानकारी",

@@ -14,6 +14,7 @@
     "saved": "✓ נשמר",
     "saveFailed": "✗ השמירה נכשלה",
     "invoiceNumber": "מספר חשבונית",
+    "currency": "מטבע",
     "creationDate": "תאריך יצירה",
     "dueDate": "תאריך תשלום",
     "billFromInfo": "פרטי המנפיק",

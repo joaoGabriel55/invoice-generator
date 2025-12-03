@@ -14,6 +14,7 @@
     "saved": "✓ Saved",
     "saveFailed": "✗ Save failed",
     "invoiceNumber": "Invoice Number",
+    "currency": "Currency",
     "creationDate": "Creation Date",
     "dueDate": "Due Date",
     "billFromInfo": "Bill From Information",
