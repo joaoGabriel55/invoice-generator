@@ -479,14 +479,15 @@ function generatePDF(event) {
 
     // Configure PDF options
     const opt = {
-        margin: [0.3, 0.3, 0.3, 0.3],
+        margin: [0.2, 0.2, 0.2, 0.2],
         filename: `invoice_${invoiceNumber}_${new Date().toISOString().split('T')[0]}.pdf`,
         image: { type: 'jpeg', quality: 0.98 },
         html2canvas: {
-            scale: 1.5,
+            scale: 2,
             useCORS: true,
             letterRendering: true,
             logging: false,
+            windowHeight: element.scrollHeight
         },
         jsPDF: {
             unit: 'in',
@@ -494,7 +495,10 @@ function generatePDF(event) {
             orientation: 'portrait',
             compress: true
         },
-        pagebreak: { mode: 'avoid-all' }
+        pagebreak: { 
+            mode: 'css',
+            avoid: ['tr', '.party', '.date-item', '.bank-details', '.invoice-header']
+        }
     };
 
     // Show loading indicator (optional - you can add a loading spinner here)

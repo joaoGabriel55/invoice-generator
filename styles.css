@@ -349,24 +349,26 @@ body {
 }
 
 .invoice-content {
-    padding: 2rem;
+    padding: 0.5rem 1.5rem 0.5rem 1.5rem;
     background: white;
     max-width: 800px;
     margin: 0 auto;
+    box-sizing: border-box;
 }
 
 .invoice-header {
     text-align: center;
-    margin-bottom: 1.5rem;
-    padding-bottom: 1rem;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
     border-bottom: 3px solid var(--primary-color);
+    page-break-after: avoid;
 }
 
 .invoice-title {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 700;
     color: var(--primary-color);
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.25rem;
     letter-spacing: 2px;
 }
 
@@ -379,8 +381,9 @@ body {
 .invoice-parties {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-    margin-bottom: 1rem;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+    page-break-inside: avoid;
 }
 
 .party h3 {
@@ -409,11 +412,12 @@ body {
 .invoice-dates {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-    padding: 0.75rem;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+    padding: 0.5rem;
     background: var(--bg-secondary);
     border-radius: 8px;
+    page-break-inside: avoid;
 }
 
 .date-item {
@@ -437,7 +441,7 @@ body {
 }
 
 .invoice-items {
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.75rem;
 }
 
 .invoice-items table {
@@ -451,7 +455,7 @@ body {
 }
 
 .invoice-items th {
-    padding: 0.75rem;
+    padding: 0.5rem 0.75rem;
     text-align: left;
     font-weight: 600;
     font-size: 0.85rem;
@@ -460,9 +464,13 @@ body {
 }
 
 .invoice-items td {
-    padding: 0.75rem;
+    padding: 0.5rem 0.75rem;
     border-bottom: 1px solid var(--border-color);
     font-size: 0.9rem;
+}
+
+.invoice-items tbody tr {
+    page-break-inside: avoid;
 }
 
 .invoice-items tbody tr:hover {
@@ -487,28 +495,34 @@ body {
     font-size: 1.1rem;
 }
 
+.total-row {
+    page-break-inside: avoid;
+}
+
 .total-row td {
     border-bottom: none !important;
-    padding: 1rem 0.75rem !important;
+    padding: 0.75rem !important;
 }
 
 .bank-details {
-    margin-top: 1.5rem;
-    padding: 1rem;
+    margin-top: 0.75rem;
+    padding: 0.75rem;
     background: var(--bg-secondary);
     border-radius: 8px;
     border-left: 4px solid var(--primary-color);
+    page-break-before: auto;
+    page-break-inside: avoid;
 }
 
 .bank-details h3 {
-    font-size: 1rem;
-    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
     color: var(--text-primary);
     font-weight: 700;
 }
 
 .bank-info {
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
 }
 
 .bank-info p,
@@ -526,8 +540,8 @@ body {
 }
 
 .intermediary-bank {
-    margin-top: 1rem;
-    padding-top: 1rem;
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
     border-top: 2px dashed var(--border-color);
 }
 
@@ -544,9 +558,10 @@ body {
 }
 
 .invoice-footer {
-    margin-top: 1.5rem;
-    padding-top: 1rem;
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
     border-top: 2px solid var(--border-color);
+    page-break-inside: avoid;
 }
 
 .footer-note {
@@ -639,4 +654,25 @@ body {
         max-height: none;
         border: none;
     }
+    
+    .invoice-content {
+        padding: 0.5rem 1rem;
+    }
+}
+
+/* PDF Generation Optimization */
+.invoice-content * {
+    box-sizing: border-box;
+}
+
+/* Ensure no orphaned content creates blank pages */
+.invoice-content > *:last-child {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.bank-details:last-child,
+.invoice-footer:last-child {
+    margin-bottom: 0 !important;
+    padding-bottom: 0.5rem !important;
 }
