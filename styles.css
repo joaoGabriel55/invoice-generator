@@ -59,6 +59,31 @@ body {
     margin: 0 auto;
 }
 
+.adslot_1 {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  display: block;
+  width: 320px !important;
+  height: 50px !important;
+}
+
+@media (max-width:400px) { .adslot_1 { display: none !important; } }
+@media (min-width:500px) { .adslot_1 { width: 468px !important; height: 60px !important; } }
+@media (min-width:800px) { .adslot_1 { width: 100% !important; height: 90px !important; } }
+
+/* Responsive Ad Adjustments */
+@media (max-width: 768px) {
+    .ad-container {
+        padding: 0.5rem;
+        margin: 1rem 0;
+    }
+
+    .ad-sidebar {
+        position: relative;
+        top: 0;
+    }
+}
+
 .app-header {
     text-align: center;
     color: white;
@@ -708,7 +733,7 @@ select:open::picker-icon {
         page-break-inside: avoid !important;
         break-inside: avoid !important;
     }
-    
+
     .invoice-content {
         padding: 1.5rem 2rem !important;
     }
