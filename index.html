@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invoice Generator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="app-header">
+        <h1>📄 Invoice Generator</h1>
+        <p class="subtitle">Create professional invoices with ease</p>
+      </header>
+
+      <div class="main-content">
+        <!-- Input Form -->
+        <div class="form-section">
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              margin-bottom: 1rem;
+            "
+          >
+            <h2 style="margin: 0">Invoice Details</h2>
+            <span
+              id="autoSaveStatus"
+              style="font-size: 0.875rem; color: #6c757d; font-style: italic"
+              >💾 Auto-save enabled</span
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="invoiceNumber">Invoice Number</label>
+            <input
+              type="number"
+              id="invoiceNumber"
+              value="1"
+              min="1"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="creationDate">Creation Date</label>
+            <input type="date" id="creationDate" required />
+          </div>
+
+          <div class="form-group">
+            <label for="dueDate">Due Date</label>
+            <input type="date" id="dueDate" required />
+          </div>
+
+          <h3>Bill From Information</h3>
+          <div class="form-group">
+            <label for="billFromName">Name</label>
+            <input type="text" id="billFromName" value="John Doe" />
+          </div>
+          <div class="form-group">
+            <label for="billFromAddress1">Address Line 1</label>
+            <input
+              type="text"
+              id="billFromAddress1"
+              value="123 Main Street, Suite 100"
+            />
+          </div>
+          <div class="form-group">
+            <label for="billFromAddress2">City, State, Country</label>
+            <input
+              type="text"
+              id="billFromAddress2"
+              value="New York, NY, USA"
+            />
+          </div>
+          <div class="form-group">
+            <label for="billFromZip">Zip Code</label>
+            <input type="text" id="billFromZip" value="10001" />
+          </div>
+
+          <h3>Bill To Information</h3>
+          <div class="form-group">
+            <label for="billToName">Name</label>
+            <input type="text" id="billToName" value="Acme Corporation" />
+          </div>
+          <div class="form-group">
+            <label for="billToAddress1">Address Line 1</label>
+            <input type="text" id="billToAddress1" value="456 Business Ave" />
+          </div>
+          <div class="form-group">
+            <label for="billToAddress2">City, State, Zip, Country</label>
+            <input
+              type="text"
+              id="billToAddress2"
+              value="Los Angeles, CA 90001, USA"
+            />
+          </div>
+
+          <h3>Bank Details</h3>
+          <div class="form-group">
+            <label for="beneficiaryName">Beneficiary Name</label>
+            <input type="text" id="beneficiaryName" value="John Doe" />
+          </div>
+          <div class="form-group">
+            <label for="beneficiaryAccount"
+              >Beneficiary Account Number (IBAN)</label
+            >
+            <input
+              type="text"
+              id="beneficiaryAccount"
+              value="US00 1234 5678 9012 3456 78"
+            />
+          </div>
+          <div class="form-group">
+            <label for="swiftCode">SWIFT Code</label>
+            <input type="text" id="swiftCode" value="BANKUS33XXX" />
+          </div>
+          <div class="form-group">
+            <label for="bankName">Bank Name</label>
+            <input type="text" id="bankName" value="First National Bank" />
+          </div>
+          <div class="form-group">
+            <label for="bankAddress">Bank Address</label>
+            <input
+              type="text"
+              id="bankAddress"
+              value="789 Financial Plaza, New York, NY 10005"
+            />
+          </div>
+
+          <h3>Intermediary Bank Details (Optional)</h3>
+          <div class="form-group">
+            <label for="intermediarySwift">Swift/BIC Code</label>
+            <input type="text" id="intermediarySwift" value="CHASUS33XXX" />
+          </div>
+          <div class="form-group">
+            <label for="intermediaryBankName">Bank Name</label>
+            <input
+              type="text"
+              id="intermediaryBankName"
+              value="Global Transfer Bank, N.A"
+            />
+          </div>
+
+          <h3>Line Items</h3>
+          <div id="lineItems">
+            <div class="line-item">
+              <div class="line-item-row">
+                <input
+                  type="text"
+                  class="item-description"
+                  placeholder="e.g., Monthly service"
+                  value="Consulting Services"
+                />
+                <input
+                  type="number"
+                  class="item-amount"
+                  placeholder="0.00"
+                  step="0.01"
+                  min="0"
+                  value="1500"
+                />
+                <button
+                  type="button"
+                  class="btn-remove"
+                  onclick="removeLineItem(this)"
+                >
+                  ✕
+                </button>
+              </div>
+            </div>
+            <div class="line-item">
+              <div class="line-item-row">
+                <input
+                  type="text"
+                  class="item-description"
+                  placeholder="e.g., Additional service"
+                  value="Design Work"
+                />
+                <input
+                  type="number"
+                  class="item-amount"
+                  placeholder="0.00"
+                  step="0.01"
+                  min="0"
+                  value="750"
+                />
+                <button
+                  type="button"
+                  class="btn-remove"
+                  onclick="removeLineItem(this)"
+                >
+                  ✕
+                </button>
+              </div>
+            </div>
+            <div class="line-item">
+              <div class="line-item-row">
+                <input
+                  type="text"
+                  class="item-description"
+                  placeholder="e.g., Reimbursement"
+                  value="Travel Expenses"
+                />
+                <input
+                  type="number"
+                  class="item-amount"
+                  placeholder="0.00"
+                  step="0.01"
+                  min="0"
+                  value="250"
+                />
+                <button
+                  type="button"
+                  class="btn-remove"
+                  onclick="removeLineItem(this)"
+                >
+                  ✕
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <button type="button" class="btn-secondary" onclick="addLineItem()">
+            + Add Line Item
+          </button>
+
+          <div class="form-actions">
+            <button type="button" class="btn-success" onclick="generatePDF()">
+              📥 Export PDF
+            </button>
+            <button
+              type="button"
+              class="btn-secondary"
+              onclick="clearSavedData()"
+              style="background-color: #dc3545; color: white"
+            >
+              🗑️ Clear Saved Data
+            </button>
+          </div>
+        </div>
+
+        <!-- Invoice Preview -->
+        <div class="preview-section">
+          <h2>Preview</h2>
+          <div id="invoicePreview" class="invoice-preview">
+            <div class="invoice-content">
+              <div class="invoice-header">
+                <h1 class="invoice-title">INVOICE</h1>
+                <p class="invoice-number">
+                  Invoice #<span id="previewInvoiceNumber">1</span>
+                </p>
+              </div>
+
+              <div class="invoice-parties">
+                <div class="party">
+                  <h3>Bill From:</h3>
+                  <p class="party-name" id="previewBillFromName">John Doe</p>
+                  <p id="previewBillFromAddress1">123 Main Street, Suite 100</p>
+                  <p id="previewBillFromAddress2">New York, NY, USA</p>
+                  <p id="previewBillFromZip">Zip Code: 10001</p>
+                </div>
+
+                <div class="party">
+                  <h3>Bill To:</h3>
+                  <p class="party-name" id="previewBillToName">
+                    Acme Corporation
+                  </p>
+                  <p id="previewBillToAddress1">456 Business Ave</p>
+                  <p id="previewBillToAddress2">Los Angeles, CA 90001, USA</p>
+                </div>
+              </div>
+
+              <div class="invoice-dates">
+                <div class="date-item">
+                  <span class="date-label">Creation date:</span>
+                  <span id="previewCreationDate">-</span>
+                </div>
+                <div class="date-item">
+                  <span class="date-label">Due date:</span>
+                  <span id="previewDueDate">-</span>
+                </div>
+              </div>
+
+              <div class="invoice-items">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Description</th>
+                      <th class="text-right">Amount</th>
+                    </tr>
+                  </thead>
+                  <tbody id="previewLineItems">
+                    <tr>
+                      <td colspan="2" class="text-center text-muted">
+                        No items added yet
+                      </td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr class="total-row">
+                      <td><strong>Total</strong></td>
+                      <td class="text-right">
+                        <strong id="previewTotal">USD 0.00</strong>
+                      </td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+
+              <div class="bank-details">
+                <h3>Pay to the banking details below:</h3>
+                <div class="bank-info">
+                  <p>
+                    <strong>Beneficiary name:</strong>
+                    <span id="previewBeneficiaryName">John Doe</span>
+                  </p>
+                  <p>
+                    <strong>Beneficiary Account Number (IBAN):</strong>
+                    <span id="previewBeneficiaryAccount"
+                      >US00 1234 5678 9012 3456 78</span
+                    >
+                  </p>
+                  <p>
+                    <strong>SWIFT Code:</strong>
+                    <span id="previewSwiftCode">BANKUS33XXX</span>
+                  </p>
+                  <p>
+                    <strong>Bank Name:</strong>
+                    <span id="previewBankName">First National Bank</span>
+                  </p>
+                  <p>
+                    <strong>Bank Address:</strong>
+                    <span id="previewBankAddress"
+                      >789 Financial Plaza, New York, NY 10005</span
+                    >
+                  </p>
+                </div>
+
+                <div class="intermediary-bank">
+                  <p class="intermediary-note">
+                    (Optional information, always use it together with the bank
+                    details above)
+                  </p>
+                  <p class="intermediary-title">
+                    <strong>Intermediary bank details:</strong>
+                  </p>
+                  <p>
+                    <strong>Swift/BIC Code:</strong>
+                    <span id="previewIntermediarySwift">CHASUS33XXX</span>
+                  </p>
+                  <p>
+                    <strong>Bank Name:</strong>
+                    <span id="previewIntermediaryBankName"
+                      >Global Transfer Bank, N.A</span
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
