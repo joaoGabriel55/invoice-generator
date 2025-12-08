@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Invoice - Create Professional Invoices with Ease</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 
     <!-- SEO Meta Tags -->
     <meta
@@ -359,14 +360,6 @@
           <div class="form-actions">
             <button
               type="button"
-              class="btn-success"
-              onclick="generatePDF(event)"
-              data-i18n="form.exportPDF"
-            >
-              📥 Export PDF
-            </button>
-            <button
-              type="button"
               class="btn-secondary"
               onclick="clearSavedData()"
               style="background-color: #dc3545; color: white"
@@ -379,7 +372,17 @@
 
         <!-- Invoice Preview -->
         <div class="preview-section">
-          <h2 data-i18n="preview.title">Preview</h2>
+          <header>
+            <h2 data-i18n="preview.title">Preview</h2>
+            <button
+              type="button"
+              class="btn-success"
+              onclick="generatePDF(event)"
+              data-i18n="form.exportPDF"
+            >
+              📥 Export PDF
+            </button>
+          </header>
           <div id="invoicePreview" class="invoice-preview">
             <div class="invoice-content">
               <div class="invoice-header">
@@ -397,7 +400,10 @@
                   <p class="party-name" id="previewBillFromName">John Doe</p>
                   <p id="previewBillFromAddress1">123 Main Street, Suite 100</p>
                   <p id="previewBillFromAddress2">New York, NY, USA</p>
-                  <p id="previewBillFromZip">Zip Code: 10001</p>
+                  <p>
+                    <span data-i18n="preview.zipCodeLabel">Zip Code</span>
+                    <span id="previewBillFromZip">12345</span>
+                  </p>
                 </div>
 
                 <div class="party">
