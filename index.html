@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Invoice - Create Professional Invoices with Ease</title>
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
 
     <!-- SEO Meta Tags -->
     <meta
@@ -66,15 +66,20 @@
     ></script>
   </head>
   <body>
-    <ins
-      class="adsbygoogle adslot_1"
-      style="display: block; height: 90px !important"
-      data-ad-client="ca-pub-9821555230393214"
-      data-ad-slot="9561031910"
-    ></ins>
-    <script>
-      (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
+    <div class="ad-container" role="region" aria-label="Advertisement">
+      <div class="text-muted" style="font-size: 0.8rem; margin-bottom: 0.25rem">
+        Advertisement
+      </div>
+      <ins
+        class="adsbygoogle adslot_1"
+        style="display: inline-block"
+        data-ad-client="ca-pub-9821555230393214"
+        data-ad-slot="9561031910"
+      ></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
     <div class="container">
       <header class="app-header">
         <h1 data-i18n="header.title">📄 The Invoice</h1>
@@ -387,7 +392,10 @@
             <div class="invoice-content">
               <div class="invoice-header">
                 <h1 class="invoice-title">
-                  <span data-i18n="preview.invoice">INVOICE</span> #<span id="previewInvoiceNumber">1</span>
+                  <span data-i18n="preview.invoice">INVOICE</span> #<span
+                    id="previewInvoiceNumber"
+                    >1</span
+                  >
                 </h1>
               </div>
 
@@ -532,8 +540,11 @@
       </div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-    <script src="i18n.js"></script>
-    <script src="script.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+      defer
+    ></script>
+    <script src="i18n.js" defer></script>
+    <script src="script.js" defer></script>
   </body>
 </html>
