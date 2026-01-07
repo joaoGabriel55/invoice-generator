@@ -56,12 +56,12 @@ body {
   color: var(--text-primary);
   line-height: 1.6;
   min-height: 100vh;
-  padding: 2rem 1rem;
 }
 
 .container {
   max-width: 1400px;
   margin: 0 auto;
+  padding: 0 1rem;
 }
 
 /* Add a consistent ad container wrapper to prevent layout shift and clarify visuals */
@@ -184,6 +184,34 @@ body {
 .subtitle {
   font-size: 1.1rem;
   opacity: 0.9;
+}
+
+.links,
+.app-footer {
+  margin: 0.75rem 0 1.25rem 0;
+  text-align: center;
+  color: white;
+  a {
+    margin: 0 0.75rem;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.app-footer {
+  background-color: var(--primary-hover);
+  margin: 2rem 0 0 0;
+  padding: 1rem;
+  text-align: center;
+  color: white;
+  a {
+    color: white;
+  }
 }
 
 .main-content {

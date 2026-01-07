@@ -66,20 +66,6 @@
     ></script>
   </head>
   <body>
-    <div class="ad-container" role="region" aria-label="Advertisement">
-      <div class="text-muted" style="font-size: 0.8rem; margin-bottom: 0.25rem">
-        Advertisement
-      </div>
-      <ins
-        class="adsbygoogle adslot_1"
-        style="display: inline-block"
-        data-ad-client="ca-pub-9821555230393214"
-        data-ad-slot="9561031910"
-      ></ins>
-      <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
-    </div>
     <div class="container">
       <header class="app-header">
         <h1 data-i18n="header.title">📄 The Invoice</h1>
@@ -87,6 +73,53 @@
           Create professional invoices with ease
         </p>
       </header>
+
+      <nav class="links" aria-label="Primary">
+        <a href="pages/about.html">About</a>
+        <a href="pages/privacy.html">Privacy</a>
+        <a href="pages/terms.html">Terms</a>
+      </nav>
+
+      <div class="ad-container" role="region" aria-label="Advertisement">
+        <div
+          class="text-muted"
+          style="font-size: 0.8rem; margin-bottom: 0.25rem"
+        >
+          Advertisement
+        </div>
+        <ins
+          class="adsbygoogle adslot_1"
+          style="display: inline-block"
+          data-ad-client="ca-pub-9821555230393214"
+          data-ad-slot="9561031910"
+        ></ins>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+
+      <section
+        class="intro"
+        style="
+          background: #fff;
+          border-radius: 12px;
+          padding: 1rem 1.25rem;
+          box-shadow: var(--shadow-xl);
+          margin-bottom: 1rem;
+        "
+      >
+        <h2 style="margin-bottom: 0.5rem">What you can do with The Invoice</h2>
+        <p>
+          Generate professional invoices in minutes. Enter your details, add
+          line items, and export a polished PDF. The app supports multiple
+          currencies, localized UI, and auto-saves your progress.
+        </p>
+        <p>
+          This page explains how to use the tool and best practices for
+          invoicing. For more details, visit our About, Privacy, and Terms
+          pages.
+        </p>
+      </section>
 
       <div class="main-content">
         <!-- Input Form -->
@@ -546,5 +579,16 @@
     ></script>
     <script src="i18n.js" defer></script>
     <script src="script.js" defer></script>
+    <footer class="app-footer">
+      <p>&copy; <span id="year"></span> The Invoice</p>
+      <p>
+        <a href="pages/privacy.html">Privacy</a> ·
+        <a href="pages/terms.html">Terms</a> ·
+        <a href="pages/about.html">About</a>
+      </p>
+    </footer>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
   </body>
 </html>
