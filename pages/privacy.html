@@ -14,7 +14,7 @@
   <body style="padding: 2rem 1rem">
     <div class="container" style="max-width: 900px">
       <header class="app-header" style="text-align: left">
-        <h1>Privacy Policy</h1>
+        <h1 data-i18n="pages.privacy.title">Privacy Policy</h1>
       </header>
       <main
         style="
@@ -24,32 +24,51 @@
           box-shadow: var(--shadow-xl);
         "
       >
-        <p>Last updated: 2026-01-01</p>
-
-        <h2>Data we collect</h2>
         <p>
+          <span data-i18n="pages.privacy.lastUpdatedPrefix">Last updated:</span>
+          2026-01-01
+        </p>
+
+        <h2 data-i18n="pages.privacy.dataWeCollectTitle">Data we collect</h2>
+        <p data-i18n="pages.privacy.dataWeCollectBody">
           This app stores your invoice inputs locally in your own browser using
           LocalStorage. We do not receive or store your invoice contents on our
           servers.
         </p>
 
-        <h2>Cookies and third-party services</h2>
-        <p>
+        <h2 data-i18n="pages.privacy.cookiesTitle">
+          Cookies and third-party services
+        </h2>
+        <p data-i18n="pages.privacy.cookiesBody">
           We use Google AdSense to display ads. Google may use cookies or local
           storage to deliver and measure ads. Learn more about how Google uses
           information at https://policies.google.com/technologies/ads
         </p>
 
-        <h2>Consent</h2>
-        <p>
+        <h2 data-i18n="pages.privacy.consentTitle">Consent</h2>
+        <p data-i18n="pages.privacy.consentBody">
           If you are in the EEA/UK, we show a consent banner via a
           Google-certified CMP. You can update consent at any time using the
           “Privacy” link in our footer.
         </p>
 
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:hello@example.com">hello@example.com</a></p>
+        <h2 data-i18n="pages.privacy.contactTitle">Contact</h2>
+        <p>
+          <span data-i18n="pages.privacy.contactBody">Email:</span>
+          <a href="mailto:quaresma55@protonmail.com">
+            quaresma55@protonmail.com
+          </a>
+        </p>
       </main>
     </div>
+    <script src="/i18n.js" defer></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", async () => {
+        if (typeof i18n !== "undefined") {
+          await i18n.init();
+          i18n.updateUI();
+        }
+      });
+    </script>
   </body>
 </html>

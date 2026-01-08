@@ -26,7 +26,7 @@ class I18n {
   // Load translation file for a specific locale
   async loadTranslations(locale) {
     try {
-      const response = await fetch(`locales/${locale}.json`);
+      const response = await fetch(`/locales/${locale}.json`);
       if (!response.ok) {
         throw new Error(`Failed to load translations for ${locale}`);
       }
@@ -113,8 +113,8 @@ class I18n {
     if (currencySelect && currencySelect.value) {
       return currencySelect.value;
     }
-    // Fallback to locale-based currency
-    return this.t("currency");
+    // Fallback to locale-based default currency
+    return this.t("defaultCurrency") || "USD";
   }
 
   // Initialize i18n system
@@ -160,10 +160,20 @@ class I18n {
     this.updateMetaTag("description", this.t("meta.description"));
     this.updateMetaTag("keywords", this.t("meta.keywords"));
 
+    // Alias map for keys introduced in HTML that differ from locale structure
+    const aliasMap = {
+      "ad.label": "common.adLabel"
+    };
+
     // Update all elements with data-i18n attribute
     document.querySelectorAll("[data-i18n]").forEach((element) => {
-      const key = element.getAttribute("data-i18n");
-      element.textContent = this.t(key);
+      let key = element.getAttribute("data-i18n");
+      let value = this.t(key);
+      // Fallback via alias map if key not found
+      if (value === key && aliasMap[key]) {
+        value = this.t(aliasMap[key]);
+      }
+      element.textContent = value;
     });
 
     // Update all placeholders with data-i18n-placeholder attribute
@@ -245,7 +255,7 @@ class I18n {
       // Update currency select to the locale's default currency if no currency is selected yet
       const currencySelect = document.getElementById("currency");
       if (currencySelect && !localStorage.getItem('invoiceGeneratorData')) {
-        const defaultCurrency = this.t("currency");
+        const defaultCurrency = this.t("defaultCurrency") || currencySelect.value;
         if (currencySelect.querySelector(`option[value="${defaultCurrency}"]`)) {
           currencySelect.value = defaultCurrency;
         }

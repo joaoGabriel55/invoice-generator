@@ -76,5 +76,85 @@
     "dataCleared": "Todos os dados salvos foram limpos!",
     "minOneLineItem": "Você deve ter pelo menos um item na fatura."
   },
-  "currency": "BRL"
+  "nav": {
+    "about": "Sobre",
+    "privacy": "Privacidade",
+    "terms": "Termos"
+  },
+  "pages": {
+    "about": {
+      "title": "Sobre o The Invoice",
+      "subtitle": "Um gerador de faturas simples, rápido e multilingue para freelancers e pequenas equipes.",
+      "whatThisIsTitle": "O que é isto",
+      "whatThisIsBody": "O The Invoice é um aplicativo web leve que ajuda a criar faturas profissionais rapidamente. Suporta pré-visualização em tempo real, totais automáticos, múltiplas moedas, exportação para PDF e interface multilingue.",
+      "whoItsForTitle": "Para quem é",
+      "whoItsForList": [
+        "Freelancers que precisam de faturas limpas rapidamente",
+        "Pequenas empresas que enviam faturas únicas ou recorrentes",
+        "Quem prefere uma ferramenta simples sem cadastro"
+      ],
+      "howItWorksTitle": "Como funciona",
+      "howItWorksSteps": [
+        "Preencha os detalhes da sua fatura no formulário",
+        "Veja a pré-visualização em tempo real atualizar à direita",
+        "Exporte um PDF de alta qualidade com um clique"
+      ],
+      "contactTitle": "Contato",
+      "contactBody": "Questões ou feedback? Email:"
+    },
+    "privacy": {
+      "title": "Política de Privacidade",
+      "lastUpdatedPrefix": "Última atualização:",
+      "dataWeCollectTitle": "Dados que coletamos",
+      "dataWeCollectBody": "Este aplicativo armazena suas entradas de fatura localmente no seu próprio navegador usando o LocalStorage. Não recebemos nem armazenamos o conteúdo de suas faturas em nossos servidores.",
+      "cookiesTitle": "Cookies e serviços de terceiros",
+      "cookiesBody": "Utilizamos o Google AdSense para apresentar anúncios. O Google pode usar cookies ou armazenamento local para fornecer e medir anúncios. Saiba mais sobre como o Google utiliza informações em https://policies.google.com/technologies/ads",
+      "consentTitle": "Consentimento",
+      "consentBody": "Se você estiver na EEE/Reino Unido, mostramos um banner de consentimento por meio de um CMP certificado pelo Google. Você pode atualizar o consentimento a qualquer momento através do link “Privacidade” em nosso rodapé.",
+      "contactTitle": "Contato",
+      "contactBody": "Email:"
+    },
+    "terms": {
+      "title": "Termos de Serviço",
+      "useOfAppTitle": "Uso do aplicativo",
+      "useOfAppBody": "O The Invoice é fornecido “como está” sem garantias. Você é responsável pela exatidão e legalidade de quaisquer faturas que criar.",
+      "noAccountTitle": "Não é necessário conta",
+      "noAccountBody": "O aplicativo armazena as entradas da fatura apenas no seu navegador. Não gerenciamos contas de usuário.",
+      "liabilityTitle": "Limitação de responsabilidade",
+      "liabilityBody": "Não nos responsabilizamos por quaisquer danos diretos ou indiretos decorrentes do uso do aplicativo.",
+      "changesTitle": "Alterações",
+      "changesBody": "Podemos atualizar estes termos ocasionalmente. Continuar a usar o aplicativo constitui aceitação."
+    }
+  },
+  "common": {
+    "adLabel": "Publicidade"
+  },
+  "home": {
+    "introTitle": "O que você pode fazer com o The Invoice",
+    "introP1": "Gere faturas profissionais em minutos. Insira seus dados, adicione itens e exporte um PDF caprichado. O app oferece suporte a múltiplas moedas, interface localizada e salva automaticamente seu progresso.",
+    "introP2": "Esta página explica como usar a ferramenta e as melhores práticas de faturamento. Para mais detalhes, visite nossas páginas Sobre, Privacidade e Termos."
+  },
+  "defaultCurrency": "BRL",
+  "currency": {
+    "USD": "USD - Dólar Americano",
+    "EUR": "EUR - Euro",
+    "GBP": "GBP - Libra Esterlina",
+    "BRL": "BRL - Real Brasileiro",
+    "JPY": "JPY - Iene Japonês",
+    "CNY": "CNY - Yuan Chinês",
+    "INR": "INR - Rúpia Indiana",
+    "AUD": "AUD - Dólar Australiano",
+    "CAD": "CAD - Dólar Canadense",
+    "CHF": "CHF - Franco Suíço",
+    "MXN": "MXN - Peso Mexicano",
+    "ZAR": "ZAR - Rand Sul-Africano",
+    "RUB": "RUB - Rublo Russo",
+    "UAH": "UAH - Hryvnia Ucraniana",
+    "AED": "AED - Dirham dos EAU",
+    "SAR": "SAR - Rial Saudita",
+    "ILS": "ILS - Shekel Israelense"
+  },
+  "footer": {
+    "brand": "The Invoice"
+  }
 }

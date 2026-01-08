@@ -76,5 +76,85 @@
     "dataCleared": "所有已保存的数据已清除！",
     "minOneLineItem": "您必须至少有一个项目。"
   },
-  "currency": "CNY"
+  "defaultCurrency": "CNY",
+  "currency": {
+    "USD": "USD - 美元",
+    "EUR": "EUR - 欧元",
+    "GBP": "GBP - 英镑",
+    "BRL": "BRL - 巴西雷亚尔",
+    "JPY": "JPY - 日元",
+    "CNY": "CNY - 人民币",
+    "INR": "INR - 印度卢比",
+    "AUD": "AUD - 澳大利亚元",
+    "CAD": "CAD - 加拿大元",
+    "CHF": "CHF - 瑞士法郎",
+    "MXN": "MXN - 墨西哥比索",
+    "ZAR": "ZAR - 南非兰特",
+    "RUB": "RUB - 俄罗斯卢布",
+    "UAH": "UAH - 乌克兰格里夫纳",
+    "AED": "AED - 阿联酋迪拉姆",
+    "SAR": "SAR - 沙特里亚尔",
+    "ILS": "ILS - 以色列谢克尔"
+  },
+  "footer": {
+    "brand": "The Invoice"
+  },
+  "common": {
+    "adLabel": "广告"
+  },
+  "home": {
+    "introTitle": "使用 The Invoice 可以做什么",
+    "introP1": "在几分钟内生成专业发票。填写你的信息，添加明细项目，并导出高质量的 PDF。应用支持多种货币、本地化界面，并会自动保存你的进度。",
+    "introP2": "本页面介绍如何使用该工具以及开具发票的最佳实践。更多详情请访问我们的「关于」「隐私」和「条款」页面。"
+  },
+  "nav": {
+    "about": "关于",
+    "privacy": "隐私",
+    "terms": "条款"
+  },
+  "pages": {
+    "about": {
+      "title": "关于 The Invoice",
+      "subtitle": "简单、快速、支持多语言的发票生成器，适合自由职业者和小团队。",
+      "whatThisIsTitle": "这是什么",
+      "whatThisIsBody": "The Invoice 是一个轻量级的网页应用，帮助你快速创建专业的发票。它支持实时预览、自动合计、多种货币、PDF 导出以及多语言界面。",
+      "whoItsForTitle": "适用人群",
+      "whoItsForList": [
+        "需要快速生成规范发票的自由职业者",
+        "发送一次性或周期性发票的小型企业",
+        "喜欢无需注册即可使用的简单工具的任何人"
+      ],
+      "howItWorksTitle": "使用方法",
+      "howItWorksSteps": [
+        "在表单中填写发票详情",
+        "右侧预览会实时更新",
+        "一键导出高质量 PDF"
+      ],
+      "contactTitle": "联系方式",
+      "contactBody": "问题或反馈？邮箱："
+    },
+    "privacy": {
+      "title": "隐私政策",
+      "lastUpdatedPrefix": "最近更新：",
+      "dataWeCollectTitle": "我们收集的数据",
+      "dataWeCollectBody": "本应用使用浏览器的 LocalStorage 在本地保存你的发票输入内容。我们不会在服务器接收或存储你的发票内容。",
+      "cookiesTitle": "Cookies 与第三方服务",
+      "cookiesBody": "我们使用 Google AdSense 展示广告。Google 可能使用 cookies 或本地存储来投放和衡量广告。了解 Google 如何使用信息：https://policies.google.com/technologies/ads",
+      "consentTitle": "同意",
+      "consentBody": "如果你位于 EEA/英国，我们会通过 Google 认证的 CMP 显示同意横幅。你可以随时通过页脚中的“隐私”链接更新同意设置。",
+      "contactTitle": "联系方式",
+      "contactBody": "邮箱："
+    },
+    "terms": {
+      "title": "服务条款",
+      "useOfAppTitle": "应用使用",
+      "useOfAppBody": "The Invoice 以“原样”提供，不作任何担保。你需自行确保所创建发票的准确性与合法性。",
+      "noAccountTitle": "无需账户",
+      "noAccountBody": "本应用仅在你的浏览器中保存发票输入内容。我们不管理用户账户。",
+      "liabilityTitle": "责任限制",
+      "liabilityBody": "对于因你使用本应用而产生的任何直接或间接损害，我们不承担责任。",
+      "changesTitle": "变更",
+      "changesBody": "我们可能不时更新这些条款。继续使用本应用即表示你接受更新后的条款。"
+    }
+  }
 }

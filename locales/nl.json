@@ -76,5 +76,85 @@
     "dataCleared": "Alle opgeslagen gegevens zijn gewist!",
     "minOneLineItem": "U moet ten minste één regelitem hebben."
   },
-  "currency": "EUR"
+  "nav": {
+    "about": "Over",
+    "privacy": "Privacy",
+    "terms": "Voorwaarden"
+  },
+  "pages": {
+    "about": {
+      "title": "Over The Invoice",
+      "subtitle": "Een eenvoudige, snelle, meertalige factuurgenerator voor freelancers en kleine teams.",
+      "whatThisIsTitle": "Wat dit is",
+      "whatThisIsBody": "The Invoice is een lichte webapp die je helpt snel professionele facturen te maken. Het ondersteunt realtime voorbeeldweergave, automatische totalen, meerdere valuta’s, PDF-export en een meertalige UI.",
+      "whoItsForTitle": "Voor wie het is",
+      "whoItsForList": [
+        "Freelancers die snel nette facturen nodig hebben",
+        "Kleine bedrijven die eenmalige of terugkerende facturen versturen",
+        "Iedereen die een eenvoudige tool zonder registratie verkiest"
+      ],
+      "howItWorksTitle": "Hoe het werkt",
+      "howItWorksSteps": [
+        "Vul je factuurgegevens in het formulier in",
+        "Bekijk de realtime voorbeeldweergave aan de rechterkant",
+        "Exporteer met één klik een hoogwaardige PDF"
+      ],
+      "contactTitle": "Contact",
+      "contactBody": "Vragen of feedback? E-mail:"
+    },
+    "privacy": {
+      "title": "Privacybeleid",
+      "lastUpdatedPrefix": "Laatst bijgewerkt:",
+      "dataWeCollectTitle": "Gegevens die we verzamelen",
+      "dataWeCollectBody": "Deze app slaat je factuurinvoer lokaal op in je eigen browser via LocalStorage. We ontvangen of bewaren je factuurinhoud niet op onze servers.",
+      "cookiesTitle": "Cookies en diensten van derden",
+      "cookiesBody": "We gebruiken Google AdSense om advertenties weer te geven. Google kan cookies of lokale opslag gebruiken om advertenties te leveren en te meten. Lees meer over hoe Google informatie gebruikt op https://policies.google.com/technologies/ads",
+      "consentTitle": "Toestemming",
+      "consentBody": "Als je in de EER/VK bent, tonen we een toestemmingsbanner via een door Google gecertificeerde CMP. Je kunt je toestemming op elk moment bijwerken via de ‘Privacy’-link in onze footer.",
+      "contactTitle": "Contact",
+      "contactBody": "E-mail:"
+    },
+    "terms": {
+      "title": "Servicevoorwaarden",
+      "useOfAppTitle": "Gebruik van de app",
+      "useOfAppBody": "The Invoice wordt aangeboden ‘zoals het is’ zonder garanties. Je bent zelf verantwoordelijk voor de juistheid en legaliteit van de facturen die je maakt.",
+      "noAccountTitle": "Geen account vereist",
+      "noAccountBody": "De app slaat factuurgegevens alleen in je browser op. We beheren geen gebruikersaccounts.",
+      "liabilityTitle": "Beperking van aansprakelijkheid",
+      "liabilityBody": "We zijn niet aansprakelijk voor directe of indirecte schade die voortvloeit uit het gebruik van de app.",
+      "changesTitle": "Wijzigingen",
+      "changesBody": "We kunnen deze voorwaarden af en toe bijwerken. Het blijven gebruiken van de app betekent dat je akkoord gaat met de wijzigingen."
+    }
+  },
+  "home": {
+    "introTitle": "Wat je kunt doen met The Invoice",
+    "introP1": "Genereer in enkele minuten professionele facturen. Voer je gegevens in, voeg regels toe en exporteer een verzorgde PDF. De app ondersteunt meerdere valuta’s, gelokaliseerde UI en slaat je voortgang automatisch op.",
+    "introP2": "Deze pagina legt uit hoe je de tool gebruikt en de beste praktijken voor factureren. Voor meer details, bezoek onze pagina’s Over, Privacy en Voorwaarden."
+  },
+  "defaultCurrency": "EUR",
+  "currency": {
+    "USD": "USD - Amerikaanse dollar",
+    "EUR": "EUR - Euro",
+    "GBP": "GBP - Britse pond",
+    "BRL": "BRL - Braziliaanse real",
+    "JPY": "JPY - Japanse yen",
+    "CNY": "CNY - Chinese yuan",
+    "INR": "INR - Indiase roepie",
+    "AUD": "AUD - Australische dollar",
+    "CAD": "CAD - Canadese dollar",
+    "CHF": "CHF - Zwitserse frank",
+    "MXN": "MXN - Mexicaanse peso",
+    "ZAR": "ZAR - Zuid-Afrikaanse rand",
+    "RUB": "RUB - Russische roebel",
+    "UAH": "UAH - Oekraïense hryvnia",
+    "AED": "AED - VAE dirham",
+    "SAR": "SAR - Saoedische riyal",
+    "ILS": "ILS - Israëlische shekel"
+  },
+  "footer": {
+    "brand": "The Invoice"
+  },
+  "common": {
+    "adLabel": "Advertentie"
+  }
 }

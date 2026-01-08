@@ -1,19 +1,19 @@
 {
   "meta": {
-    "title": "The Invoice - Crie Facturas Profissionais com Facilidade",
-    "description": "Crie facturas profissionais de forma rápida e fácil com o The Invoice. Gerador de facturas online gratuito com exportação para PDF, gravação automática e modelos personalizáveis. Perfeito para freelancers e pequenas empresas.",
-    "keywords": "gerador de factura, criar factura, factura profissional, factura PDF, criador de factura grátis, factura online, factura empresarial, factura freelance"
+    "title": "The Invoice - Crie Faturas Profissionais com Facilidade",
+    "description": "Crie faturas profissionais de forma rápida e fácil com o The Invoice. Gerador de faturas online gratuito com exportação para PDF, salvamento automático e modelos personalizáveis. Perfeito para freelancers e pequenas empresas.",
+    "keywords": "gerador de fatura, criar fatura, fatura profissional, fatura PDF, criador de fatura grátis, fatura online, fatura empresarial, fatura freelance"
   },
   "header": {
     "title": "📄 The Invoice",
-    "subtitle": "Crie facturas profissionais com facilidade"
+    "subtitle": "Crie faturas profissionais com facilidade"
   },
   "form": {
-    "invoiceDetails": "Detalhes da Factura",
-    "autoSaveEnabled": "💾 Gravação automática ativada",
-    "saved": "✓ Guardado",
-    "saveFailed": "✗ Falha ao guardar",
-    "invoiceNumber": "Número da Factura",
+    "invoiceDetails": "Detalhes da Fatura",
+    "autoSaveEnabled": "💾 Salvamento automático ativado",
+    "saved": "✓ Salvo",
+    "saveFailed": "✗ Falha ao salvar",
+    "invoiceNumber": "Número da Fatura",
     "currency": "Moeda",
     "creationDate": "Data de Criação",
     "dueDate": "Data de Vencimento",
@@ -21,9 +21,9 @@
     "billToInfo": "Informações do Destinatário",
     "name": "Nome",
     "addressLine1": "Endereço Linha 1",
-    "addressLine2": "Cidade, Distrito, País",
-    "zipCode": "Código Postal",
-    "billToAddressLine2": "Cidade, Distrito, Código Postal, País",
+    "addressLine2": "Cidade, Estado, País",
+    "zipCode": "CEP",
+    "billToAddressLine2": "Cidade, Estado, CEP, País",
     "bankDetails": "Dados Bancários",
     "beneficiaryName": "Nome do Beneficiário",
     "beneficiaryAccount": "Número da Conta do Beneficiário (IBAN)",
@@ -33,23 +33,23 @@
     "intermediaryBankDetails": "Dados do Banco Intermediário (Opcional)",
     "intermediarySwift": "Código Swift/BIC",
     "intermediaryBankName": "Nome do Banco",
-    "lineItems": "Itens da Factura",
+    "lineItems": "Itens da Fatura",
     "addLineItem": "+ Adicionar Item",
     "exportPDF": "📥 Exportar PDF",
-    "clearSavedData": "🗑️ Limpar Dados Guardados",
+    "clearSavedData": "🗑️ Limpar Dados Salvos",
     "placeholderDescription": "ex: Serviço mensal",
     "placeholderAdditional": "ex: Serviço adicional",
     "placeholderReimbursement": "ex: Reembolso",
     "placeholderAmount": "0,00",
-    "exporting": "⏳ A exportar..."
+    "exporting": "⏳ Exportando..."
   },
   "preview": {
     "title": "Pré-visualização",
-    "invoice": "FACTURA",
-    "invoiceNumber": "Factura #",
+    "invoice": "FATURA",
+    "invoiceNumber": "Fatura #",
     "billFrom": "Emitido por:",
     "billTo": "Emitido para:",
-    "zipCodeLabel": "Código Postal:",
+    "zipCodeLabel": "CEP:",
     "creationDate": "Data de criação:",
     "dueDate": "Data de vencimento:",
     "description": "Descrição",
@@ -68,13 +68,93 @@
     "intermediaryBankName": "Nome do Banco:"
   },
   "alerts": {
-    "noInvoiceNumber": "Por favor, insira um número de factura.",
+    "noInvoiceNumber": "Por favor, insira um número de fatura.",
     "noCreationDate": "Por favor, insira uma data de criação.",
     "noDueDate": "Por favor, insira uma data de vencimento.",
     "noLineItems": "Por favor, adicione pelo menos um item com descrição e valor.",
-    "confirmClear": "Tem a certeza de que deseja limpar todos os dados guardados? Esta ação não pode ser revertida.",
-    "dataCleared": "Todos os dados guardados foram limpos!",
-    "minOneLineItem": "Deve ter pelo menos um item na factura."
+    "confirmClear": "Tem certeza de que deseja limpar todos os dados salvos? Esta ação não pode ser desfeita.",
+    "dataCleared": "Todos os dados salvos foram limpos!",
+    "minOneLineItem": "Você deve ter pelo menos um item na fatura."
   },
-  "currency": "EUR"
+  "common": {
+    "adLabel": "Publicidade"
+  },
+  "home": {
+    "introTitle": "O que pode fazer com o The Invoice",
+    "introP1": "Gere faturas profissionais em minutos. Introduza os seus dados, adicione itens e exporte um PDF de qualidade. A aplicação suporta múltiplas moedas, interface localizada e guarda automaticamente o seu progresso.",
+    "introP2": "Esta página explica como usar a ferramenta e as melhores práticas de faturação. Para mais detalhes, visite as páginas Sobre, Privacidade e Termos."
+  },
+  "defaultCurrency": "EUR",
+  "currency": {
+    "USD": "USD - Dólar Americano",
+    "EUR": "EUR - Euro",
+    "GBP": "GBP - Libra Esterlina",
+    "BRL": "BRL - Real Brasileiro",
+    "JPY": "JPY - Iene Japonês",
+    "CNY": "CNY - Yuan Chinês",
+    "INR": "INR - Rúpia Indiana",
+    "AUD": "AUD - Dólar Australiano",
+    "CAD": "CAD - Dólar Canadiano",
+    "CHF": "CHF - Franco Suíço",
+    "MXN": "MXN - Peso Mexicano",
+    "ZAR": "ZAR - Rand Sul-Africano",
+    "RUB": "RUB - Rublo Russo",
+    "UAH": "UAH - Hryvnia Ucraniana",
+    "AED": "AED - Dirham dos EAU",
+    "SAR": "SAR - Rial Saudita",
+    "ILS": "ILS - Shekel Israelita"
+  },
+  "footer": {
+    "brand": "The Invoice"
+  },
+  "nav": {
+    "about": "Sobre",
+    "privacy": "Privacidade",
+    "terms": "Termos"
+  },
+  "pages": {
+    "about": {
+      "title": "Sobre o The Invoice",
+      "subtitle": "Um gerador de faturas simples, rápido e multilingue para freelancers e pequenas equipas.",
+      "whatThisIsTitle": "O que é isto",
+      "whatThisIsBody": "O The Invoice é uma aplicação web leve que ajuda a criar faturas profissionais rapidamente. Suporta pré-visualização em tempo real, totais automáticos, múltiplas moedas, exportação para PDF e interface multilingue.",
+      "whoItsForTitle": "Para quem é",
+      "whoItsForList": [
+        "Freelancers que precisam de faturas limpas rapidamente",
+        "Pequenas empresas que enviam faturas únicas ou recorrentes",
+        "Quem prefere uma ferramenta simples sem registo"
+      ],
+      "howItWorksTitle": "Como funciona",
+      "howItWorksSteps": [
+        "Preencha os detalhes da sua fatura no formulário",
+        "Veja a pré-visualização em tempo real atualizar à direita",
+        "Exporte um PDF de alta qualidade com um clique"
+      ],
+      "contactTitle": "Contacto",
+      "contactBody": "Questões ou feedback? Email:"
+    },
+    "privacy": {
+      "title": "Política de Privacidade",
+      "lastUpdatedPrefix": "Última atualização:",
+      "dataWeCollectTitle": "Dados que recolhemos",
+      "dataWeCollectBody": "Esta aplicação guarda as entradas da sua fatura localmente no seu próprio navegador usando o LocalStorage. Não recebemos nem armazenamos o conteúdo das suas faturas nos nossos servidores.",
+      "cookiesTitle": "Cookies e serviços de terceiros",
+      "cookiesBody": "Utilizamos o Google AdSense para apresentar anúncios. O Google pode usar cookies ou armazenamento local para fornecer e medir anúncios. Saiba mais sobre como o Google utiliza informações em https://policies.google.com/technologies/ads",
+      "consentTitle": "Consentimento",
+      "consentBody": "Se estiver na EEE/Reino Unido, mostramos um banner de consentimento através de um CMP certificado pela Google. Pode atualizar o consentimento a qualquer momento através do link “Privacidade” no nosso rodapé.",
+      "contactTitle": "Contacto",
+      "contactBody": "Email:"
+    },
+    "terms": {
+      "title": "Termos de Serviço",
+      "useOfAppTitle": "Utilização da aplicação",
+      "useOfAppBody": "O The Invoice é fornecido 'tal como está' sem garantias. É responsável pela exatidão e legalidade de quaisquer faturas que criar.",
+      "noAccountTitle": "Não é necessário conta",
+      "noAccountBody": "A aplicação armazena as entradas da fatura apenas no seu navegador. Não gerimos contas de utilizador.",
+      "liabilityTitle": "Limitação de responsabilidade",
+      "liabilityBody": "Não nos responsabilizamos por quaisquer danos diretos ou indiretos decorrentes da utilização da aplicação.",
+      "changesTitle": "Alterações",
+      "changesBody": "Podemos atualizar estes termos ocasionalmente. Continuar a usar a aplicação constitui aceitação."
+    }
+  }
 }

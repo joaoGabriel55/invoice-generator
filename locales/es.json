@@ -8,6 +8,11 @@
     "title": "📄 The Invoice",
     "subtitle": "Cree facturas profesionales con facilidad"
   },
+  "home": {
+    "introTitle": "¡Bienvenido a The Invoice!",
+    "introP1": "Genera facturas profesionales en minutos. Ingresa tus detalles, agrega elementos de línea y exporta un PDF de alta calidad.",
+    "introP2": "Esta página explica cómo utilizar la herramienta y las mejores prácticas para facturar. Para más detalles, visite nuestras páginas Acerca de, Privacidad y Términos."
+  },
   "form": {
     "invoiceDetails": "Detalles de la Factura",
     "autoSaveEnabled": "💾 Guardado automático activado",
@@ -76,5 +81,80 @@
     "dataCleared": "¡Todos los datos guardados se han borrado!",
     "minOneLineItem": "Debe tener al menos un elemento en la factura."
   },
-  "currency": "EUR"
+  "defaultCurrency": "EUR",
+  "currency": {
+    "USD": "USD - Dólar estadounidense",
+    "EUR": "EUR - Euro",
+    "GBP": "GBP - Libra esterlina",
+    "BRL": "BRL - Real brasileño",
+    "JPY": "JPY - Yen japonés",
+    "CNY": "CNY - Yuan chino",
+    "INR": "INR - Rupia india",
+    "AUD": "AUD - Dólar australiano",
+    "CAD": "CAD - Dólar canadiense",
+    "CHF": "CHF - Franco suizo",
+    "MXN": "MXN - Peso mexicano",
+    "ZAR": "ZAR - Rand sudafricano",
+    "RUB": "RUB - Rublo ruso",
+    "UAH": "UAH - Grivna ucraniana",
+    "AED": "AED - Dirham de los EAU",
+    "SAR": "SAR - Riyal saudí",
+    "ILS": "ILS - Shekel israelí"
+  },
+  "footer": {
+    "brand": "The Invoice"
+  },
+  "common": {
+    "adLabel": "Publicidad"
+  },
+  "nav": {
+    "about": "Acerca de",
+    "privacy": "Privacidad",
+    "terms": "Términos"
+  },
+  "pages": {
+    "about": {
+      "title": "Acerca de The Invoice",
+      "subtitle": "Un generador de facturas simple, rápido y multilingüe para freelancers y equipos pequeños.",
+      "whatThisIsTitle": "Qué es esto",
+      "whatThisIsBody": "The Invoice es una aplicación web ligera que te ayuda a crear facturas profesionales rápidamente. Admite vista previa en tiempo real, totales automáticos, múltiples monedas, exportación a PDF y una interfaz multilingüe.",
+      "whoItsForTitle": "Para quién es",
+      "whoItsForList": [
+        "Freelancers que necesitan facturas limpias rápidamente",
+        "Pequeñas empresas que envían facturas únicas o recurrentes",
+        "Cualquiera que prefiera una herramienta simple sin registro"
+      ],
+      "howItWorksTitle": "Cómo funciona",
+      "howItWorksSteps": [
+        "Completa los detalles de tu factura en el formulario",
+        "Observa la vista previa en tiempo real a la derecha",
+        "Exporta un PDF de alta calidad con un clic"
+      ],
+      "contactTitle": "Contacto",
+      "contactBody": "¿Preguntas o comentarios? Correo:"
+    },
+    "privacy": {
+      "title": "Política de Privacidad",
+      "lastUpdatedPrefix": "Última actualización:",
+      "dataWeCollectTitle": "Datos que recopilamos",
+      "dataWeCollectBody": "Esta aplicación almacena tus entradas de factura localmente en tu propio navegador usando LocalStorage. No recibimos ni almacenamos el contenido de tus facturas en nuestros servidores.",
+      "cookiesTitle": "Cookies y servicios de terceros",
+      "cookiesBody": "Usamos Google AdSense para mostrar anuncios. Google puede usar cookies o almacenamiento local para entregar y medir anuncios. Más información sobre cómo Google usa la información en https://policies.google.com/technologies/ads",
+      "consentTitle": "Consentimiento",
+      "consentBody": "Si estás en el EEE/Reino Unido, mostramos un banner de consentimiento mediante un CMP certificado por Google. Puedes actualizar el consentimiento en cualquier momento usando el enlace “Privacidad” en nuestro pie de página.",
+      "contactTitle": "Contacto",
+      "contactBody": "Correo:"
+    },
+    "terms": {
+      "title": "Términos de Servicio",
+      "useOfAppTitle": "Uso de la aplicación",
+      "useOfAppBody": "The Invoice se proporciona “tal cual”, sin garantías. Eres responsable de la precisión y legalidad de cualquier factura que crees.",
+      "noAccountTitle": "No se requiere cuenta",
+      "noAccountBody": "La aplicación almacena entradas de facturas solo en tu navegador. No gestionamos cuentas de usuario.",
+      "liabilityTitle": "Limitación de responsabilidad",
+      "liabilityBody": "No somos responsables de ningún daño directo o indirecto que surja del uso de la aplicación.",
+      "changesTitle": "Cambios",
+      "changesBody": "Podemos actualizar estos términos ocasionalmente. Continuar usando la aplicación constituye aceptación."
+    }
+  }
 }

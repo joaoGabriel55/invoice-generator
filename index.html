@@ -75,15 +75,16 @@
       </header>
 
       <nav class="links" aria-label="Primary">
-        <a href="pages/about.html">About</a>
-        <a href="pages/privacy.html">Privacy</a>
-        <a href="pages/terms.html">Terms</a>
+        <a data-i18n="nav.about" href="pages/about.html">About</a>
+        <a data-i18n="nav.privacy" href="pages/privacy.html">Privacy</a>
+        <a data-i18n="nav.terms" href="pages/terms.html">Terms</a>
       </nav>
 
       <div class="ad-container" role="region" aria-label="Advertisement">
         <div
           class="text-muted"
           style="font-size: 0.8rem; margin-bottom: 0.25rem"
+          data-i18n="common.adLabel"
         >
           Advertisement
         </div>
@@ -108,13 +109,15 @@
           margin-bottom: 1rem;
         "
       >
-        <h2 style="margin-bottom: 0.5rem">What you can do with The Invoice</h2>
-        <p>
+        <h2 style="margin-bottom: 0.5rem" data-i18n="home.introTitle">
+          What you can do with The Invoice
+        </h2>
+        <p data-i18n="home.introP1">
           Generate professional invoices in minutes. Enter your details, add
           line items, and export a polished PDF. The app supports multiple
           currencies, localized UI, and auto-saves your progress.
         </p>
-        <p>
+        <p data-i18n="home.introP2">
           This page explains how to use the tool and best practices for
           invoicing. For more details, visit our About, Privacy, and Terms
           pages.
@@ -159,23 +162,55 @@
           <div class="form-group">
             <label for="currency" data-i18n="form.currency">Currency</label>
             <select id="currency" required>
-              <option value="USD">USD - US Dollar</option>
-              <option value="EUR">EUR - Euro</option>
-              <option value="GBP">GBP - British Pound</option>
-              <option value="BRL">BRL - Brazilian Real</option>
-              <option value="JPY">JPY - Japanese Yen</option>
-              <option value="CNY">CNY - Chinese Yuan</option>
-              <option value="INR">INR - Indian Rupee</option>
-              <option value="AUD">AUD - Australian Dollar</option>
-              <option value="CAD">CAD - Canadian Dollar</option>
-              <option value="CHF">CHF - Swiss Franc</option>
-              <option value="MXN">MXN - Mexican Peso</option>
-              <option value="ZAR">ZAR - South African Rand</option>
-              <option value="RUB">RUB - Russian Ruble</option>
-              <option value="UAH">UAH - Ukrainian Hryvnia</option>
-              <option value="AED">AED - UAE Dirham</option>
-              <option value="SAR">SAR - Saudi Riyal</option>
-              <option value="ILS">ILS - Israeli Shekel</option>
+              <option value="USD" data-i18n="currency.USD">
+                USD - US Dollar
+              </option>
+              <option value="EUR" data-i18n="currency.EUR">EUR - Euro</option>
+              <option value="GBP" data-i18n="currency.GBP">
+                GBP - British Pound
+              </option>
+              <option value="BRL" data-i18n="currency.BRL">
+                BRL - Brazilian Real
+              </option>
+              <option value="JPY" data-i18n="currency.JPY">
+                JPY - Japanese Yen
+              </option>
+              <option value="CNY" data-i18n="currency.CNY">
+                CNY - Chinese Yuan
+              </option>
+              <option value="INR" data-i18n="currency.INR">
+                INR - Indian Rupee
+              </option>
+              <option value="AUD" data-i18n="currency.AUD">
+                AUD - Australian Dollar
+              </option>
+              <option value="CAD" data-i18n="currency.CAD">
+                CAD - Canadian Dollar
+              </option>
+              <option value="CHF" data-i18n="currency.CHF">
+                CHF - Swiss Franc
+              </option>
+              <option value="MXN" data-i18n="currency.MXN">
+                MXN - Mexican Peso
+              </option>
+              <option value="ZAR" data-i18n="currency.ZAR">
+                ZAR - South African Rand
+              </option>
+              <option value="RUB" data-i18n="currency.RUB">
+                RUB - Russian Ruble
+              </option>
+              <option value="UAH" data-i18n="currency.UAH">
+                UAH - Ukrainian Hryvnia
+              </option>
+              <option value="AED" data-i18n="currency.AED">
+                AED - UAE Dirham
+              </option>
+              <option value="SAR" data-i18n="currency.SAR">
+                SAR - Saudi Riyal
+              </option>
+              <option value="ILS" data-i18n="currency.ILS">
+                ILS - Israeli Shekel
+              </option>
             </select>
           </div>
 
@@ -580,11 +615,14 @@
     <script src="i18n.js" defer></script>
     <script src="script.js" defer></script>
     <footer class="app-footer">
-      <p>&copy; <span id="year"></span> The Invoice</p>
       <p>
-        <a href="pages/privacy.html">Privacy</a> ·
-        <a href="pages/terms.html">Terms</a> ·
-        <a href="pages/about.html">About</a>
+        &copy; <span id="year"></span>
+        <span data-i18n="footer.brand">The Invoice</span>
+      </p>
+      <p>
+        <a data-i18n="nav.privacy" href="pages/privacy.html">Privacy</a> ·
+        <a data-i18n="nav.terms" href="pages/terms.html">Terms</a> ·
+        <a data-i18n="nav.about" href="pages/about.html">About</a>
       </p>
     </footer>
     <script>

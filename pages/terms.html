@@ -14,7 +14,7 @@
   <body style="padding: 2rem 1rem">
     <div class="container" style="max-width: 900px">
       <header class="app-header" style="text-align: left">
-        <h1>Terms of Service</h1>
+        <h1 data-i18n="pages.terms.title">Terms of Service</h1>
       </header>
       <main
         style="
@@ -24,30 +24,39 @@
           box-shadow: var(--shadow-xl);
         "
       >
-        <h2>Use of the app</h2>
-        <p>
+        <h2 data-i18n="pages.terms.useOfAppTitle">Use of the app</h2>
+        <p data-i18n="pages.terms.useOfAppBody">
           The Invoice is provided “as is” without warranties. You are
           responsible for the accuracy and legality of any invoices you create.
         </p>
 
-        <h2>No account required</h2>
-        <p>
+        <h2 data-i18n="pages.terms.noAccountTitle">No account required</h2>
+        <p data-i18n="pages.terms.noAccountBody">
           The app stores invoice inputs in your browser only. We don’t manage
           user accounts.
         </p>
 
-        <h2>Limitation of liability</h2>
-        <p>
+        <h2 data-i18n="pages.terms.liabilityTitle">Limitation of liability</h2>
+        <p data-i18n="pages.terms.liabilityBody">
           We are not liable for any direct or indirect damages arising from your
           use of the app.
         </p>
 
-        <h2>Changes</h2>
-        <p>
+        <h2 data-i18n="pages.terms.changesTitle">Changes</h2>
+        <p data-i18n="pages.terms.changesBody">
           We may update these terms occasionally. Continuing to use the app
           constitutes acceptance.
         </p>
       </main>
     </div>
+    <script src="/i18n.js" defer></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', async () => {
+        if (typeof i18n !== 'undefined') {
+          await i18n.init();
+          i18n.updateUI();
+        }
+      });
+    </script>
   </body>
 </html>

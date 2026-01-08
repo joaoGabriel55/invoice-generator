@@ -76,5 +76,85 @@
     "dataCleared": "Toutes les données sauvegardées ont été effacées !",
     "minOneLineItem": "Vous devez avoir au moins un élément de facturation."
   },
-  "currency": "EUR"
+  "defaultCurrency": "EUR",
+  "currency": {
+    "USD": "USD - Dollar américain",
+    "EUR": "EUR - Euro",
+    "GBP": "GBP - Livre sterling",
+    "BRL": "BRL - Réal brésilien",
+    "JPY": "JPY - Yen japonais",
+    "CNY": "CNY - Yuan chinois",
+    "INR": "INR - Roupie indienne",
+    "AUD": "AUD - Dollar australien",
+    "CAD": "CAD - Dollar canadien",
+    "CHF": "CHF - Franc suisse",
+    "MXN": "MXN - Peso mexicain",
+    "ZAR": "ZAR - Rand sud-africain",
+    "RUB": "RUB - Rouble russe",
+    "UAH": "UAH - Hryvnia ukrainienne",
+    "AED": "AED - Dirham des ÉAU",
+    "SAR": "SAR - Riyal saoudien",
+    "ILS": "ILS - Shekel israélien"
+  },
+  "footer": {
+    "brand": "The Invoice"
+  },
+  "common": {
+    "adLabel": "Publicité"
+  },
+  "home": {
+    "introTitle": "Ce que vous pouvez faire avec The Invoice",
+    "introP1": "Générez des factures professionnelles en quelques minutes. Renseignez vos informations, ajoutez des éléments et exportez un PDF soigné.",
+    "introP2": "Cette page explique comment utiliser l’outil et les bonnes pratiques de facturation. Pour plus de détails, consultez nos pages À propos, Confidentialité et Conditions."
+  },
+  "nav": {
+    "about": "À propos",
+    "privacy": "Confidentialité",
+    "terms": "Conditions"
+  },
+  "pages": {
+    "about": {
+      "title": "À propos de The Invoice",
+      "subtitle": "Un générateur de factures simple, rapide et multilingue pour les freelances et les petites équipes.",
+      "whatThisIsTitle": "Ce que c’est",
+      "whatThisIsBody": "The Invoice est une application web légère qui vous aide à créer rapidement des factures professionnelles. Elle propose un aperçu en temps réel, le calcul automatique des totaux, plusieurs devises, l’export en PDF et une interface multilingue.",
+      "whoItsForTitle": "Pour qui",
+      "whoItsForList": [
+        "Freelances qui ont besoin de factures claires rapidement",
+        "Petites entreprises envoyant des factures ponctuelles ou récurrentes",
+        "Toute personne préférant un outil simple sans inscription"
+      ],
+      "howItWorksTitle": "Fonctionnement",
+      "howItWorksSteps": [
+        "Renseignez les détails de votre facture dans le formulaire",
+        "Visualisez l’aperçu en temps réel à droite",
+        "Exportez une facture PDF de haute qualité en un clic"
+      ],
+      "contactTitle": "Contact",
+      "contactBody": "Questions ou commentaires ? Email :"
+    },
+    "privacy": {
+      "title": "Politique de confidentialité",
+      "lastUpdatedPrefix": "Dernière mise à jour :",
+      "dataWeCollectTitle": "Données que nous collectons",
+      "dataWeCollectBody": "Cette application enregistre vos informations de facture localement dans votre navigateur via le LocalStorage. Nous ne recevons ni ne stockons le contenu de vos factures sur nos serveurs.",
+      "cookiesTitle": "Cookies et services tiers",
+      "cookiesBody": "Nous utilisons Google AdSense pour afficher des annonces. Google peut utiliser des cookies ou le stockage local pour diffuser et mesurer les annonces. En savoir plus sur l’utilisation des informations par Google : https://policies.google.com/technologies/ads",
+      "consentTitle": "Consentement",
+      "consentBody": "Si vous êtes dans l’EEE/Royaume-Uni, nous affichons une bannière de consentement via un CMP certifié par Google. Vous pouvez modifier votre consentement à tout moment via le lien « Confidentialité » dans notre pied de page.",
+      "contactTitle": "Contact",
+      "contactBody": "Email :"
+    },
+    "terms": {
+      "title": "Conditions d’utilisation",
+      "useOfAppTitle": "Utilisation de l’application",
+      "useOfAppBody": "The Invoice est fourni « tel quel » sans garantie. Vous êtes responsable de l’exactitude et de la légalité des factures que vous créez.",
+      "noAccountTitle": "Aucun compte requis",
+      "noAccountBody": "L’application stocke les données de vos factures uniquement dans votre navigateur. Nous ne gérons pas de comptes utilisateurs.",
+      "liabilityTitle": "Limitation de responsabilité",
+      "liabilityBody": "Nous ne sommes pas responsables des dommages directs ou indirects résultant de l’utilisation de l’application.",
+      "changesTitle": "Modifications",
+      "changesBody": "Nous pouvons mettre à jour ces conditions de temps à autre. L’utilisation continue de l’application vaut acceptation."
+    }
+  }
 }

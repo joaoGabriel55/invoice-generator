@@ -76,5 +76,85 @@
     "dataCleared": "保存されたすべてのデータが削除されました！",
     "minOneLineItem": "少なくとも1つの項目が必要です。"
   },
-  "currency": "JPY"
+  "defaultCurrency": "JPY",
+  "currency": {
+    "USD": "USD - 米ドル",
+    "EUR": "EUR - ユーロ",
+    "GBP": "GBP - 英ポンド",
+    "BRL": "BRL - ブラジルレアル",
+    "JPY": "JPY - 日本円",
+    "CNY": "CNY - 人民元",
+    "INR": "INR - インドルピー",
+    "AUD": "AUD - 豪ドル",
+    "CAD": "CAD - カナダドル",
+    "CHF": "CHF - スイスフラン",
+    "MXN": "MXN - メキシコペソ",
+    "ZAR": "ZAR - 南アフリカランド",
+    "RUB": "RUB - ロシアルーブル",
+    "UAH": "UAH - ウクライナ・フリヴニャ",
+    "AED": "AED - UAEディルハム",
+    "SAR": "SAR - サウジリヤル",
+    "ILS": "ILS - イスラエル・シェケル"
+  },
+  "footer": {
+    "brand": "The Invoice"
+  },
+  "common": {
+    "adLabel": "広告"
+  },
+  "home": {
+    "introTitle": "The Invoiceでできること",
+    "introP1": "数分でプロフェッショナルな請求書を作成できます。詳細を入力し、明細項目を追加して、洗練されたPDFをエクスポートしましょう。アプリは複数通貨、ローカライズされたUI、そして自動保存に対応しています。",
+    "introP2": "このページではツールの使い方と請求におけるベストプラクティスを説明します。詳細は「概要」「プライバシー」「利用規約」の各ページをご覧ください。"
+  },
+  "nav": {
+    "about": "概要",
+    "privacy": "プライバシー",
+    "terms": "利用規約"
+  },
+  "pages": {
+    "about": {
+      "title": "The Invoice について",
+      "subtitle": "フリーランサーや小規模チームのための、シンプルで高速な多言語対応の請求書ジェネレーター。",
+      "whatThisIsTitle": "このサービスについて",
+      "whatThisIsBody": "The Invoice は、短時間でプロフェッショナルな請求書を作成できる軽量なウェブアプリです。リアルタイムプレビュー、自動合計、複数通貨、PDFエクスポート、そして多言語UIに対応しています。",
+      "whoItsForTitle": "対象ユーザー",
+      "whoItsForList": [
+        "素早くきれいな請求書を必要とするフリーランサー",
+        "単発または継続的な請求書を送付する小規模事業者",
+        "サインアップ不要のシンプルなツールを好む方"
+      ],
+      "howItWorksTitle": "使い方",
+      "howItWorksSteps": [
+        "フォームに請求書の詳細を入力します",
+        "右側のプレビューがリアルタイムで更新されます",
+        "ワンクリックで高品質なPDFをエクスポートします"
+      ],
+      "contactTitle": "お問い合わせ",
+      "contactBody": "ご質問やご意見は以下のメールへ："
+    },
+    "privacy": {
+      "title": "プライバシーポリシー",
+      "lastUpdatedPrefix": "最終更新日：",
+      "dataWeCollectTitle": "収集するデータ",
+      "dataWeCollectBody": "本アプリは、ブラウザの LocalStorage を使用して、請求書の入力内容をお使いの端末内に保存します。弊社サーバーで請求書の内容を受信または保存することはありません。",
+      "cookiesTitle": "Cookie と第三者サービス",
+      "cookiesBody": "広告表示のために Google AdSense を使用しています。Google は、広告の配信および測定のために Cookie またはローカルストレージを使用する場合があります。Google による情報の取り扱いについては https://policies.google.com/technologies/ads をご覧ください。",
+      "consentTitle": "同意について",
+      "consentBody": "EEA/UK のユーザーには、Google 認定の CMP により同意バナーを表示します。フッターの「プライバシー」リンクから、いつでも同意設定を更新できます。",
+      "contactTitle": "お問い合わせ",
+      "contactBody": "メール："
+    },
+    "terms": {
+      "title": "利用規約",
+      "useOfAppTitle": "アプリの利用について",
+      "useOfAppBody": "The Invoice は「現状のまま」提供され、いかなる保証もいたしません。作成する請求書の正確性および適法性は利用者の責任となります。",
+      "noAccountTitle": "アカウント不要",
+      "noAccountBody": "本アプリはブラウザ内にのみ入力内容を保存します。ユーザーアカウントの管理は行っていません。",
+      "liabilityTitle": "責任の制限",
+      "liabilityBody": "本アプリの利用に起因する直接的または間接的な損害について、当方は一切の責任を負いません。",
+      "changesTitle": "変更について",
+      "changesBody": "本規約は随時更新される場合があります。アプリの継続利用により、更新後の規約に同意したものとみなされます。"
+    }
+  }
 }

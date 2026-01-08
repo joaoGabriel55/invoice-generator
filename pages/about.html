@@ -14,8 +14,8 @@
   <body style="padding: 2rem 1rem">
     <div class="container" style="max-width: 900px">
       <header class="app-header" style="text-align: left">
-        <h1>About The Invoice</h1>
-        <p class="subtitle">
+        <h1 data-i18n="pages.about.title">About The Invoice</h1>
+        <p class="subtitle" data-i18n="pages.about.subtitle">
           A simple, fast, multilingual invoice generator for freelancers and
           small teams.
         </p>
@@ -30,8 +30,8 @@
         "
       >
         <section>
-          <h2>What this is</h2>
-          <p>
+          <h2 data-i18n="pages.about.whatThisIsTitle">What this is</h2>
+          <p data-i18n="pages.about.whatThisIsBody">
             The Invoice is a lightweight web app that helps you create
             professional invoices quickly. It supports real-time preview,
             automatic totals, multiple currencies, PDF export, and
@@ -39,31 +39,60 @@
           </p>
         </section>
         <section>
-          <h2>Who it’s for</h2>
-          <ul style="margin-left: 1rem; list-style: disc">
-            <li>Freelancers who need clean invoices fast</li>
-            <li>Small businesses sending one-off or recurring invoices</li>
-            <li>Anyone who prefers a simple tool with no signup</li>
-          </ul>
+          <h2 data-i18n="pages.about.whoItsForTitle">Who it’s for</h2>
+          <ul
+            id="who-its-for-list"
+            style="margin-left: 1rem; list-style: disc"
+          ></ul>
         </section>
         <section>
-          <h2>How it works</h2>
-          <ol style="margin-left: 1rem">
-            <li>Fill in your invoice details in the form</li>
-            <li>See the real-time preview update on the right</li>
-            <li>Export a high-quality PDF with one click</li>
-          </ol>
+          <h2 data-i18n="pages.about.howItWorksTitle">How it works</h2>
+          <ol id="how-it-works-steps" style="margin-left: 1rem"></ol>
         </section>
         <section>
-          <h2>Contact</h2>
+          <h2 data-i18n="pages.about.contactTitle">Contact</h2>
           <p>
-            Questions or feedback? Email:
-            <a href="mailto:quaresma55@protonmail.com"
-              >quaresma55@protonmail.com</a
+            <span data-i18n="pages.about.contactBody"
+              >Questions or feedback? Email:</span
             >
+            <a href="mailto:quaresma55@protonmail.com">
+              quaresma55@protonmail.com
+            </a>
           </p>
         </section>
       </main>
     </div>
+    <script src="/i18n.js" defer></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", async () => {
+        if (typeof i18n !== "undefined") {
+          await i18n.init();
+          i18n.updateUI();
+
+          const whoList = i18n.t("pages.about.whoItsForList");
+          const steps = i18n.t("pages.about.howItWorksSteps");
+
+          const whoUl = document.querySelector("#who-its-for-list");
+          if (Array.isArray(whoList) && whoUl) {
+            whoUl.innerHTML = "";
+            whoList.forEach((text) => {
+              const li = document.createElement("li");
+              li.textContent = text;
+              whoUl.appendChild(li);
+            });
+          }
+
+          const stepsOl = document.querySelector("#how-it-works-steps");
+          if (Array.isArray(steps) && stepsOl) {
+            stepsOl.innerHTML = "";
+            steps.forEach((text) => {
+              const li = document.createElement("li");
+              li.textContent = text;
+              stepsOl.appendChild(li);
+            });
+          }
+        }
+      });
+    </script>
   </body>
 </html>

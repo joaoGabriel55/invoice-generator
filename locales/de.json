@@ -76,5 +76,85 @@
     "dataCleared": "Alle gespeicherten Daten wurden gelöscht!",
     "minOneLineItem": "Sie müssen mindestens einen Rechnungsposten haben."
   },
-  "currency": "EUR"
+  "nav": {
+    "about": "Über",
+    "privacy": "Datenschutz",
+    "terms": "Bedingungen"
+  },
+  "pages": {
+    "about": {
+      "title": "Über The Invoice",
+      "subtitle": "Ein einfacher, schneller, mehrsprachiger Rechnungs‑Generator für Freiberufler und kleine Teams.",
+      "whatThisIsTitle": "Was das ist",
+      "whatThisIsBody": "The Invoice ist eine leichtgewichtige Web‑App, mit der Sie schnell professionelle Rechnungen erstellen. Sie unterstützt Echtzeit‑Vorschau, automatische Summen, mehrere Währungen, PDF‑Export und eine mehrsprachige Oberfläche.",
+      "whoItsForTitle": "Für wen",
+      "whoItsForList": [
+        "Freiberufler, die schnell saubere Rechnungen benötigen",
+        "Kleine Unternehmen mit einmaligen oder wiederkehrenden Rechnungen",
+        "Alle, die ein einfaches Tool ohne Anmeldung bevorzugen"
+      ],
+      "howItWorksTitle": "Wie es funktioniert",
+      "howItWorksSteps": [
+        "Geben Sie Ihre Rechnungsdetails im Formular ein",
+        "Sehen Sie rechts die Aktualisierung der Vorschau in Echtzeit",
+        "Exportieren Sie eine hochwertige PDF‑Rechnung mit einem Klick"
+      ],
+      "contactTitle": "Kontakt",
+      "contactBody": "Fragen oder Feedback? E‑Mail:"
+    },
+    "privacy": {
+      "title": "Datenschutzerklärung",
+      "lastUpdatedPrefix": "Zuletzt aktualisiert:",
+      "dataWeCollectTitle": "Daten, die wir erheben",
+      "dataWeCollectBody": "Diese App speichert Ihre Rechnungseingaben lokal in Ihrem eigenen Browser über LocalStorage. Wir empfangen oder speichern den Inhalt Ihrer Rechnungen nicht auf unseren Servern.",
+      "cookiesTitle": "Cookies und Dienste Dritter",
+      "cookiesBody": "Wir verwenden Google AdSense zur Anzeige von Anzeigen. Google kann Cookies oder lokalen Speicher verwenden, um Anzeigen zu liefern und zu messen. Weitere Informationen zur Nutzung von Daten durch Google: https://policies.google.com/technologies/ads",
+      "consentTitle": "Einwilligung",
+      "consentBody": "Wenn Sie sich im EWR/Vereinigten Königreich befinden, zeigen wir einen Einwilligungs‑Banner über eine von Google zertifizierte CMP. Sie können die Einwilligung jederzeit über den Link „Datenschutz“ in unserer Fußzeile aktualisieren.",
+      "contactTitle": "Kontakt",
+      "contactBody": "E‑Mail:"
+    },
+    "terms": {
+      "title": "Nutzungsbedingungen",
+      "useOfAppTitle": "Nutzung der App",
+      "useOfAppBody": "The Invoice wird „wie besehen“ ohne Gewährleistungen bereitgestellt. Sie sind für die Genauigkeit und Rechtmäßigkeit der von Ihnen erstellten Rechnungen verantwortlich.",
+      "noAccountTitle": "Kein Konto erforderlich",
+      "noAccountBody": "Die App speichert Rechnungseingaben nur in Ihrem Browser. Wir verwalten keine Benutzerkonten.",
+      "liabilityTitle": "Haftungsbeschränkung",
+      "liabilityBody": "Wir haften nicht für direkte oder indirekte Schäden, die aus der Nutzung der App entstehen.",
+      "changesTitle": "Änderungen",
+      "changesBody": "Wir können diese Bedingungen gelegentlich aktualisieren. Die weitere Nutzung der App gilt als Zustimmung."
+    }
+  },
+  "common": {
+    "adLabel": "Werbung"
+  },
+  "home": {
+    "introTitle": "Was Sie mit The Invoice tun können",
+    "introP1": "Erstellen Sie in wenigen Minuten professionelle Rechnungen. Geben Sie Ihre Daten ein, fügen Sie Positionen hinzu und exportieren Sie eine ausgearbeitete PDF.",
+    "introP2": "Diese Seite erklärt die Verwendung des Tools und bewährte Verfahren für die Rechnungsstellung. Weitere Details finden Sie auf unseren Seiten Über, Datenschutz und Bedingungen."
+  },
+  "defaultCurrency": "EUR",
+  "currency": {
+    "USD": "USD - US-Dollar",
+    "EUR": "EUR - Euro",
+    "GBP": "GBP - Britisches Pfund",
+    "BRL": "BRL - Brasilianischer Real",
+    "JPY": "JPY - Japanischer Yen",
+    "CNY": "CNY - Chinesischer Yuan",
+    "INR": "INR - Indische Rupie",
+    "AUD": "AUD - Australischer Dollar",
+    "CAD": "CAD - Kanadischer Dollar",
+    "CHF": "CHF - Schweizer Franken",
+    "MXN": "MXN - Mexikanischer Peso",
+    "ZAR": "ZAR - Südafrikanischer Rand",
+    "RUB": "RUB - Russischer Rubel",
+    "UAH": "UAH - Ukrainische Hrywnja",
+    "AED": "AED - VAE-Dirham",
+    "SAR": "SAR - Saudi-Riyal",
+    "ILS": "ILS - Israelischer Schekel"
+  },
+  "footer": {
+    "brand": "The Invoice"
+  }
 }

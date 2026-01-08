@@ -8,6 +8,19 @@
     "title": "📄 The Invoice",
     "subtitle": "Create professional invoices with ease"
   },
+  "common": {
+    "adLabel": "Advertisement"
+  },
+  "home": {
+    "introTitle": "What you can do with The Invoice",
+    "introP1": "Generate professional invoices in minutes. Enter your details, add line items, and export a polished PDF.",
+    "introP2": "This page explains how to use the tool and best practices for invoicing. For more details, visit our About, Privacy, and Terms pages."
+  },
+  "nav": {
+    "about": "About",
+    "privacy": "Privacy",
+    "terms": "Terms"
+  },
   "form": {
     "invoiceDetails": "Invoice Details",
     "autoSaveEnabled": "💾 Auto-save enabled",
@@ -67,6 +80,51 @@
     "intermediarySwift": "Swift/BIC Code:",
     "intermediaryBankName": "Bank Name:"
   },
+  "pages": {
+    "about": {
+      "title": "About The Invoice",
+      "subtitle": "A simple, fast, multilingual invoice generator for freelancers and small teams.",
+      "whatThisIsTitle": "What this is",
+      "whatThisIsBody": "The Invoice is a lightweight web app that helps you create professional invoices quickly. It supports real-time preview, automatic totals, multiple currencies, PDF export, and multi-language UI.",
+      "whoItsForTitle": "Who it’s for",
+      "whoItsForList": [
+        "Freelancers who need clean invoices fast",
+        "Small businesses sending one-off or recurring invoices",
+        "Anyone who prefers a simple tool with no signup"
+      ],
+      "howItWorksTitle": "How it works",
+      "howItWorksSteps": [
+        "Fill in your invoice details in the form",
+        "See the real-time preview update on the right",
+        "Export a high-quality PDF with one click"
+      ],
+      "contactTitle": "Contact",
+      "contactBody": "Questions or feedback? Email:"
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "lastUpdatedPrefix": "Last updated:",
+      "dataWeCollectTitle": "Data we collect",
+      "dataWeCollectBody": "This app stores your invoice inputs locally in your own browser using LocalStorage. We do not receive or store your invoice contents on our servers.",
+      "cookiesTitle": "Cookies and third-party services",
+      "cookiesBody": "We use Google AdSense to display ads. Google may use cookies or local storage to deliver and measure ads. Learn more about how Google uses information at https://policies.google.com/technologies/ads",
+      "consentTitle": "Consent",
+      "consentBody": "If you are in the EEA/UK, we show a consent banner via a Google-certified CMP. You can update consent at any time using the “Privacy” link in our footer.",
+      "contactTitle": "Contact",
+      "contactBody": "Email:"
+    },
+    "terms": {
+      "title": "Terms of Service",
+      "useOfAppTitle": "Use of the app",
+      "useOfAppBody": "The Invoice is provided “as is” without warranties. You are responsible for the accuracy and legality of any invoices you create.",
+      "noAccountTitle": "No account required",
+      "noAccountBody": "The app stores invoice inputs in your browser only. We don’t manage user accounts.",
+      "liabilityTitle": "Limitation of liability",
+      "liabilityBody": "We are not liable for any direct or indirect damages arising from your use of the app.",
+      "changesTitle": "Changes",
+      "changesBody": "We may update these terms occasionally. Continuing to use the app constitutes acceptance."
+    }
+  },
   "alerts": {
     "noInvoiceNumber": "Please enter an invoice number.",
     "noCreationDate": "Please enter a creation date.",
@@ -76,5 +134,27 @@
     "dataCleared": "All saved data has been cleared!",
     "minOneLineItem": "You must have at least one line item."
   },
-  "currency": "USD"
+  "defaultCurrency": "USD",
+  "currency": {
+    "USD": "USD - US Dollar",
+    "EUR": "EUR - Euro",
+    "GBP": "GBP - British Pound",
+    "BRL": "BRL - Brazilian Real",
+    "JPY": "JPY - Japanese Yen",
+    "CNY": "CNY - Chinese Yuan",
+    "INR": "INR - Indian Rupee",
+    "AUD": "AUD - Australian Dollar",
+    "CAD": "CAD - Canadian Dollar",
+    "CHF": "CHF - Swiss Franc",
+    "MXN": "MXN - Mexican Peso",
+    "ZAR": "ZAR - South African Rand",
+    "RUB": "RUB - Russian Ruble",
+    "UAH": "UAH - Ukrainian Hryvnia",
+    "AED": "AED - UAE Dirham",
+    "SAR": "SAR - Saudi Riyal",
+    "ILS": "ILS - Israeli Shekel"
+  },
+  "footer": {
+    "brand": "The Invoice"
+  }
 }
