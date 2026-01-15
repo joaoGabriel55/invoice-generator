@@ -695,10 +695,6 @@ select:open::picker-icon {
     grid-template-columns: 1fr;
   }
 
-  .invoice-parties {
-    grid-template-columns: 1fr;
-  }
-
   .invoice-content {
     padding: 2rem;
   }
