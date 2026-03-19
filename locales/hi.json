@@ -5,14 +5,14 @@
     "keywords": "चालान जनरेटर, चालान बनाएं, पेशेवर चालान, PDF चालान, मुफ्त चालान निर्माता, ऑनलाइन चालान, व्यावसायिक चालान, फ्रीलांस चालान"
   },
   "header": {
-    "title": "📄 The Invoice",
+    "title": "The Invoice",
     "subtitle": "आसानी से पेशेवर चालान बनाएं"
   },
   "form": {
     "invoiceDetails": "चालान विवरण",
-    "autoSaveEnabled": "💾 स्वतः सेव सक्षम है",
-    "saved": "✓ सेव हो गया",
-    "saveFailed": "✗ सेव विफल रहा",
+    "autoSaveEnabled": "स्वतः सेव सक्षम है",
+    "saved": "सेव हो गया",
+    "saveFailed": "सेव विफल रहा",
     "invoiceNumber": "चालान संख्या",
     "currency": "मुद्रा",
     "creationDate": "निर्माण तिथि",
@@ -24,24 +24,19 @@
     "addressLine2": "शहर, राज्य, देश",
     "zipCode": "पिन कोड",
     "billToAddressLine2": "शहर, राज्य, पिन कोड, देश",
-    "bankDetails": "बैंक विवरण",
-    "beneficiaryName": "लाभार्थी का नाम",
-    "beneficiaryAccount": "लाभार्थी खाता संख्या (IBAN)",
-    "swiftCode": "SWIFT कोड",
-    "bankName": "बैंक का नाम",
-    "bankAddress": "बैंक का पता",
-    "intermediaryBankDetails": "मध्यस्थ बैंक विवरण (वैकल्पिक)",
-    "intermediarySwift": "Swift/BIC कोड",
-    "intermediaryBankName": "बैंक का नाम",
+    "bankDetails": "भुगतान विवरण",
+    "fieldLabel": "फ़ील्ड लेबल",
+    "fieldValue": "मान",
+    "addBankField": "+ भुगतान फ़ील्ड जोड़ें",
     "lineItems": "मद सूची",
     "addLineItem": "+ मद जोड़ें",
-    "exportPDF": "📥 PDF निर्यात करें",
-    "clearSavedData": "🗑️ सेव डेटा साफ़ करें",
+    "exportPDF": "PDF निर्यात करें",
+    "clearSavedData": "सेव डेटा साफ़ करें",
     "placeholderDescription": "उदा. मासिक सेवा",
     "placeholderAdditional": "उदा. अतिरिक्त सेवा",
     "placeholderReimbursement": "उदा. प्रतिपूर्ति",
     "placeholderAmount": "0.00",
-    "exporting": "⏳ निर्यात हो रहा है..."
+    "exporting": "निर्यात हो रहा है..."
   },
   "preview": {
     "title": "पूर्वावलोकन",
@@ -56,16 +51,7 @@
     "amount": "राशि",
     "noItems": "अभी तक कोई मद नहीं जोड़ी गई",
     "total": "कुल",
-    "payToDetails": "निम्नलिखित बैंक विवरण में भुगतान करें:",
-    "beneficiaryName": "लाभार्थी का नाम:",
-    "beneficiaryAccount": "लाभार्थी खाता संख्या (IBAN):",
-    "swiftCode": "SWIFT कोड:",
-    "bankName": "बैंक का नाम:",
-    "bankAddress": "बैंक का पता:",
-    "intermediaryNote": "(वैकल्पिक जानकारी, हमेशा ऊपर दिए गए बैंक विवरण के साथ उपयोग करें)",
-    "intermediaryTitle": "मध्यस्थ बैंक विवरण:",
-    "intermediarySwift": "Swift/BIC कोड:",
-    "intermediaryBankName": "बैंक का नाम:"
+    "payToDetails": "भुगतान विवरण"
   },
   "alerts": {
     "noInvoiceNumber": "कृपया एक चालान संख्या दर्ज करें।",
@@ -74,7 +60,8 @@
     "noLineItems": "कृपया कम से कम एक मद जोड़ें जिसमें विवरण और राशि हो।",
     "confirmClear": "क्या आप वाकई सभी सहेजे गए डेटा को साफ़ करना चाहते हैं? यह क्रिया पूर्ववत नहीं की जा सकती।",
     "dataCleared": "सभी सेव किए गए डेटा साफ़ कर दिए गए हैं!",
-    "minOneLineItem": "आपके पास कम से कम एक मद होनी चाहिए।"
+    "minOneLineItem": "आपके पास कम से कम एक मद होनी चाहिए।",
+    "minOneBankField": "आपके पास कम से कम एक भुगतान फ़ील्ड होना चाहिए।"
   },
   "home": {
     "introTitle": "The Invoice के साथ आप क्या कर सकते हैं",

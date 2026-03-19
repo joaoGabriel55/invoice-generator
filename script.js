@@ -87,21 +87,16 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Add event listeners for Bank Details fields
-  const bankFields = [
-    "beneficiaryName",
-    "beneficiaryAccount",
-    "swiftCode",
-    "bankName",
-    "bankAddress",
-    "intermediarySwift",
-    "intermediaryBankName",
-  ];
-  bankFields.forEach((fieldId) => {
-    document.getElementById(fieldId).addEventListener("input", function () {
+  // Add event listeners for dynamic bank detail fields
+  const bankDetailFields = document.getElementById("bankDetailFields");
+  bankDetailFields.addEventListener("input", function (e) {
+    if (
+      e.target.classList.contains("bank-field-label") ||
+      e.target.classList.contains("bank-field-value")
+    ) {
       updatePreview();
       saveFormData();
-    });
+    }
   });
 
   // Add event listeners for line items
@@ -133,16 +128,18 @@ function saveFormData() {
     billToName: document.getElementById("billToName").value,
     billToAddress1: document.getElementById("billToAddress1").value,
     billToAddress2: document.getElementById("billToAddress2").value,
-    // Bank Details fields
-    beneficiaryName: document.getElementById("beneficiaryName").value,
-    beneficiaryAccount: document.getElementById("beneficiaryAccount").value,
-    swiftCode: document.getElementById("swiftCode").value,
-    bankName: document.getElementById("bankName").value,
-    bankAddress: document.getElementById("bankAddress").value,
-    intermediarySwift: document.getElementById("intermediarySwift").value,
-    intermediaryBankName: document.getElementById("intermediaryBankName").value,
+    // Dynamic bank detail fields
+    bankFields: [],
     lineItems: [],
   };
+
+  // Collect all bank detail fields
+  const bankFieldRows = document.querySelectorAll(".bank-field-row");
+  bankFieldRows.forEach((row) => {
+    const label = row.querySelector(".bank-field-label").value;
+    const value = row.querySelector(".bank-field-value").value;
+    data.bankFields.push({ label, value });
+  });
 
   // Collect all line items
   const lineItems = document.querySelectorAll(".line-item");
@@ -234,30 +231,32 @@ function loadFormData() {
       document.getElementById("billToAddress2").value = data.billToAddress2;
     }
 
-    // Restore Bank Details fields
-    if (data.beneficiaryName) {
-      document.getElementById("beneficiaryName").value = data.beneficiaryName;
+    // Migrate old bank detail format to new dynamic format
+    if (!data.bankFields && data.beneficiaryName) {
+      data.bankFields = [];
+      if (data.beneficiaryName) data.bankFields.push({ label: "Beneficiary Name", value: data.beneficiaryName });
+      if (data.beneficiaryAccount) data.bankFields.push({ label: "Account Number (IBAN)", value: data.beneficiaryAccount });
+      if (data.swiftCode) data.bankFields.push({ label: "SWIFT Code", value: data.swiftCode });
+      if (data.bankName) data.bankFields.push({ label: "Bank Name", value: data.bankName });
+      if (data.bankAddress) data.bankFields.push({ label: "Bank Address", value: data.bankAddress });
+      if (data.intermediarySwift) data.bankFields.push({ label: "Intermediary SWIFT/BIC", value: data.intermediarySwift });
+      if (data.intermediaryBankName) data.bankFields.push({ label: "Intermediary Bank", value: data.intermediaryBankName });
     }
-    if (data.beneficiaryAccount) {
-      document.getElementById("beneficiaryAccount").value =
-        data.beneficiaryAccount;
-    }
-    if (data.swiftCode) {
-      document.getElementById("swiftCode").value = data.swiftCode;
-    }
-    if (data.bankName) {
-      document.getElementById("bankName").value = data.bankName;
-    }
-    if (data.bankAddress) {
-      document.getElementById("bankAddress").value = data.bankAddress;
-    }
-    if (data.intermediarySwift) {
-      document.getElementById("intermediarySwift").value =
-        data.intermediarySwift;
-    }
-    if (data.intermediaryBankName) {
-      document.getElementById("intermediaryBankName").value =
-        data.intermediaryBankName;
+
+    // Restore dynamic bank detail fields
+    if (data.bankFields && data.bankFields.length > 0) {
+      const bankContainer = document.getElementById("bankDetailFields");
+      bankContainer.innerHTML = "";
+      data.bankFields.forEach((field) => {
+        const row = document.createElement("div");
+        row.className = "bank-field-row";
+        row.innerHTML = `
+          <input type="text" class="bank-field-label" data-i18n-placeholder="form.fieldLabel" placeholder="${i18n.t("form.fieldLabel")}" value="${escapeHtml(field.label || "")}" />
+          <input type="text" class="bank-field-value" data-i18n-placeholder="form.fieldValue" placeholder="${i18n.t("form.fieldValue")}" value="${escapeHtml(field.value || "")}" />
+          <button type="button" class="btn-remove" onclick="removeBankField(this)">✕</button>
+        `;
+        bankContainer.appendChild(row);
+      });
     }
 
     // Restore line items
@@ -315,17 +314,35 @@ function clearSavedData() {
       document.getElementById("billToAddress2").value =
         "Los Angeles, CA 90001, USA";
 
-      // Reset Bank Details fields
-      document.getElementById("beneficiaryName").value = "John Doe";
-      document.getElementById("beneficiaryAccount").value =
-        "US00 1234 5678 9012 3456 78";
-      document.getElementById("swiftCode").value = "BANKUS33XXX";
-      document.getElementById("bankName").value = "First National Bank";
-      document.getElementById("bankAddress").value =
-        "789 Financial Plaza, New York, NY 10005";
-      document.getElementById("intermediarySwift").value = "CHASUS33XXX";
-      document.getElementById("intermediaryBankName").value =
-        "Global Transfer Bank, N.A";
+      // Reset bank detail fields to defaults
+      const bankContainer = document.getElementById("bankDetailFields");
+      bankContainer.innerHTML = `
+        <div class="bank-field-row">
+          <input type="text" class="bank-field-label" data-i18n-placeholder="form.fieldLabel" placeholder="${i18n.t("form.fieldLabel")}" value="Beneficiary Name" />
+          <input type="text" class="bank-field-value" data-i18n-placeholder="form.fieldValue" placeholder="${i18n.t("form.fieldValue")}" value="John Doe" />
+          <button type="button" class="btn-remove" onclick="removeBankField(this)">✕</button>
+        </div>
+        <div class="bank-field-row">
+          <input type="text" class="bank-field-label" data-i18n-placeholder="form.fieldLabel" placeholder="${i18n.t("form.fieldLabel")}" value="Account Number (IBAN)" />
+          <input type="text" class="bank-field-value" data-i18n-placeholder="form.fieldValue" placeholder="${i18n.t("form.fieldValue")}" value="US00 1234 5678 9012 3456 78" />
+          <button type="button" class="btn-remove" onclick="removeBankField(this)">✕</button>
+        </div>
+        <div class="bank-field-row">
+          <input type="text" class="bank-field-label" data-i18n-placeholder="form.fieldLabel" placeholder="${i18n.t("form.fieldLabel")}" value="SWIFT Code" />
+          <input type="text" class="bank-field-value" data-i18n-placeholder="form.fieldValue" placeholder="${i18n.t("form.fieldValue")}" value="BANKUS33XXX" />
+          <button type="button" class="btn-remove" onclick="removeBankField(this)">✕</button>
+        </div>
+        <div class="bank-field-row">
+          <input type="text" class="bank-field-label" data-i18n-placeholder="form.fieldLabel" placeholder="${i18n.t("form.fieldLabel")}" value="Bank Name" />
+          <input type="text" class="bank-field-value" data-i18n-placeholder="form.fieldValue" placeholder="${i18n.t("form.fieldValue")}" value="First National Bank" />
+          <button type="button" class="btn-remove" onclick="removeBankField(this)">✕</button>
+        </div>
+        <div class="bank-field-row">
+          <input type="text" class="bank-field-label" data-i18n-placeholder="form.fieldLabel" placeholder="${i18n.t("form.fieldLabel")}" value="Bank Address" />
+          <input type="text" class="bank-field-value" data-i18n-placeholder="form.fieldValue" placeholder="${i18n.t("form.fieldValue")}" value="789 Financial Plaza, New York, NY 10005" />
+          <button type="button" class="btn-remove" onclick="removeBankField(this)">✕</button>
+        </div>
+      `;
 
       // Reset line items to default
       const lineItemsContainer = document.getElementById("lineItems");
@@ -359,6 +376,41 @@ function clearSavedData() {
       console.error("Error clearing saved data:", error);
       alert(i18n.t("alerts.dataCleared"));
     }
+  }
+}
+
+// Escape HTML to prevent XSS
+function escapeHtml(str) {
+  const div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
+
+// Add a new bank detail field
+function addBankField() {
+  const container = document.getElementById("bankDetailFields");
+  const row = document.createElement("div");
+  row.className = "bank-field-row";
+  row.innerHTML = `
+    <input type="text" class="bank-field-label" data-i18n-placeholder="form.fieldLabel" placeholder="${i18n.t("form.fieldLabel")}" />
+    <input type="text" class="bank-field-value" data-i18n-placeholder="form.fieldValue" placeholder="${i18n.t("form.fieldValue")}" />
+    <button type="button" class="btn-remove" onclick="removeBankField(this)">✕</button>
+  `;
+  container.appendChild(row);
+  updatePreview();
+  saveFormData();
+}
+
+// Remove a bank detail field
+function removeBankField(button) {
+  const container = document.getElementById("bankDetailFields");
+  const rows = container.querySelectorAll(".bank-field-row");
+  if (rows.length > 1) {
+    button.closest(".bank-field-row").remove();
+    updatePreview();
+    saveFormData();
+  } else {
+    alert(i18n.t("alerts.minOneBankField"));
   }
 }
 
@@ -431,23 +483,19 @@ function updatePreview() {
   document.getElementById("previewBillToAddress2").textContent =
     document.getElementById("billToAddress2").value || "";
 
-  // Update Bank Details
-  document.getElementById("previewBeneficiaryName").textContent =
-    document.getElementById("beneficiaryName").value || "N/A";
-  document.getElementById("previewBeneficiaryAccount").textContent =
-    document.getElementById("beneficiaryAccount").value || "N/A";
-  document.getElementById("previewSwiftCode").textContent =
-    document.getElementById("swiftCode").value || "N/A";
-  document.getElementById("previewBankName").textContent =
-    document.getElementById("bankName").value || "N/A";
-  document.getElementById("previewBankAddress").textContent =
-    document.getElementById("bankAddress").value || "N/A";
-
-  // Update Intermediary Bank Details
-  document.getElementById("previewIntermediarySwift").textContent =
-    document.getElementById("intermediarySwift").value || "N/A";
-  document.getElementById("previewIntermediaryBankName").textContent =
-    document.getElementById("intermediaryBankName").value || "N/A";
+  // Update dynamic bank details preview
+  const previewBankDetails = document.getElementById("previewBankDetails");
+  previewBankDetails.innerHTML = "";
+  const bankFieldRows = document.querySelectorAll(".bank-field-row");
+  bankFieldRows.forEach((row) => {
+    const label = row.querySelector(".bank-field-label").value.trim();
+    const value = row.querySelector(".bank-field-value").value.trim();
+    if (label || value) {
+      const p = document.createElement("p");
+      p.innerHTML = `<strong>${escapeHtml(label || "—")}:</strong> ${escapeHtml(value || "N/A")}`;
+      previewBankDetails.appendChild(p);
+    }
+  });
 
   // Update line items
   const lineItems = document.querySelectorAll(".line-item");

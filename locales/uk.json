@@ -5,14 +5,14 @@
     "keywords": "генератор рахунків, створити рахунок, професійний рахунок, PDF рахунок, безкоштовний створювач рахунків, онлайн рахунок, бізнес рахунок, фріланс рахунок"
   },
   "header": {
-    "title": "📄 The Invoice",
+    "title": "The Invoice",
     "subtitle": "Створюйте професійні рахунки з легкістю"
   },
   "form": {
     "invoiceDetails": "Деталі рахунку",
-    "autoSaveEnabled": "💾 Автозбереження увімкнено",
-    "saved": "✓ Збережено",
-    "saveFailed": "✗ Збереження не вдалося",
+    "autoSaveEnabled": "Автозбереження увімкнено",
+    "saved": "Збережено",
+    "saveFailed": "Збереження не вдалося",
     "invoiceNumber": "Номер рахунку",
     "currency": "Валюта",
     "creationDate": "Дата створення",
@@ -24,24 +24,19 @@
     "addressLine2": "Місто, Область, Країна",
     "zipCode": "Поштовий індекс",
     "billToAddressLine2": "Місто, Область, Індекс, Країна",
-    "bankDetails": "Банківські реквізити",
-    "beneficiaryName": "Ім'я отримувача",
-    "beneficiaryAccount": "Номер рахунку отримувача (IBAN)",
-    "swiftCode": "Код SWIFT",
-    "bankName": "Назва банку",
-    "bankAddress": "Адреса банку",
-    "intermediaryBankDetails": "Реквізити банку-посередника (необов'язково)",
-    "intermediarySwift": "Код Swift/BIC",
-    "intermediaryBankName": "Назва банку",
+    "bankDetails": "Платіжні реквізити",
+    "fieldLabel": "Назва поля",
+    "fieldValue": "Значення",
+    "addBankField": "+ Додати платіжне поле",
     "lineItems": "Позиції рахунку",
     "addLineItem": "+ Додати позицію",
-    "exportPDF": "📥 Експортувати в PDF",
-    "clearSavedData": "🗑️ Очистити збережені дані",
+    "exportPDF": "Експортувати в PDF",
+    "clearSavedData": "Очистити збережені дані",
     "placeholderDescription": "напр. Щомісячна послуга",
     "placeholderAdditional": "напр. Додаткова послуга",
     "placeholderReimbursement": "напр. Відшкодування витрат",
     "placeholderAmount": "0.00",
-    "exporting": "⏳ Експорт..."
+    "exporting": "Експорт..."
   },
   "preview": {
     "title": "Попередній перегляд",
@@ -56,16 +51,7 @@
     "amount": "Сума",
     "noItems": "Позиції ще не додані",
     "total": "Разом",
-    "payToDetails": "Оплатіть за наступними банківськими реквізитами:",
-    "beneficiaryName": "Ім'я отримувача:",
-    "beneficiaryAccount": "Номер рахунку отримувача (IBAN):",
-    "swiftCode": "Код SWIFT:",
-    "bankName": "Назва банку:",
-    "bankAddress": "Адреса банку:",
-    "intermediaryNote": "(Необов'язкова інформація, завжди використовуйте разом з банківськими реквізитами вище)",
-    "intermediaryTitle": "Реквізити банку-посередника:",
-    "intermediarySwift": "Код Swift/BIC:",
-    "intermediaryBankName": "Назва банку:"
+    "payToDetails": "Платіжні реквізити"
   },
   "alerts": {
     "noInvoiceNumber": "Будь ласка, введіть номер рахунку.",
@@ -74,7 +60,8 @@
     "noLineItems": "Будь ласка, додайте принаймні одну позицію з описом та сумою.",
     "confirmClear": "Ви впевнені, що хочете очистити всі збережені дані? Цю дію неможливо скасувати.",
     "dataCleared": "Всі збережені дані були очищені!",
-    "minOneLineItem": "Повинна бути принаймні одна позиція в рахунку."
+    "minOneLineItem": "Повинна бути принаймні одна позиція в рахунку.",
+    "minOneBankField": "Повинно бути принаймні одне платіжне поле."
   },
   "defaultCurrency": "UAH",
   "currency": {

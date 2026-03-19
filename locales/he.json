@@ -5,14 +5,14 @@
     "keywords": "מחולל חשבוניות, יצירת חשבונית, חשבונית מקצועית, חשבונית PDF, יוצר חשבוניות בחינם, חשבונית מקוונת, חשבונית עסקית, חשבונית פרילנסר"
   },
   "header": {
-    "title": "📄 The Invoice",
+    "title": "The Invoice",
     "subtitle": "צור חשבוניות מקצועיות בקלות"
   },
   "form": {
     "invoiceDetails": "פרטי החשבונית",
-    "autoSaveEnabled": "💾 שמירה אוטומטית מופעלת",
-    "saved": "✓ נשמר",
-    "saveFailed": "✗ השמירה נכשלה",
+    "autoSaveEnabled": "שמירה אוטומטית מופעלת",
+    "saved": "נשמר",
+    "saveFailed": "השמירה נכשלה",
     "invoiceNumber": "מספר חשבונית",
     "currency": "מטבע",
     "creationDate": "תאריך יצירה",
@@ -24,24 +24,19 @@
     "addressLine2": "עיר, מחוז, מדינה",
     "zipCode": "מיקוד",
     "billToAddressLine2": "עיר, מחוז, מיקוד, מדינה",
-    "bankDetails": "פרטי בנק",
-    "beneficiaryName": "שם המוטב",
-    "beneficiaryAccount": "מספר חשבון מוטב (IBAN)",
-    "swiftCode": "קוד SWIFT",
-    "bankName": "שם הבנק",
-    "bankAddress": "כתובת הבנק",
-    "intermediaryBankDetails": "פרטי בנק מתווך (אופציונלי)",
-    "intermediarySwift": "קוד Swift/BIC",
-    "intermediaryBankName": "שם הבנק",
+    "bankDetails": "פרטי תשלום",
+    "fieldLabel": "תווית שדה",
+    "fieldValue": "ערך",
+    "addBankField": "+ הוסף שדה תשלום",
     "lineItems": "פריטי החשבונית",
     "addLineItem": "+ הוסף פריט",
-    "exportPDF": "📥 ייצא PDF",
-    "clearSavedData": "🗑️ מחק נתונים שמורים",
+    "exportPDF": "ייצא PDF",
+    "clearSavedData": "מחק נתונים שמורים",
     "placeholderDescription": "לדוגמה: שירות חודשי",
     "placeholderAdditional": "לדוגמה: שירות נוסף",
     "placeholderReimbursement": "לדוגמה: החזר הוצאות",
     "placeholderAmount": "0.00",
-    "exporting": "⏳ מייצא..."
+    "exporting": "מייצא..."
   },
   "preview": {
     "title": "תצוגה מקדימה",
@@ -56,16 +51,7 @@
     "amount": "סכום",
     "noItems": "טרם נוספו פריטים",
     "total": "סה״כ",
-    "payToDetails": "שלם לפרטי הבנק הבאים:",
-    "beneficiaryName": "שם המוטב:",
-    "beneficiaryAccount": "מספר חשבון מוטב (IBAN):",
-    "swiftCode": "קוד SWIFT:",
-    "bankName": "שם הבנק:",
-    "bankAddress": "כתובת הבנק:",
-    "intermediaryNote": "(מידע אופציונלי, השתמש תמיד יחד עם פרטי הבנק למעלה)",
-    "intermediaryTitle": "פרטי בנק מתווך:",
-    "intermediarySwift": "קוד Swift/BIC:",
-    "intermediaryBankName": "שם הבנק:"
+    "payToDetails": "פרטי תשלום"
   },
   "alerts": {
     "noInvoiceNumber": "אנא הזן מספר חשבונית.",
@@ -74,7 +60,8 @@
     "noLineItems": "אנא הוסף לפחות פריט אחד עם תיאור וסכום.",
     "confirmClear": "האם אתה בטוח שברצונך למחוק את כל הנתונים השמורים? לא ניתן לבטל פעולה זו.",
     "dataCleared": "כל הנתונים השמורים נמחקו!",
-    "minOneLineItem": "חייב להיות לך לפחות פריט אחד בחשבונית."
+    "minOneLineItem": "חייב להיות לך לפחות פריט אחד בחשבונית.",
+    "minOneBankField": "חייב להיות לך לפחות שדה תשלום אחד."
   },
   "nav": {
     "about": "אודות",

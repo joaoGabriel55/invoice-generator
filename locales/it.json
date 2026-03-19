@@ -5,14 +5,14 @@
     "keywords": "generatore di fatture, creare fattura, fattura professionale, fattura PDF, creatore di fatture gratis, fattura online, fattura aziendale, fattura freelance"
   },
   "header": {
-    "title": "📄 The Invoice",
+    "title": "The Invoice",
     "subtitle": "Crea fatture professionali con facilità"
   },
   "form": {
     "invoiceDetails": "Dettagli della Fattura",
-    "autoSaveEnabled": "💾 Salvataggio automatico abilitato",
-    "saved": "✓ Salvato",
-    "saveFailed": "✗ Salvataggio fallito",
+    "autoSaveEnabled": "Salvataggio automatico abilitato",
+    "saved": "Salvato",
+    "saveFailed": "Salvataggio fallito",
     "invoiceNumber": "Numero Fattura",
     "currency": "Valuta",
     "creationDate": "Data di Creazione",
@@ -24,24 +24,19 @@
     "addressLine2": "Città, Provincia, Paese",
     "zipCode": "CAP",
     "billToAddressLine2": "Città, Provincia, CAP, Paese",
-    "bankDetails": "Coordinate Bancarie",
-    "beneficiaryName": "Nome Beneficiario",
-    "beneficiaryAccount": "Numero di Conto Beneficiario (IBAN)",
-    "swiftCode": "Codice SWIFT",
-    "bankName": "Nome della Banca",
-    "bankAddress": "Indirizzo della Banca",
-    "intermediaryBankDetails": "Dettagli Banca Intermediaria (Opzionale)",
-    "intermediarySwift": "Codice Swift/BIC",
-    "intermediaryBankName": "Nome della Banca",
+    "bankDetails": "Dettagli di Pagamento",
+    "fieldLabel": "Etichetta campo",
+    "fieldValue": "Valore",
+    "addBankField": "+ Aggiungi Campo di Pagamento",
     "lineItems": "Voci di Fattura",
     "addLineItem": "+ Aggiungi Voce",
-    "exportPDF": "📥 Esporta PDF",
-    "clearSavedData": "🗑️ Cancella Dati Salvati",
+    "exportPDF": "Esporta PDF",
+    "clearSavedData": "Cancella Dati Salvati",
     "placeholderDescription": "es. Servizio mensile",
     "placeholderAdditional": "es. Servizio aggiuntivo",
     "placeholderReimbursement": "es. Rimborso spese",
     "placeholderAmount": "0,00",
-    "exporting": "⏳ Esportazione in corso..."
+    "exporting": "Esportazione in corso..."
   },
   "preview": {
     "title": "Anteprima",
@@ -56,16 +51,7 @@
     "amount": "Importo",
     "noItems": "Nessuna voce aggiunta ancora",
     "total": "Totale",
-    "payToDetails": "Pagare alle seguenti coordinate bancarie:",
-    "beneficiaryName": "Nome beneficiario:",
-    "beneficiaryAccount": "Numero di Conto Beneficiario (IBAN):",
-    "swiftCode": "Codice SWIFT:",
-    "bankName": "Nome della Banca:",
-    "bankAddress": "Indirizzo della Banca:",
-    "intermediaryNote": "(Informazioni opzionali, utilizzare sempre insieme alle coordinate bancarie sopra)",
-    "intermediaryTitle": "Dettagli banca intermediaria:",
-    "intermediarySwift": "Codice Swift/BIC:",
-    "intermediaryBankName": "Nome della Banca:"
+    "payToDetails": "Dettagli di Pagamento"
   },
   "alerts": {
     "noInvoiceNumber": "Inserire un numero di fattura.",
@@ -74,7 +60,8 @@
     "noLineItems": "Aggiungere almeno una voce con descrizione e importo.",
     "confirmClear": "Sei sicuro di voler cancellare tutti i dati salvati? Questa azione non può essere annullata.",
     "dataCleared": "Tutti i dati salvati sono stati cancellati!",
-    "minOneLineItem": "Devi avere almeno una voce di fattura."
+    "minOneLineItem": "Devi avere almeno una voce di fattura.",
+    "minOneBankField": "Devi avere almeno un campo di pagamento."
   },
   "nav": {
     "about": "Informazioni",

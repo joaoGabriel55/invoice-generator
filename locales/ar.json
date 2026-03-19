@@ -5,14 +5,14 @@
     "keywords": "مولد فواتير, إنشاء فاتورة, فاتورة احترافية, فاتورة PDF, صانع فواتير مجاني, فاتورة عبر الإنترنت, فاتورة تجارية, فاتورة مستقل"
   },
   "header": {
-    "title": "📄 The Invoice",
+    "title": "The Invoice",
     "subtitle": "إنشاء فواتير احترافية بسهولة"
   },
   "form": {
     "invoiceDetails": "تفاصيل الفاتورة",
-    "autoSaveEnabled": "💾 الحفظ التلقائي مفعّل",
-    "saved": "✓ تم الحفظ",
-    "saveFailed": "✗ فشل الحفظ",
+    "autoSaveEnabled": "الحفظ التلقائي مفعّل",
+    "saved": "تم الحفظ",
+    "saveFailed": "فشل الحفظ",
     "invoiceNumber": "رقم الفاتورة",
     "currency": "العملة",
     "creationDate": "تاريخ الإنشاء",
@@ -24,24 +24,19 @@
     "addressLine2": "المدينة، المنطقة، الدولة",
     "zipCode": "الرمز البريدي",
     "billToAddressLine2": "المدينة، المنطقة، الرمز البريدي، الدولة",
-    "bankDetails": "التفاصيل المصرفية",
-    "beneficiaryName": "اسم المستفيد",
-    "beneficiaryAccount": "رقم حساب المستفيد (IBAN)",
-    "swiftCode": "رمز SWIFT",
-    "bankName": "اسم البنك",
-    "bankAddress": "عنوان البنك",
-    "intermediaryBankDetails": "تفاصيل البنك الوسيط (اختياري)",
-    "intermediarySwift": "رمز Swift/BIC",
-    "intermediaryBankName": "اسم البنك",
+    "bankDetails": "تفاصيل الدفع",
+    "fieldLabel": "تسمية الحقل",
+    "fieldValue": "القيمة",
+    "addBankField": "+ إضافة حقل دفع",
     "lineItems": "عناصر الفاتورة",
     "addLineItem": "+ إضافة عنصر",
-    "exportPDF": "📥 تصدير PDF",
-    "clearSavedData": "🗑️ مسح البيانات المحفوظة",
+    "exportPDF": "تصدير PDF",
+    "clearSavedData": "مسح البيانات المحفوظة",
     "placeholderDescription": "مثال: خدمة شهرية",
     "placeholderAdditional": "مثال: خدمة إضافية",
     "placeholderReimbursement": "مثال: سداد مصروفات",
     "placeholderAmount": "0.00",
-    "exporting": "⏳ جارٍ التصدير..."
+    "exporting": "جارٍ التصدير..."
   },
   "preview": {
     "title": "معاينة",
@@ -56,16 +51,7 @@
     "amount": "المبلغ",
     "noItems": "لم تتم إضافة أي عناصر بعد",
     "total": "المجموع",
-    "payToDetails": "الدفع إلى التفاصيل المصرفية أدناه:",
-    "beneficiaryName": "اسم المستفيد:",
-    "beneficiaryAccount": "رقم حساب المستفيد (IBAN):",
-    "swiftCode": "رمز SWIFT:",
-    "bankName": "اسم البنك:",
-    "bankAddress": "عنوان البنك:",
-    "intermediaryNote": "(معلومات اختيارية، استخدمها دائمًا مع التفاصيل المصرفية أعلاه)",
-    "intermediaryTitle": "تفاصيل البنك الوسيط:",
-    "intermediarySwift": "رمز Swift/BIC:",
-    "intermediaryBankName": "اسم البنك:"
+    "payToDetails": "تفاصيل الدفع"
   },
   "alerts": {
     "noInvoiceNumber": "الرجاء إدخال رقم الفاتورة.",
@@ -74,7 +60,8 @@
     "noLineItems": "الرجاء إضافة عنصر واحد على الأقل مع الوصف والمبلغ.",
     "confirmClear": "هل أنت متأكد من رغبتك في مسح جميع البيانات المحفوظة؟ لا يمكن التراجع عن هذا الإجراء.",
     "dataCleared": "تم مسح جميع البيانات المحفوظة!",
-    "minOneLineItem": "يجب أن يكون لديك عنصر واحد على الأقل في الفاتورة."
+    "minOneLineItem": "يجب أن يكون لديك عنصر واحد على الأقل في الفاتورة.",
+    "minOneBankField": "يجب أن يكون لديك حقل دفع واحد على الأقل."
   },
   "nav": {
     "about": "نبذة عنا",

@@ -5,14 +5,14 @@
     "keywords": "генератор счетов, создать счет, профессиональный счет, PDF счет, бесплатный создатель счетов, онлайн счет, бизнес счет, фриланс счет"
   },
   "header": {
-    "title": "📄 The Invoice",
+    "title": "The Invoice",
     "subtitle": "Создавайте профессиональные счета с легкостью"
   },
   "form": {
     "invoiceDetails": "Детали счета",
-    "autoSaveEnabled": "💾 Автосохранение включено",
-    "saved": "✓ Сохранено",
-    "saveFailed": "✗ Сохранение не удалось",
+    "autoSaveEnabled": "Автосохранение включено",
+    "saved": "Сохранено",
+    "saveFailed": "Сохранение не удалось",
     "invoiceNumber": "Номер счета",
     "currency": "Валюта",
     "creationDate": "Дата создания",
@@ -24,24 +24,19 @@
     "addressLine2": "Город, Область, Страна",
     "zipCode": "Почтовый индекс",
     "billToAddressLine2": "Город, Область, Индекс, Страна",
-    "bankDetails": "Банковские реквизиты",
-    "beneficiaryName": "Имя получателя",
-    "beneficiaryAccount": "Номер счета получателя (IBAN)",
-    "swiftCode": "Код SWIFT",
-    "bankName": "Название банка",
-    "bankAddress": "Адрес банка",
-    "intermediaryBankDetails": "Реквизиты банка-посредника (необязательно)",
-    "intermediarySwift": "Код Swift/BIC",
-    "intermediaryBankName": "Название банка",
+    "bankDetails": "Платежные реквизиты",
+    "fieldLabel": "Название поля",
+    "fieldValue": "Значение",
+    "addBankField": "+ Добавить платежное поле",
     "lineItems": "Позиции счета",
     "addLineItem": "+ Добавить позицию",
-    "exportPDF": "📥 Экспортировать в PDF",
-    "clearSavedData": "🗑️ Очистить сохраненные данные",
+    "exportPDF": "Экспортировать в PDF",
+    "clearSavedData": "Очистить сохраненные данные",
     "placeholderDescription": "напр. Ежемесячная услуга",
     "placeholderAdditional": "напр. Дополнительная услуга",
     "placeholderReimbursement": "напр. Возмещение расходов",
     "placeholderAmount": "0.00",
-    "exporting": "⏳ Экспорт..."
+    "exporting": "Экспорт..."
   },
   "preview": {
     "title": "Предпросмотр",
@@ -56,16 +51,7 @@
     "amount": "Сумма",
     "noItems": "Позиции еще не добавлены",
     "total": "Итого",
-    "payToDetails": "Оплатите по следующим банковским реквизитам:",
-    "beneficiaryName": "Имя получателя:",
-    "beneficiaryAccount": "Номер счета получателя (IBAN):",
-    "swiftCode": "Код SWIFT:",
-    "bankName": "Название банка:",
-    "bankAddress": "Адрес банка:",
-    "intermediaryNote": "(Необязательная информация, всегда используйте вместе с банковскими реквизитами выше)",
-    "intermediaryTitle": "Реквизиты банка-посредника:",
-    "intermediarySwift": "Код Swift/BIC:",
-    "intermediaryBankName": "Название банка:"
+    "payToDetails": "Платежные реквизиты"
   },
   "alerts": {
     "noInvoiceNumber": "Пожалуйста, введите номер счета.",
@@ -74,7 +60,8 @@
     "noLineItems": "Пожалуйста, добавьте хотя бы одну позицию с описанием и суммой.",
     "confirmClear": "Вы уверены, что хотите очистить все сохраненные данные? Это действие нельзя отменить.",
     "dataCleared": "Все сохраненные данные были очищены!",
-    "minOneLineItem": "Должна быть хотя бы одна позиция в счете."
+    "minOneLineItem": "Должна быть хотя бы одна позиция в счете.",
+    "minOneBankField": "Должно быть хотя бы одно платежное поле."
   },
   "defaultCurrency": "RUB",
   "currency": {

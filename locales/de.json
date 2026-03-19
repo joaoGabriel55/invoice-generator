@@ -5,14 +5,14 @@
     "keywords": "Rechnungsgenerator, Rechnung erstellen, professionelle Rechnung, PDF Rechnung, kostenloser Rechnungsersteller, Online-Rechnung, Geschäftsrechnung, Freelance-Rechnung"
   },
   "header": {
-    "title": "📄 The Invoice",
+    "title": "The Invoice",
     "subtitle": "Erstellen Sie professionelle Rechnungen mit Leichtigkeit"
   },
   "form": {
     "invoiceDetails": "Rechnungsdetails",
-    "autoSaveEnabled": "💾 Automatisches Speichern aktiviert",
-    "saved": "✓ Gespeichert",
-    "saveFailed": "✗ Speichern fehlgeschlagen",
+    "autoSaveEnabled": "Automatisches Speichern aktiviert",
+    "saved": "Gespeichert",
+    "saveFailed": "Speichern fehlgeschlagen",
     "invoiceNumber": "Rechnungsnummer",
     "currency": "Währung",
     "creationDate": "Erstellungsdatum",
@@ -24,24 +24,19 @@
     "addressLine2": "Stadt, Bundesland, Land",
     "zipCode": "Postleitzahl",
     "billToAddressLine2": "Stadt, Bundesland, PLZ, Land",
-    "bankDetails": "Bankverbindung",
-    "beneficiaryName": "Name des Begünstigten",
-    "beneficiaryAccount": "Kontonummer des Begünstigten (IBAN)",
-    "swiftCode": "SWIFT-Code",
-    "bankName": "Name der Bank",
-    "bankAddress": "Adresse der Bank",
-    "intermediaryBankDetails": "Korrespondenzbank-Details (Optional)",
-    "intermediarySwift": "Swift/BIC-Code",
-    "intermediaryBankName": "Name der Bank",
+    "bankDetails": "Zahlungsdetails",
+    "fieldLabel": "Feldbezeichnung",
+    "fieldValue": "Wert",
+    "addBankField": "+ Zahlungsfeld hinzufügen",
     "lineItems": "Rechnungspositionen",
     "addLineItem": "+ Position hinzufügen",
-    "exportPDF": "📥 PDF exportieren",
-    "clearSavedData": "🗑️ Gespeicherte Daten löschen",
+    "exportPDF": "PDF exportieren",
+    "clearSavedData": "Gespeicherte Daten löschen",
     "placeholderDescription": "z.B. Monatliche Dienstleistung",
     "placeholderAdditional": "z.B. Zusätzliche Dienstleistung",
     "placeholderReimbursement": "z.B. Kostenerstattung",
     "placeholderAmount": "0,00",
-    "exporting": "⏳ Exportiere..."
+    "exporting": "Exportiere..."
   },
   "preview": {
     "title": "Vorschau",
@@ -56,16 +51,7 @@
     "amount": "Betrag",
     "noItems": "Noch keine Positionen hinzugefügt",
     "total": "Summe",
-    "payToDetails": "Zahlung an folgende Bankverbindung:",
-    "beneficiaryName": "Name des Begünstigten:",
-    "beneficiaryAccount": "Kontonummer des Begünstigten (IBAN):",
-    "swiftCode": "SWIFT-Code:",
-    "bankName": "Name der Bank:",
-    "bankAddress": "Adresse der Bank:",
-    "intermediaryNote": "(Optionale Informationen, immer zusammen mit den obigen Bankdaten verwenden)",
-    "intermediaryTitle": "Korrespondenzbank-Details:",
-    "intermediarySwift": "Swift/BIC-Code:",
-    "intermediaryBankName": "Name der Bank:"
+    "payToDetails": "Zahlungsdetails"
   },
   "alerts": {
     "noInvoiceNumber": "Bitte geben Sie eine Rechnungsnummer ein.",
@@ -74,7 +60,8 @@
     "noLineItems": "Bitte fügen Sie mindestens einen Posten mit Beschreibung und Betrag hinzu.",
     "confirmClear": "Sind Sie sicher, dass Sie alle gespeicherten Daten löschen möchten? Diese Aktion kann nicht rückgängig gemacht werden.",
     "dataCleared": "Alle gespeicherten Daten wurden gelöscht!",
-    "minOneLineItem": "Sie müssen mindestens einen Rechnungsposten haben."
+    "minOneLineItem": "Sie müssen mindestens einen Rechnungsposten haben.",
+    "minOneBankField": "Sie müssen mindestens ein Zahlungsfeld haben."
   },
   "nav": {
     "about": "Über",

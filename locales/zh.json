@@ -5,14 +5,14 @@
     "keywords": "发票生成器, 创建发票, 专业发票, PDF发票, 免费发票制作器, 在线发票, 商业发票, 自由职业发票"
   },
   "header": {
-    "title": "📄 The Invoice",
+    "title": "The Invoice",
     "subtitle": "轻松创建专业发票"
   },
   "form": {
     "invoiceDetails": "发票详情",
-    "autoSaveEnabled": "💾 自动保存已启用",
-    "saved": "✓ 已保存",
-    "saveFailed": "✗ 保存失败",
+    "autoSaveEnabled": "自动保存已启用",
+    "saved": "已保存",
+    "saveFailed": "保存失败",
     "invoiceNumber": "发票编号",
     "currency": "货币",
     "creationDate": "创建日期",
@@ -24,24 +24,19 @@
     "addressLine2": "城市、省份、国家",
     "zipCode": "邮政编码",
     "billToAddressLine2": "城市、省份、邮政编码、国家",
-    "bankDetails": "银行详情",
-    "beneficiaryName": "受益人姓名",
-    "beneficiaryAccount": "受益人账户号码（IBAN）",
-    "swiftCode": "SWIFT代码",
-    "bankName": "银行名称",
-    "bankAddress": "银行地址",
-    "intermediaryBankDetails": "中间银行详情（可选）",
-    "intermediarySwift": "Swift/BIC代码",
-    "intermediaryBankName": "银行名称",
+    "bankDetails": "付款详情",
+    "fieldLabel": "字段标签",
+    "fieldValue": "值",
+    "addBankField": "+ 添加付款字段",
     "lineItems": "明细项目",
     "addLineItem": "+ 添加项目",
-    "exportPDF": "📥 导出PDF",
-    "clearSavedData": "🗑️ 清除已保存数据",
+    "exportPDF": "导出PDF",
+    "clearSavedData": "清除已保存数据",
     "placeholderDescription": "例如：月度服务",
     "placeholderAdditional": "例如：附加服务",
     "placeholderReimbursement": "例如：费用报销",
     "placeholderAmount": "0.00",
-    "exporting": "⏳ 正在导出..."
+    "exporting": "正在导出..."
   },
   "preview": {
     "title": "预览",
@@ -56,16 +51,7 @@
     "amount": "金额",
     "noItems": "尚未添加任何项目",
     "total": "总计",
-    "payToDetails": "请支付至以下银行账户：",
-    "beneficiaryName": "受益人姓名：",
-    "beneficiaryAccount": "受益人账户号码（IBAN）：",
-    "swiftCode": "SWIFT代码：",
-    "bankName": "银行名称：",
-    "bankAddress": "银行地址：",
-    "intermediaryNote": "（可选信息，请始终与上述银行详情一起使用）",
-    "intermediaryTitle": "中间银行详情：",
-    "intermediarySwift": "Swift/BIC代码：",
-    "intermediaryBankName": "银行名称："
+    "payToDetails": "付款详情"
   },
   "alerts": {
     "noInvoiceNumber": "请输入发票编号。",
@@ -74,7 +60,8 @@
     "noLineItems": "请至少添加一个包含描述和金额的项目。",
     "confirmClear": "您确定要清除所有已保存的数据吗？此操作无法撤消。",
     "dataCleared": "所有已保存的数据已清除！",
-    "minOneLineItem": "您必须至少有一个项目。"
+    "minOneLineItem": "您必须至少有一个项目。",
+    "minOneBankField": "您必须至少有一个付款字段。"
   },
   "defaultCurrency": "CNY",
   "currency": {

@@ -5,7 +5,7 @@
     "keywords": "generador de facturas, crear factura, factura profesional, factura PDF, creador de facturas gratis, factura en línea, factura empresarial, factura freelance"
   },
   "header": {
-    "title": "📄 The Invoice",
+    "title": "The Invoice",
     "subtitle": "Cree facturas profesionales con facilidad"
   },
   "home": {
@@ -15,9 +15,9 @@
   },
   "form": {
     "invoiceDetails": "Detalles de la Factura",
-    "autoSaveEnabled": "💾 Guardado automático activado",
-    "saved": "✓ Guardado",
-    "saveFailed": "✗ Error al guardar",
+    "autoSaveEnabled": "Guardado automático activado",
+    "saved": "Guardado",
+    "saveFailed": "Error al guardar",
     "invoiceNumber": "Número de Factura",
     "currency": "Moneda",
     "creationDate": "Fecha de Creación",
@@ -29,24 +29,19 @@
     "addressLine2": "Ciudad, Provincia, País",
     "zipCode": "Código Postal",
     "billToAddressLine2": "Ciudad, Provincia, Código Postal, País",
-    "bankDetails": "Datos Bancarios",
-    "beneficiaryName": "Nombre del Beneficiario",
-    "beneficiaryAccount": "Número de Cuenta del Beneficiario (IBAN)",
-    "swiftCode": "Código SWIFT",
-    "bankName": "Nombre del Banco",
-    "bankAddress": "Dirección del Banco",
-    "intermediaryBankDetails": "Datos del Banco Intermediario (Opcional)",
-    "intermediarySwift": "Código Swift/BIC",
-    "intermediaryBankName": "Nombre del Banco",
+    "bankDetails": "Detalles de Pago",
+    "fieldLabel": "Etiqueta del campo",
+    "fieldValue": "Valor",
+    "addBankField": "+ Agregar Campo de Pago",
     "lineItems": "Elementos de la Factura",
     "addLineItem": "+ Agregar Elemento",
-    "exportPDF": "📥 Exportar PDF",
-    "clearSavedData": "🗑️ Borrar Datos Guardados",
+    "exportPDF": "Exportar PDF",
+    "clearSavedData": "Borrar Datos Guardados",
     "placeholderDescription": "ej: Servicio mensual",
     "placeholderAdditional": "ej: Servicio adicional",
     "placeholderReimbursement": "ej: Reembolso",
     "placeholderAmount": "0,00",
-    "exporting": "⏳ Exportando..."
+    "exporting": "Exportando..."
   },
   "preview": {
     "title": "Vista Previa",
@@ -61,16 +56,7 @@
     "amount": "Importe",
     "noItems": "No se han agregado elementos todavía",
     "total": "Total",
-    "payToDetails": "Pague a los datos bancarios a continuación:",
-    "beneficiaryName": "Nombre del beneficiario:",
-    "beneficiaryAccount": "Número de Cuenta del Beneficiario (IBAN):",
-    "swiftCode": "Código SWIFT:",
-    "bankName": "Nombre del Banco:",
-    "bankAddress": "Dirección del Banco:",
-    "intermediaryNote": "(Información opcional, úsela siempre junto con los datos bancarios anteriores)",
-    "intermediaryTitle": "Datos del banco intermediario:",
-    "intermediarySwift": "Código Swift/BIC:",
-    "intermediaryBankName": "Nombre del Banco:"
+    "payToDetails": "Detalles de Pago"
   },
   "alerts": {
     "noInvoiceNumber": "Por favor, ingrese un número de factura.",
@@ -79,7 +65,8 @@
     "noLineItems": "Por favor, agregue al menos un elemento con descripción e importe.",
     "confirmClear": "¿Está seguro de que desea borrar todos los datos guardados? Esta acción no se puede deshacer.",
     "dataCleared": "¡Todos los datos guardados se han borrado!",
-    "minOneLineItem": "Debe tener al menos un elemento en la factura."
+    "minOneLineItem": "Debe tener al menos un elemento en la factura.",
+    "minOneBankField": "Debe tener al menos un campo de pago."
   },
   "defaultCurrency": "EUR",
   "currency": {

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -26,33 +28,31 @@
 }
 
 :root {
-  --primary-color: #4f46e5;
-  --primary-hover: #4338ca;
-  --success-color: #10b981;
-  --success-hover: #059669;
-  --danger-color: #ef4444;
-  --danger-hover: #dc2626;
-  --text-primary: #1f2937;
-  --text-secondary: #6b7280;
-  --text-muted: #9ca3af;
-  --border-color: #e5e7eb;
+  --primary-color: #475569;
+  --primary-hover: #334155;
+  --accent-color: #64748b;
+  --success-color: #475569;
+  --success-hover: #334155;
+  --danger-color: #94a3b8;
+  --danger-hover: #64748b;
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --text-muted: #94a3b8;
+  --border-color: #e2e8f0;
   --bg-primary: #ffffff;
-  --bg-secondary: #f9fafb;
-  --bg-hover: #f3f4f6;
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md:
-    0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --shadow-lg:
-    0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  --shadow-xl:
-    0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --bg-secondary: #f8fafc;
+  --bg-hover: #f1f5f9;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 4px 8px -1px rgba(0, 0, 0, 0.06);
+  --shadow-xl: 0 4px 12px -2px rgba(0, 0, 0, 0.08);
 }
 
 body {
   font-family:
-    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
-    Arial, sans-serif;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  background: #f1f5f9;
   color: var(--text-primary);
   line-height: 1.6;
   min-height: 100vh;
@@ -64,16 +64,58 @@ body {
   padding: 0 1rem;
 }
 
+.intro {
+  background: var(--bg-primary);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+  margin-bottom: 1rem;
+}
+
+.intro h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.intro p {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.25rem;
+}
+
+.form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.form-header h2 {
+  margin: 0;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.auto-save-status {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
 /* Add a consistent ad container wrapper to prevent layout shift and clarify visuals */
 .ad-container {
   display: block;
   width: 100%;
   max-width: 100%;
-  min-height: 90px; /* reserve space at common sizes */
+  min-height: 90px;
   margin: 1rem auto;
   padding: 0.5rem;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
 }
 
 .adslot_1 {
@@ -117,15 +159,17 @@ body {
 
 .app-header {
   text-align: center;
-  color: white;
-  margin-bottom: 2rem;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
   position: relative;
+  padding: 1.5rem 0 1rem;
 }
 
 .app-header h1 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  letter-spacing: -0.025em;
 }
 
 /* Language Selector Styling */
@@ -142,29 +186,25 @@ body {
 }
 
 .language-selector select {
-  padding: 0.5rem 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  background: var(--bg-primary);
   cursor: pointer;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 500;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+  transition: border-color 0.15s ease;
   color: var(--text-primary);
   outline: none;
 }
 
 .language-selector select:hover {
-  background: rgba(255, 255, 255, 1);
-  border-color: var(--primary-color);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  border-color: var(--text-muted);
 }
 
 .language-selector select:focus {
   border-color: var(--primary-color);
-  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+  box-shadow: 0 0 0 2px rgba(71, 85, 105, 0.08);
 }
 
 @media (max-width: 768px) {
@@ -182,35 +222,40 @@ body {
 }
 
 .subtitle {
-  font-size: 1.1rem;
-  opacity: 0.9;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  font-weight: 400;
 }
 
 .links,
 .app-footer {
-  margin: 0.75rem 0 1.25rem 0;
+  margin: 0.5rem 0 1rem 0;
   text-align: center;
-  color: white;
+  color: var(--text-secondary);
   a {
     margin: 0 0.75rem;
-    color: white;
+    color: var(--text-secondary);
     text-decoration: none;
-    transition: color 0.3s ease;
+    font-size: 0.85rem;
+    transition: color 0.2s ease;
 
     &:hover {
-      text-decoration: underline;
+      color: var(--text-primary);
     }
   }
 }
 
 .app-footer {
-  background-color: var(--primary-hover);
+  background-color: var(--text-primary);
   margin: 2rem 0 0 0;
   padding: 1rem;
   text-align: center;
-  color: white;
+  color: var(--text-muted);
   a {
-    color: white;
+    color: var(--text-muted);
+    &:hover {
+      color: #fff;
+    }
   }
 }
 
@@ -224,9 +269,10 @@ body {
 .form-section,
 .preview-section {
   background: var(--bg-primary);
-  border-radius: 12px;
-  padding: 2rem;
-  box-shadow: var(--shadow-xl);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
 }
 
 .form-section {
@@ -244,21 +290,23 @@ body {
 }
 
 .form-section::-webkit-scrollbar-thumb {
-  background: var(--primary-color);
+  background: var(--text-muted);
   border-radius: 4px;
 }
 
 .form-section::-webkit-scrollbar-thumb:hover {
-  background: var(--primary-hover);
+  background: var(--text-secondary);
 }
 
 .form-section h2,
 .preview-section h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1.5rem;
+  font-size: 1.125rem;
+  margin-bottom: 1.25rem;
   color: var(--text-primary);
-  border-bottom: 2px solid var(--primary-color);
+  border-bottom: 1px solid var(--border-color);
   padding-bottom: 0.5rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
 }
 
 .preview-section header {
@@ -271,12 +319,15 @@ body {
 }
 
 .form-section h3 {
-  font-size: 1.1rem;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-  color: var(--text-primary);
-  padding-top: 1rem;
+  font-size: 0.8rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: var(--text-secondary);
+  padding-top: 0.75rem;
   border-top: 1px solid var(--border-color);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
 }
 
 .form-section h3:first-of-type {
@@ -302,11 +353,11 @@ body {
 .form-group input[type="date"],
 .form-group select {
   width: 100%;
-  padding: 0.75rem;
-  border: 2px solid var(--border-color);
-  border-radius: 8px;
-  font-size: 1rem;
-  transition: all 0.3s ease;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 0.875rem;
+  transition: border-color 0.15s ease;
   background: var(--bg-primary);
 }
 
@@ -354,11 +405,11 @@ select:open::picker-icon {
 
 .item-description,
 .item-amount {
-  padding: 0.75rem;
-  border: 2px solid var(--border-color);
-  border-radius: 8px;
-  font-size: 0.95rem;
-  transition: all 0.3s ease;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 0.875rem;
+  transition: border-color 0.15s ease;
 }
 
 .item-description:focus,
@@ -369,38 +420,38 @@ select:open::picker-icon {
 }
 
 .btn-remove {
-  padding: 0.75rem;
-  background: var(--danger-color);
-  color: white;
-  border: none;
-  border-radius: 8px;
+  padding: 0.5rem;
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
   cursor: pointer;
-  font-size: 1rem;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  width: 40px;
-  height: 40px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.15s ease;
+  width: 36px;
+  height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .btn-remove:hover {
-  background: var(--danger-hover);
-  transform: scale(1.05);
+  background: var(--bg-hover);
+  color: var(--text-primary);
+  border-color: var(--text-muted);
 }
 
 .btn-primary,
 .btn-secondary,
 .btn-success {
-  padding: 0.875rem 1.5rem;
+  padding: 0.625rem 1.25rem;
   border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-weight: 600;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: var(--shadow-sm);
+  transition: all 0.15s ease;
 }
 
 .btn-primary {
@@ -410,20 +461,18 @@ select:open::picker-icon {
 
 .btn-primary:hover {
   background: var(--primary-hover);
-  box-shadow: var(--shadow-md);
-  transform: translateY(-1px);
 }
 
 .btn-secondary {
-  background: var(--bg-secondary);
+  background: var(--bg-primary);
   color: var(--text-primary);
-  border: 2px solid var(--border-color);
+  border: 1px solid var(--border-color);
   width: 100%;
 }
 
 .btn-secondary:hover {
-  background: var(--bg-hover);
-  border-color: var(--text-secondary);
+  background: var(--bg-secondary);
+  border-color: var(--text-muted);
 }
 
 .btn-success {
@@ -433,8 +482,6 @@ select:open::picker-icon {
 
 .btn-success:hover {
   background: var(--success-hover);
-  box-shadow: var(--shadow-md);
-  transform: translateY(-1px);
 }
 
 .form-actions {
@@ -469,16 +516,16 @@ select:open::picker-icon {
   text-align: center;
   margin-bottom: 1rem;
   padding-bottom: 0.75rem;
-  border-bottom: 3px solid var(--primary-color);
+  border-bottom: 1px solid var(--border-color);
   page-break-after: avoid;
 }
 
 .invoice-title {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: var(--primary-color);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
   margin-bottom: 0.25rem;
-  letter-spacing: 2px;
+  letter-spacing: 0.1em;
 }
 
 .invoice-number {
@@ -559,8 +606,8 @@ select:open::picker-icon {
 }
 
 .invoice-items thead {
-  background: var(--primary-color);
-  color: white;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
 }
 
 .invoice-items th {
@@ -617,8 +664,8 @@ select:open::picker-icon {
   margin-top: 1rem;
   padding: 1rem;
   background: var(--bg-secondary);
-  border-radius: 8px;
-  border-left: 4px solid var(--primary-color);
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
   page-break-before: auto;
   page-break-inside: avoid;
   page-break-after: avoid;
@@ -670,6 +717,45 @@ select:open::picker-icon {
 .intermediary-title {
   margin-top: 0.3rem;
   margin-bottom: 0.5rem !important;
+}
+
+/* Dynamic bank detail fields */
+.bank-field-row {
+  display: grid;
+  grid-template-columns: 1fr 2fr auto;
+  gap: 0.5rem;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.bank-field-row input {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 0.875rem;
+  transition: border-color 0.15s ease;
+  background: var(--bg-primary);
+  width: 100%;
+}
+
+.bank-field-row input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(71, 85, 105, 0.08);
+}
+
+#bankDetailFields {
+  margin-bottom: 0.75rem;
+}
+
+.btn-add-bank-field {
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .bank-field-row {
+    grid-template-columns: 1fr;
+  }
 }
 
 .invoice-footer {

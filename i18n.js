@@ -182,26 +182,6 @@ class I18n {
       element.placeholder = this.t(key);
     });
 
-    // Special handling for bank labels that need trailing space
-    const bankLabels = document.querySelectorAll(".bank-info p strong");
-    if (bankLabels.length >= 5) {
-      bankLabels[0].textContent = this.t("preview.beneficiaryName") + " ";
-      bankLabels[1].textContent = this.t("preview.beneficiaryAccount") + " ";
-      bankLabels[2].textContent = this.t("preview.swiftCode") + " ";
-      bankLabels[3].textContent = this.t("preview.bankName") + " ";
-      bankLabels[4].textContent = this.t("preview.bankAddress") + " ";
-    }
-
-    // Special handling for intermediary bank labels that need trailing space
-    const intermediaryLabels = document.querySelectorAll(
-      ".intermediary-bank p:not(.intermediary-note):not(.intermediary-title) strong",
-    );
-    if (intermediaryLabels.length >= 2) {
-      intermediaryLabels[0].textContent =
-        this.t("preview.intermediarySwift") + " ";
-      intermediaryLabels[1].textContent =
-        this.t("preview.intermediaryBankName") + " ";
-    }
   }
 
   // Helper function to update meta tag

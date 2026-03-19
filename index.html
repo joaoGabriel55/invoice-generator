@@ -51,7 +51,7 @@
     <meta name="twitter:image" content="preview.jpg" />
 
     <!-- Additional Meta Tags -->
-    <meta name="theme-color" content="#4a90e2" />
+    <meta name="theme-color" content="#475569" />
     <meta name="application-name" content="The Invoice" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
@@ -68,7 +68,7 @@
   <body>
     <div class="container">
       <header class="app-header">
-        <h1 data-i18n="header.title">📄 The Invoice</h1>
+        <h1 data-i18n="header.title">The Invoice</h1>
         <p class="subtitle" data-i18n="header.subtitle">
           Create professional invoices with ease
         </p>
@@ -99,17 +99,8 @@
         </script>
       </div>
 
-      <section
-        class="intro"
-        style="
-          background: #fff;
-          border-radius: 12px;
-          padding: 1rem 1.25rem;
-          box-shadow: var(--shadow-xl);
-          margin-bottom: 1rem;
-        "
-      >
-        <h2 style="margin-bottom: 0.5rem" data-i18n="home.introTitle">
+      <section class="intro">
+        <h2 data-i18n="home.introTitle">
           What you can do with The Invoice
         </h2>
         <p data-i18n="home.introP1">
@@ -127,22 +118,15 @@
       <div class="main-content">
         <!-- Input Form -->
         <div class="form-section">
-          <div
-            style="
-              display: flex;
-              justify-content: space-between;
-              align-items: center;
-              margin-bottom: 1rem;
-            "
-          >
-            <h2 style="margin: 0" data-i18n="form.invoiceDetails">
+          <div class="form-header">
+            <h2 data-i18n="form.invoiceDetails">
               Invoice Details
             </h2>
             <span
               id="autoSaveStatus"
-              style="font-size: 0.875rem; color: #6c757d; font-style: italic"
+              class="auto-save-status"
               data-i18n="form.autoSaveEnabled"
-              >💾 Auto-save enabled</span
+              >Auto-save enabled</span
             >
           </div>
 
@@ -278,63 +262,42 @@
             />
           </div>
 
-          <h3 data-i18n="form.bankDetails">Bank Details</h3>
-          <div class="form-group">
-            <label for="beneficiaryName" data-i18n="form.beneficiaryName"
-              >Beneficiary Name</label
-            >
-            <input type="text" id="beneficiaryName" value="John Doe" />
+          <h3 data-i18n="form.bankDetails">Payment Details</h3>
+          <div id="bankDetailFields">
+            <div class="bank-field-row">
+              <input type="text" class="bank-field-label" data-i18n-placeholder="form.fieldLabel" placeholder="Field label" value="Beneficiary Name" />
+              <input type="text" class="bank-field-value" data-i18n-placeholder="form.fieldValue" placeholder="Value" value="John Doe" />
+              <button type="button" class="btn-remove" onclick="removeBankField(this)">✕</button>
+            </div>
+            <div class="bank-field-row">
+              <input type="text" class="bank-field-label" data-i18n-placeholder="form.fieldLabel" placeholder="Field label" value="Account Number (IBAN)" />
+              <input type="text" class="bank-field-value" data-i18n-placeholder="form.fieldValue" placeholder="Value" value="US00 1234 5678 9012 3456 78" />
+              <button type="button" class="btn-remove" onclick="removeBankField(this)">✕</button>
+            </div>
+            <div class="bank-field-row">
+              <input type="text" class="bank-field-label" data-i18n-placeholder="form.fieldLabel" placeholder="Field label" value="SWIFT Code" />
+              <input type="text" class="bank-field-value" data-i18n-placeholder="form.fieldValue" placeholder="Value" value="BANKUS33XXX" />
+              <button type="button" class="btn-remove" onclick="removeBankField(this)">✕</button>
+            </div>
+            <div class="bank-field-row">
+              <input type="text" class="bank-field-label" data-i18n-placeholder="form.fieldLabel" placeholder="Field label" value="Bank Name" />
+              <input type="text" class="bank-field-value" data-i18n-placeholder="form.fieldValue" placeholder="Value" value="First National Bank" />
+              <button type="button" class="btn-remove" onclick="removeBankField(this)">✕</button>
+            </div>
+            <div class="bank-field-row">
+              <input type="text" class="bank-field-label" data-i18n-placeholder="form.fieldLabel" placeholder="Field label" value="Bank Address" />
+              <input type="text" class="bank-field-value" data-i18n-placeholder="form.fieldValue" placeholder="Value" value="789 Financial Plaza, New York, NY 10005" />
+              <button type="button" class="btn-remove" onclick="removeBankField(this)">✕</button>
+            </div>
           </div>
-          <div class="form-group">
-            <label for="beneficiaryAccount" data-i18n="form.beneficiaryAccount"
-              >Beneficiary Account Number (IBAN)</label
-            >
-            <input
-              type="text"
-              id="beneficiaryAccount"
-              value="US00 1234 5678 9012 3456 78"
-            />
-          </div>
-          <div class="form-group">
-            <label for="swiftCode" data-i18n="form.swiftCode">SWIFT Code</label>
-            <input type="text" id="swiftCode" value="BANKUS33XXX" />
-          </div>
-          <div class="form-group">
-            <label for="bankName" data-i18n="form.bankName">Bank Name</label>
-            <input type="text" id="bankName" value="First National Bank" />
-          </div>
-          <div class="form-group">
-            <label for="bankAddress" data-i18n="form.bankAddress"
-              >Bank Address</label
-            >
-            <input
-              type="text"
-              id="bankAddress"
-              value="789 Financial Plaza, New York, NY 10005"
-            />
-          </div>
-
-          <h3 data-i18n="form.intermediaryBankDetails">
-            Intermediary Bank Details (Optional)
-          </h3>
-          <div class="form-group">
-            <label for="intermediarySwift" data-i18n="form.intermediarySwift"
-              >Swift/BIC Code</label
-            >
-            <input type="text" id="intermediarySwift" value="CHASUS33XXX" />
-          </div>
-          <div class="form-group">
-            <label
-              for="intermediaryBankName"
-              data-i18n="form.intermediaryBankName"
-              >Bank Name</label
-            >
-            <input
-              type="text"
-              id="intermediaryBankName"
-              value="Global Transfer Bank, N.A"
-            />
-          </div>
+          <button
+            type="button"
+            class="btn-secondary btn-add-bank-field"
+            onclick="addBankField()"
+            data-i18n="form.addBankField"
+          >
+            + Add Payment Field
+          </button>
 
           <h3 data-i18n="form.lineItems">Line Items</h3>
           <div id="lineItems">
@@ -435,10 +398,9 @@
               type="button"
               class="btn-secondary"
               onclick="clearSavedData()"
-              style="background-color: #dc3545; color: white"
               data-i18n="form.clearSavedData"
             >
-              🗑️ Clear Saved Data
+              Clear Saved Data
             </button>
           </div>
         </div>
@@ -538,68 +500,9 @@
 
               <div class="bank-details">
                 <h3 data-i18n="preview.payToDetails">
-                  Pay to the banking details below:
+                  Payment Details
                 </h3>
-                <div class="bank-info">
-                  <p>
-                    <strong data-i18n="preview.beneficiaryName"
-                      >Beneficiary name:</strong
-                    >
-                    <span id="previewBeneficiaryName">John Doe</span>
-                  </p>
-                  <p>
-                    <strong data-i18n="preview.beneficiaryAccount"
-                      >Beneficiary Account Number (IBAN):</strong
-                    >
-                    <span id="previewBeneficiaryAccount"
-                      >US00 1234 5678 9012 3456 78</span
-                    >
-                  </p>
-                  <p>
-                    <strong data-i18n="preview.swiftCode">SWIFT Code:</strong>
-                    <span id="previewSwiftCode">BANKUS33XXX</span>
-                  </p>
-                  <p>
-                    <strong data-i18n="preview.bankName">Bank Name:</strong>
-                    <span id="previewBankName">First National Bank</span>
-                  </p>
-                  <p>
-                    <strong data-i18n="preview.bankAddress"
-                      >Bank Address:</strong
-                    >
-                    <span id="previewBankAddress"
-                      >789 Financial Plaza, New York, NY 10005</span
-                    >
-                  </p>
-                </div>
-
-                <div class="intermediary-bank">
-                  <p
-                    class="intermediary-note"
-                    data-i18n="preview.intermediaryNote"
-                  >
-                    (Optional information, always use it together with the bank
-                    details above)
-                  </p>
-                  <p class="intermediary-title">
-                    <strong data-i18n="preview.intermediaryTitle"
-                      >Intermediary bank details:</strong
-                    >
-                  </p>
-                  <p>
-                    <strong data-i18n="preview.intermediarySwift"
-                      >Swift/BIC Code:</strong
-                    >
-                    <span id="previewIntermediarySwift">CHASUS33XXX</span>
-                  </p>
-                  <p>
-                    <strong data-i18n="preview.intermediaryBankName"
-                      >Bank Name:</strong
-                    >
-                    <span id="previewIntermediaryBankName"
-                      >Global Transfer Bank, N.A</span
-                    >
-                  </p>
+                <div class="bank-info" id="previewBankDetails">
                 </div>
               </div>
             </div>
