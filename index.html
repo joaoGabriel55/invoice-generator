@@ -32,7 +32,10 @@
     />
     <meta property="og:site_name" content="The Invoice" />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:image" content="https://the-invoice.netlify.app/preview.jpg" />
+    <meta
+      property="og:image"
+      content="https://the-invoice.netlify.app/preview.jpg"
+    />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta
@@ -50,7 +53,10 @@
       name="twitter:description"
       content="Create professional invoices quickly and easily with The Invoice. Free online invoice generator with PDF export, auto-save, and customizable templates."
     />
-    <meta name="twitter:image" content="https://the-invoice.netlify.app/preview.jpg" />
+    <meta
+      name="twitter:image"
+      content="https://the-invoice.netlify.app/preview.jpg"
+    />
 
     <!-- Structured Data — SoftwareApplication -->
     <script type="application/ld+json">
@@ -133,416 +139,503 @@
       </div>
 
       <main>
-      <section class="intro">
-        <h2 data-i18n="home.introTitle">
-          What you can do with The Invoice
-        </h2>
-        <p data-i18n="home.introP1">
-          Generate professional invoices in minutes. Enter your details, add
-          line items, and export a polished PDF. The app supports multiple
-          currencies, localized UI, and auto-saves your progress.
-        </p>
-        <p data-i18n="home.introP2">
-          This page explains how to use the tool and best practices for
-          invoicing. For more details, visit our About, Privacy, and Terms
-          pages.
-        </p>
-      </section>
+        <section class="intro">
+          <h2 data-i18n="home.introTitle">What you can do with The Invoice</h2>
+          <p data-i18n="home.introP1">
+            Generate professional invoices in minutes. Enter your details, add
+            line items, and export a polished PDF. The app supports multiple
+            currencies, localized UI, and auto-saves your progress.
+          </p>
+          <p data-i18n="home.introP2">
+            This page explains how to use the tool and best practices for
+            invoicing. For more details, visit our About, Privacy, and Terms
+            pages.
+          </p>
+        </section>
 
-      <div class="main-content">
-        <!-- Input Form -->
-        <div class="form-section">
-          <div class="form-header">
-            <h2 data-i18n="form.invoiceDetails">
-              Invoice Details
-            </h2>
-            <span
-              id="autoSaveStatus"
-              class="auto-save-status"
-              data-i18n="form.autoSaveEnabled"
-              >Auto-save enabled</span
-            >
-          </div>
-
-          <div class="form-group">
-            <label for="invoiceNumber" data-i18n="form.invoiceNumber"
-              >Invoice Number</label
-            >
-            <input
-              type="number"
-              id="invoiceNumber"
-              value="1"
-              min="1"
-              required
-            />
-          </div>
-
-          <div class="form-group">
-            <label for="currency" data-i18n="form.currency">Currency</label>
-            <select id="currency" required>
-              <option value="USD" data-i18n="currency.USD">
-                USD - US Dollar
-              </option>
-              <option value="EUR" data-i18n="currency.EUR">EUR - Euro</option>
-              <option value="GBP" data-i18n="currency.GBP">
-                GBP - British Pound
-              </option>
-              <option value="BRL" data-i18n="currency.BRL">
-                BRL - Brazilian Real
-              </option>
-              <option value="JPY" data-i18n="currency.JPY">
-                JPY - Japanese Yen
-              </option>
-              <option value="CNY" data-i18n="currency.CNY">
-                CNY - Chinese Yuan
-              </option>
-              <option value="INR" data-i18n="currency.INR">
-                INR - Indian Rupee
-              </option>
-              <option value="AUD" data-i18n="currency.AUD">
-                AUD - Australian Dollar
-              </option>
-              <option value="CAD" data-i18n="currency.CAD">
-                CAD - Canadian Dollar
-              </option>
-              <option value="CHF" data-i18n="currency.CHF">
-                CHF - Swiss Franc
-              </option>
-              <option value="MXN" data-i18n="currency.MXN">
-                MXN - Mexican Peso
-              </option>
-              <option value="ZAR" data-i18n="currency.ZAR">
-                ZAR - South African Rand
-              </option>
-              <option value="RUB" data-i18n="currency.RUB">
-                RUB - Russian Ruble
-              </option>
-              <option value="UAH" data-i18n="currency.UAH">
-                UAH - Ukrainian Hryvnia
-              </option>
-              <option value="AED" data-i18n="currency.AED">
-                AED - UAE Dirham
-              </option>
-              <option value="SAR" data-i18n="currency.SAR">
-                SAR - Saudi Riyal
-              </option>
-              <option value="ILS" data-i18n="currency.ILS">
-                ILS - Israeli Shekel
-              </option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="creationDate" data-i18n="form.creationDate"
-              >Creation Date</label
-            >
-            <input type="date" id="creationDate" required />
-          </div>
-
-          <div class="form-group">
-            <label for="dueDate" data-i18n="form.dueDate">Due Date</label>
-            <input type="date" id="dueDate" required />
-          </div>
-
-          <h3 data-i18n="form.billFromInfo">Bill From Information</h3>
-          <div class="form-group">
-            <label for="billFromName" data-i18n="form.name">Name</label>
-            <input type="text" id="billFromName" value="John Doe" />
-          </div>
-          <div class="form-group">
-            <label for="billFromAddress1" data-i18n="form.addressLine1"
-              >Address Line 1</label
-            >
-            <input
-              type="text"
-              id="billFromAddress1"
-              value="123 Main Street, Suite 100"
-            />
-          </div>
-          <div class="form-group">
-            <label for="billFromAddress2" data-i18n="form.addressLine2"
-              >City, State, Country</label
-            >
-            <input
-              type="text"
-              id="billFromAddress2"
-              value="New York, NY, USA"
-            />
-          </div>
-          <div class="form-group">
-            <label for="billFromZip" data-i18n="form.zipCode">Zip Code</label>
-            <input type="text" id="billFromZip" value="10001" />
-          </div>
-
-          <h3 data-i18n="form.billToInfo">Bill To Information</h3>
-          <div class="form-group">
-            <label for="billToName" data-i18n="form.name">Name</label>
-            <input type="text" id="billToName" value="Acme Corporation" />
-          </div>
-          <div class="form-group">
-            <label for="billToAddress1" data-i18n="form.addressLine1"
-              >Address Line 1</label
-            >
-            <input type="text" id="billToAddress1" value="456 Business Ave" />
-          </div>
-          <div class="form-group">
-            <label for="billToAddress2" data-i18n="form.billToAddressLine2"
-              >City, State, Zip, Country</label
-            >
-            <input
-              type="text"
-              id="billToAddress2"
-              value="Los Angeles, CA 90001, USA"
-            />
-          </div>
-
-          <h3 data-i18n="form.bankDetails">Payment Details</h3>
-          <div id="bankDetailFields">
-            <div class="bank-field-row">
-              <input type="text" class="bank-field-label" data-i18n-placeholder="form.fieldLabel" placeholder="Field label" value="Beneficiary Name" />
-              <input type="text" class="bank-field-value" data-i18n-placeholder="form.fieldValue" placeholder="Value" value="John Doe" />
-              <button type="button" class="btn-remove" onclick="removeBankField(this)">✕</button>
+        <div class="main-content">
+          <!-- Input Form -->
+          <div class="form-section">
+            <div class="form-header">
+              <h2 data-i18n="form.invoiceDetails">Invoice Details</h2>
+              <span
+                id="autoSaveStatus"
+                class="auto-save-status"
+                data-i18n="form.autoSaveEnabled"
+                >Auto-save enabled</span
+              >
             </div>
-            <div class="bank-field-row">
-              <input type="text" class="bank-field-label" data-i18n-placeholder="form.fieldLabel" placeholder="Field label" value="Account Number (IBAN)" />
-              <input type="text" class="bank-field-value" data-i18n-placeholder="form.fieldValue" placeholder="Value" value="US00 1234 5678 9012 3456 78" />
-              <button type="button" class="btn-remove" onclick="removeBankField(this)">✕</button>
-            </div>
-            <div class="bank-field-row">
-              <input type="text" class="bank-field-label" data-i18n-placeholder="form.fieldLabel" placeholder="Field label" value="SWIFT Code" />
-              <input type="text" class="bank-field-value" data-i18n-placeholder="form.fieldValue" placeholder="Value" value="BANKUS33XXX" />
-              <button type="button" class="btn-remove" onclick="removeBankField(this)">✕</button>
-            </div>
-            <div class="bank-field-row">
-              <input type="text" class="bank-field-label" data-i18n-placeholder="form.fieldLabel" placeholder="Field label" value="Bank Name" />
-              <input type="text" class="bank-field-value" data-i18n-placeholder="form.fieldValue" placeholder="Value" value="First National Bank" />
-              <button type="button" class="btn-remove" onclick="removeBankField(this)">✕</button>
-            </div>
-            <div class="bank-field-row">
-              <input type="text" class="bank-field-label" data-i18n-placeholder="form.fieldLabel" placeholder="Field label" value="Bank Address" />
-              <input type="text" class="bank-field-value" data-i18n-placeholder="form.fieldValue" placeholder="Value" value="789 Financial Plaza, New York, NY 10005" />
-              <button type="button" class="btn-remove" onclick="removeBankField(this)">✕</button>
-            </div>
-          </div>
-          <button
-            type="button"
-            class="btn-secondary btn-add-bank-field"
-            onclick="addBankField()"
-            data-i18n="form.addBankField"
-          >
-            + Add Payment Field
-          </button>
 
-          <h3 data-i18n="form.lineItems">Line Items</h3>
-          <div id="lineItems">
-            <div class="line-item">
-              <div class="line-item-row">
+            <div class="form-group">
+              <label for="invoiceNumber" data-i18n="form.invoiceNumber"
+                >Invoice Number</label
+              >
+              <input
+                type="number"
+                id="invoiceNumber"
+                value="1"
+                min="1"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="currency" data-i18n="form.currency">Currency</label>
+              <select id="currency" required>
+                <option value="USD" data-i18n="currency.USD">
+                  USD - US Dollar
+                </option>
+                <option value="EUR" data-i18n="currency.EUR">EUR - Euro</option>
+                <option value="GBP" data-i18n="currency.GBP">
+                  GBP - British Pound
+                </option>
+                <option value="BRL" data-i18n="currency.BRL">
+                  BRL - Brazilian Real
+                </option>
+                <option value="JPY" data-i18n="currency.JPY">
+                  JPY - Japanese Yen
+                </option>
+                <option value="CNY" data-i18n="currency.CNY">
+                  CNY - Chinese Yuan
+                </option>
+                <option value="INR" data-i18n="currency.INR">
+                  INR - Indian Rupee
+                </option>
+                <option value="AUD" data-i18n="currency.AUD">
+                  AUD - Australian Dollar
+                </option>
+                <option value="CAD" data-i18n="currency.CAD">
+                  CAD - Canadian Dollar
+                </option>
+                <option value="CHF" data-i18n="currency.CHF">
+                  CHF - Swiss Franc
+                </option>
+                <option value="MXN" data-i18n="currency.MXN">
+                  MXN - Mexican Peso
+                </option>
+                <option value="ZAR" data-i18n="currency.ZAR">
+                  ZAR - South African Rand
+                </option>
+                <option value="RUB" data-i18n="currency.RUB">
+                  RUB - Russian Ruble
+                </option>
+                <option value="UAH" data-i18n="currency.UAH">
+                  UAH - Ukrainian Hryvnia
+                </option>
+                <option value="AED" data-i18n="currency.AED">
+                  AED - UAE Dirham
+                </option>
+                <option value="SAR" data-i18n="currency.SAR">
+                  SAR - Saudi Riyal
+                </option>
+                <option value="ILS" data-i18n="currency.ILS">
+                  ILS - Israeli Shekel
+                </option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="creationDate" data-i18n="form.creationDate"
+                >Creation Date</label
+              >
+              <input type="date" id="creationDate" required />
+            </div>
+
+            <div class="form-group">
+              <label for="dueDate" data-i18n="form.dueDate">Due Date</label>
+              <input type="date" id="dueDate" required />
+            </div>
+
+            <h3 data-i18n="form.billFromInfo">Bill From Information</h3>
+            <div class="form-group">
+              <label for="billFromName" data-i18n="form.name">Name</label>
+              <input type="text" id="billFromName" value="John Doe" />
+            </div>
+            <div class="form-group">
+              <label for="billFromAddress1" data-i18n="form.addressLine1"
+                >Address Line 1</label
+              >
+              <input
+                type="text"
+                id="billFromAddress1"
+                value="123 Main Street, Suite 100"
+              />
+            </div>
+            <div class="form-group">
+              <label for="billFromAddress2" data-i18n="form.addressLine2"
+                >City, State, Country</label
+              >
+              <input
+                type="text"
+                id="billFromAddress2"
+                value="New York, NY, USA"
+              />
+            </div>
+            <div class="form-group">
+              <label for="billFromZip" data-i18n="form.zipCode">Zip Code</label>
+              <input type="text" id="billFromZip" value="10001" />
+            </div>
+
+            <h3 data-i18n="form.billToInfo">Bill To Information</h3>
+            <div class="form-group">
+              <label for="billToName" data-i18n="form.name">Name</label>
+              <input type="text" id="billToName" value="Acme Corporation" />
+            </div>
+            <div class="form-group">
+              <label for="billToAddress1" data-i18n="form.addressLine1"
+                >Address Line 1</label
+              >
+              <input type="text" id="billToAddress1" value="456 Business Ave" />
+            </div>
+            <div class="form-group">
+              <label for="billToAddress2" data-i18n="form.billToAddressLine2"
+                >City, State, Zip, Country</label
+              >
+              <input
+                type="text"
+                id="billToAddress2"
+                value="Los Angeles, CA 90001, USA"
+              />
+            </div>
+
+            <h3 data-i18n="form.bankDetails">Payment Details</h3>
+            <div id="bankDetailFields">
+              <div class="bank-field-row">
                 <input
                   type="text"
-                  class="item-description"
-                  data-i18n-placeholder="form.placeholderDescription"
-                  placeholder="e.g., Monthly service"
-                  value="Consulting Services"
+                  class="bank-field-label"
+                  data-i18n-placeholder="form.fieldLabel"
+                  placeholder="Field label"
+                  value="Beneficiary Name"
                 />
                 <input
-                  type="number"
-                  class="item-amount"
-                  data-i18n-placeholder="form.placeholderAmount"
-                  placeholder="0.00"
-                  step="0.01"
-                  min="0"
-                  value="1500"
+                  type="text"
+                  class="bank-field-value"
+                  data-i18n-placeholder="form.fieldValue"
+                  placeholder="Value"
+                  value="John Doe"
                 />
                 <button
                   type="button"
                   class="btn-remove"
-                  onclick="removeLineItem(this)"
+                  onclick="removeBankField(this)"
+                >
+                  ✕
+                </button>
+              </div>
+              <div class="bank-field-row">
+                <input
+                  type="text"
+                  class="bank-field-label"
+                  data-i18n-placeholder="form.fieldLabel"
+                  placeholder="Field label"
+                  value="Account Number (IBAN)"
+                />
+                <input
+                  type="text"
+                  class="bank-field-value"
+                  data-i18n-placeholder="form.fieldValue"
+                  placeholder="Value"
+                  value="US00 1234 5678 9012 3456 78"
+                />
+                <button
+                  type="button"
+                  class="btn-remove"
+                  onclick="removeBankField(this)"
+                >
+                  ✕
+                </button>
+              </div>
+              <div class="bank-field-row">
+                <input
+                  type="text"
+                  class="bank-field-label"
+                  data-i18n-placeholder="form.fieldLabel"
+                  placeholder="Field label"
+                  value="SWIFT Code"
+                />
+                <input
+                  type="text"
+                  class="bank-field-value"
+                  data-i18n-placeholder="form.fieldValue"
+                  placeholder="Value"
+                  value="BANKUS33XXX"
+                />
+                <button
+                  type="button"
+                  class="btn-remove"
+                  onclick="removeBankField(this)"
+                >
+                  ✕
+                </button>
+              </div>
+              <div class="bank-field-row">
+                <input
+                  type="text"
+                  class="bank-field-label"
+                  data-i18n-placeholder="form.fieldLabel"
+                  placeholder="Field label"
+                  value="Bank Name"
+                />
+                <input
+                  type="text"
+                  class="bank-field-value"
+                  data-i18n-placeholder="form.fieldValue"
+                  placeholder="Value"
+                  value="First National Bank"
+                />
+                <button
+                  type="button"
+                  class="btn-remove"
+                  onclick="removeBankField(this)"
+                >
+                  ✕
+                </button>
+              </div>
+              <div class="bank-field-row">
+                <input
+                  type="text"
+                  class="bank-field-label"
+                  data-i18n-placeholder="form.fieldLabel"
+                  placeholder="Field label"
+                  value="Bank Address"
+                />
+                <input
+                  type="text"
+                  class="bank-field-value"
+                  data-i18n-placeholder="form.fieldValue"
+                  placeholder="Value"
+                  value="789 Financial Plaza, New York, NY 10005"
+                />
+                <button
+                  type="button"
+                  class="btn-remove"
+                  onclick="removeBankField(this)"
                 >
                   ✕
                 </button>
               </div>
             </div>
-            <div class="line-item">
-              <div class="line-item-row">
-                <input
-                  type="text"
-                  class="item-description"
-                  data-i18n-placeholder="form.placeholderAdditional"
-                  placeholder="e.g., Additional service"
-                  value="Design Work"
-                />
-                <input
-                  type="number"
-                  class="item-amount"
-                  data-i18n-placeholder="form.placeholderAmount"
-                  placeholder="0.00"
-                  step="0.01"
-                  min="0"
-                  value="750"
-                />
-                <button
-                  type="button"
-                  class="btn-remove"
-                  onclick="removeLineItem(this)"
-                >
-                  ✕
-                </button>
+            <button
+              type="button"
+              class="btn-secondary btn-add-bank-field"
+              onclick="addBankField()"
+              data-i18n="form.addBankField"
+            >
+              + Add Payment Field
+            </button>
+
+            <h3 data-i18n="form.lineItems">Line Items</h3>
+            <div id="lineItems">
+              <div class="line-item">
+                <div class="line-item-row">
+                  <input
+                    type="text"
+                    class="item-description"
+                    data-i18n-placeholder="form.placeholderDescription"
+                    placeholder="e.g., Monthly service"
+                    value="Consulting Services"
+                  />
+                  <input
+                    type="number"
+                    class="item-amount"
+                    data-i18n-placeholder="form.placeholderAmount"
+                    placeholder="0.00"
+                    step="0.01"
+                    min="0"
+                    value="1500"
+                  />
+                  <button
+                    type="button"
+                    class="btn-remove"
+                    onclick="removeLineItem(this)"
+                  >
+                    ✕
+                  </button>
+                </div>
+              </div>
+              <div class="line-item">
+                <div class="line-item-row">
+                  <input
+                    type="text"
+                    class="item-description"
+                    data-i18n-placeholder="form.placeholderAdditional"
+                    placeholder="e.g., Additional service"
+                    value="Design Work"
+                  />
+                  <input
+                    type="number"
+                    class="item-amount"
+                    data-i18n-placeholder="form.placeholderAmount"
+                    placeholder="0.00"
+                    step="0.01"
+                    min="0"
+                    value="750"
+                  />
+                  <button
+                    type="button"
+                    class="btn-remove"
+                    onclick="removeLineItem(this)"
+                  >
+                    ✕
+                  </button>
+                </div>
+              </div>
+              <div class="line-item">
+                <div class="line-item-row">
+                  <input
+                    type="text"
+                    class="item-description"
+                    data-i18n-placeholder="form.placeholderReimbursement"
+                    placeholder="e.g., Reimbursement"
+                    value="Travel Expenses"
+                  />
+                  <input
+                    type="number"
+                    class="item-amount"
+                    data-i18n-placeholder="form.placeholderAmount"
+                    placeholder="0.00"
+                    step="0.01"
+                    min="0"
+                    value="250"
+                  />
+                  <button
+                    type="button"
+                    class="btn-remove"
+                    onclick="removeLineItem(this)"
+                  >
+                    ✕
+                  </button>
+                </div>
               </div>
             </div>
-            <div class="line-item">
-              <div class="line-item-row">
-                <input
-                  type="text"
-                  class="item-description"
-                  data-i18n-placeholder="form.placeholderReimbursement"
-                  placeholder="e.g., Reimbursement"
-                  value="Travel Expenses"
-                />
-                <input
-                  type="number"
-                  class="item-amount"
-                  data-i18n-placeholder="form.placeholderAmount"
-                  placeholder="0.00"
-                  step="0.01"
-                  min="0"
-                  value="250"
-                />
-                <button
-                  type="button"
-                  class="btn-remove"
-                  onclick="removeLineItem(this)"
-                >
-                  ✕
-                </button>
-              </div>
-            </div>
-          </div>
 
-          <button
-            type="button"
-            class="btn-secondary"
-            onclick="addLineItem()"
-            data-i18n="form.addLineItem"
-          >
-            + Add Line Item
-          </button>
-
-          <div class="form-actions">
             <button
               type="button"
               class="btn-secondary"
-              onclick="clearSavedData()"
-              data-i18n="form.clearSavedData"
+              onclick="addLineItem()"
+              data-i18n="form.addLineItem"
             >
-              Clear Saved Data
+              + Add Line Item
             </button>
+
+            <div class="form-actions">
+              <button
+                type="button"
+                class="btn-secondary"
+                onclick="clearSavedData()"
+                data-i18n="form.clearSavedData"
+              >
+                Clear Saved Data
+              </button>
+            </div>
           </div>
-        </div>
 
-        <!-- Invoice Preview -->
-        <div class="preview-section">
-          <header>
-            <h2 data-i18n="preview.title">Preview</h2>
-            <button
-              type="button"
-              class="btn-success"
-              onclick="generatePDF(event)"
-              data-i18n="form.exportPDF"
-            >
-              📥 Export PDF
-            </button>
-          </header>
-          <div id="invoicePreview" class="invoice-preview">
-            <div class="invoice-content">
-              <div class="invoice-header">
-                <h1 class="invoice-title">
-                  <span data-i18n="preview.invoice">INVOICE</span> #<span
-                    id="previewInvoiceNumber"
-                    >1</span
-                  >
-                </h1>
-              </div>
-
-              <div class="invoice-parties">
-                <div class="party">
-                  <h3 data-i18n="preview.billFrom">Bill From:</h3>
-                  <p class="party-name" id="previewBillFromName">John Doe</p>
-                  <p id="previewBillFromAddress1">123 Main Street, Suite 100</p>
-                  <p id="previewBillFromAddress2">New York, NY, USA</p>
-                  <p>
-                    <span data-i18n="preview.zipCodeLabel">Zip Code</span>
-                    <span id="previewBillFromZip">12345</span>
-                  </p>
+          <!-- Invoice Preview -->
+          <div class="preview-section">
+            <header>
+              <h2 data-i18n="preview.title">Preview</h2>
+              <button
+                type="button"
+                class="btn-success"
+                onclick="generatePDF(event)"
+                data-i18n="form.exportPDF"
+              >
+                📥 Export PDF
+              </button>
+            </header>
+            <div id="invoicePreview" class="invoice-preview">
+              <div class="invoice-content">
+                <div class="invoice-header">
+                  <h1 class="invoice-title">
+                    <span data-i18n="preview.invoice">INVOICE</span> #<span
+                      id="previewInvoiceNumber"
+                      >1</span
+                    >
+                  </h1>
                 </div>
 
-                <div class="party">
-                  <h3 data-i18n="preview.billTo">Bill To:</h3>
-                  <p class="party-name" id="previewBillToName">
-                    Acme Corporation
-                  </p>
-                  <p id="previewBillToAddress1">456 Business Ave</p>
-                  <p id="previewBillToAddress2">Los Angeles, CA 90001, USA</p>
-                </div>
-              </div>
+                <div class="invoice-parties">
+                  <div class="party">
+                    <h3 data-i18n="preview.billFrom">Bill From:</h3>
+                    <p class="party-name" id="previewBillFromName">John Doe</p>
+                    <p id="previewBillFromAddress1">
+                      123 Main Street, Suite 100
+                    </p>
+                    <p id="previewBillFromAddress2">New York, NY, USA</p>
+                    <p>
+                      <span data-i18n="preview.zipCodeLabel">Zip Code</span>
+                      <span id="previewBillFromZip">12345</span>
+                    </p>
+                  </div>
 
-              <div class="invoice-dates">
-                <div class="date-item">
-                  <span class="date-label" data-i18n="preview.creationDate"
-                    >Creation date:</span
-                  >
-                  <span id="previewCreationDate">-</span>
+                  <div class="party">
+                    <h3 data-i18n="preview.billTo">Bill To:</h3>
+                    <p class="party-name" id="previewBillToName">
+                      Acme Corporation
+                    </p>
+                    <p id="previewBillToAddress1">456 Business Ave</p>
+                    <p id="previewBillToAddress2">Los Angeles, CA 90001, USA</p>
+                  </div>
                 </div>
-                <div class="date-item">
-                  <span class="date-label" data-i18n="preview.dueDate"
-                    >Due date:</span
-                  >
-                  <span id="previewDueDate">-</span>
+
+                <div class="invoice-dates">
+                  <div class="date-item">
+                    <span class="date-label" data-i18n="preview.creationDate"
+                      >Creation date:</span
+                    >
+                    <span id="previewCreationDate">-</span>
+                  </div>
+                  <div class="date-item">
+                    <span class="date-label" data-i18n="preview.dueDate"
+                      >Due date:</span
+                    >
+                    <span id="previewDueDate">-</span>
+                  </div>
                 </div>
-              </div>
 
-              <div class="invoice-items">
-                <table>
-                  <thead>
-                    <tr>
-                      <th data-i18n="preview.description">Description</th>
-                      <th class="text-right" data-i18n="preview.amount">
-                        Amount
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody id="previewLineItems">
-                    <tr>
-                      <td
-                        colspan="2"
-                        class="text-center text-muted"
-                        data-i18n="preview.noItems"
-                      >
-                        No items added yet
-                      </td>
-                    </tr>
-                  </tbody>
-                  <tfoot>
-                    <tr class="total-row">
-                      <td><strong data-i18n="preview.total">Total</strong></td>
-                      <td class="text-right">
-                        <strong id="previewTotal">USD 0.00</strong>
-                      </td>
-                    </tr>
-                  </tfoot>
-                </table>
-              </div>
+                <div class="invoice-items">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th data-i18n="preview.description">Description</th>
+                        <th class="text-right" data-i18n="preview.amount">
+                          Amount
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody id="previewLineItems">
+                      <tr>
+                        <td
+                          colspan="2"
+                          class="text-center text-muted"
+                          data-i18n="preview.noItems"
+                        >
+                          No items added yet
+                        </td>
+                      </tr>
+                    </tbody>
+                    <tfoot>
+                      <tr class="total-row">
+                        <td>
+                          <strong data-i18n="preview.total">Total</strong>
+                        </td>
+                        <td class="text-right">
+                          <strong id="previewTotal">USD 0.00</strong>
+                        </td>
+                      </tr>
+                    </tfoot>
+                  </table>
+                </div>
 
-              <div class="bank-details">
-                <h3 data-i18n="preview.payToDetails">
-                  Payment Details
-                </h3>
-                <div class="bank-info" id="previewBankDetails">
+                <div class="bank-details">
+                  <h3 data-i18n="preview.payToDetails">Payment Details</h3>
+                  <div class="bank-info" id="previewBankDetails"></div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
       </main>
     </div>
 
