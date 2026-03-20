@@ -17,9 +17,11 @@
     />
     <meta name="author" content="The Invoice" />
     <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://the-invoice.netlify.app/" />
 
     <!-- Open Graph / Facebook Meta Tags -->
     <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://the-invoice.netlify.app/" />
     <meta
       property="og:title"
       content="The Invoice - Create Professional Invoices with Ease"
@@ -30,7 +32,7 @@
     />
     <meta property="og:site_name" content="The Invoice" />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:image" content="preview.jpg" />
+    <meta property="og:image" content="https://the-invoice.netlify.app/preview.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta
@@ -48,7 +50,38 @@
       name="twitter:description"
       content="Create professional invoices quickly and easily with The Invoice. Free online invoice generator with PDF export, auto-save, and customizable templates."
     />
-    <meta name="twitter:image" content="preview.jpg" />
+    <meta name="twitter:image" content="https://the-invoice.netlify.app/preview.jpg" />
+
+    <!-- Structured Data — SoftwareApplication -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "The Invoice",
+        "url": "https://the-invoice.netlify.app/",
+        "description": "Free online invoice generator with PDF export, auto-save, multi-currency support, and 16+ languages. Perfect for freelancers and small businesses.",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Any",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "featureList": [
+          "PDF invoice export",
+          "Auto-save to browser",
+          "Multi-currency support",
+          "16+ language translations",
+          "RTL language support",
+          "Customizable payment details"
+        ],
+        "screenshot": "https://the-invoice.netlify.app/preview.jpg",
+        "author": {
+          "@type": "Organization",
+          "name": "The Invoice"
+        }
+      }
+    </script>
 
     <!-- Additional Meta Tags -->
     <meta name="theme-color" content="#475569" />
@@ -99,6 +132,7 @@
         </script>
       </div>
 
+      <main>
       <section class="intro">
         <h2 data-i18n="home.introTitle">
           What you can do with The Invoice
@@ -509,6 +543,7 @@
           </div>
         </div>
       </div>
+      </main>
     </div>
 
     <script
