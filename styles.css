@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap");
 
 * {
   margin: 0;
@@ -6,7 +6,74 @@
   box-sizing: border-box;
 }
 
-/* RTL Support */
+/* ==========================================================================
+   Design Tokens — Dev-tool palette (VS Code / GitHub / Linear inspired)
+   ========================================================================== */
+:root {
+  /* Primary — Electric blue (Linear-style) */
+  --primary-color: #2563eb;
+  --primary-hover: #1d4ed8;
+  --primary-subtle: rgba(37, 99, 235, 0.08);
+  --primary-ring: rgba(37, 99, 235, 0.2);
+
+  /* Accent — Indigo for secondary emphasis */
+  --accent-color: #6366f1;
+  --accent-hover: #4f46e5;
+
+  /* Success — Green (GitHub-style merge green) */
+  --success-color: #16a34a;
+  --success-hover: #15803d;
+  --success-subtle: rgba(22, 163, 74, 0.08);
+
+  /* Danger — Soft red for destructive actions */
+  --danger-color: #dc2626;
+  --danger-hover: #b91c1c;
+  --danger-subtle: rgba(220, 38, 38, 0.06);
+
+  /* Text — High contrast, blue-gray undertone */
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --text-on-dark: #e2e8f0;
+  --text-on-dark-muted: #94a3b8;
+
+  /* Surfaces */
+  --bg-app: #f0f2f5;
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-hover: #f1f5f9;
+  --bg-dark: #0f172a;
+  --bg-dark-secondary: #1e293b;
+
+  /* Borders */
+  --border-color: #e2e8f0;
+  --border-strong: #cbd5e1;
+
+  /* Shadows — Layered depth system */
+  --shadow-xs: 0 1px 2px rgba(15, 23, 42, 0.04);
+  --shadow-sm:
+    0 1px 3px rgba(15, 23, 42, 0.06), 0 1px 2px rgba(15, 23, 42, 0.04);
+  --shadow-md:
+    0 4px 6px -1px rgba(15, 23, 42, 0.06), 0 2px 4px -2px rgba(15, 23, 42, 0.04);
+  --shadow-lg:
+    0 10px 15px -3px rgba(15, 23, 42, 0.06),
+    0 4px 6px -4px rgba(15, 23, 42, 0.04);
+  --shadow-ring: 0 0 0 3px var(--primary-ring);
+
+  /* Radii */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  /* Monospace — for numbers, codes, amounts */
+  --font-mono:
+    "JetBrains Mono", "Fira Code", "Cascadia Code", "SF Mono", Consolas,
+    monospace;
+}
+
+/* ==========================================================================
+   RTL Support
+   ========================================================================== */
 [dir="rtl"] {
   direction: rtl;
 }
@@ -27,35 +94,25 @@
   text-align: right !important;
 }
 
-:root {
-  --primary-color: #475569;
-  --primary-hover: #334155;
-  --accent-color: #64748b;
-  --success-color: #475569;
-  --success-hover: #334155;
-  --danger-color: #94a3b8;
-  --danger-hover: #64748b;
-  --text-primary: #1e293b;
-  --text-secondary: #64748b;
-  --text-muted: #94a3b8;
-  --border-color: #e2e8f0;
-  --bg-primary: #ffffff;
-  --bg-secondary: #f8fafc;
-  --bg-hover: #f1f5f9;
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.04);
-  --shadow-md: 0 2px 4px 0 rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 4px 8px -1px rgba(0, 0, 0, 0.06);
-  --shadow-xl: 0 4px 12px -2px rgba(0, 0, 0, 0.08);
-}
-
+/* ==========================================================================
+   Base — Mobile-first (< 768px is default)
+   ========================================================================== */
 body {
   font-family:
-    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif;
-  background: #f1f5f9;
+    "Plus Jakarta Sans",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+  background: var(--bg-app);
   color: var(--text-primary);
   line-height: 1.6;
   min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .container {
@@ -64,11 +121,125 @@ body {
   padding: 0 1rem;
 }
 
+/* ==========================================================================
+   App Header — Dark terminal-bar aesthetic
+   ========================================================================== */
+.app-header {
+  text-align: center;
+  background: var(--bg-dark);
+  color: var(--text-on-dark);
+  margin: 0 -1rem 1.5rem;
+  padding: 1.25rem 1rem;
+  position: relative;
+}
+
+.app-header h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  letter-spacing: -0.025em;
+  color: #ffffff;
+}
+
+.subtitle {
+  font-size: 0.875rem;
+  color: var(--text-on-dark-muted);
+  font-weight: 400;
+}
+
+/* ==========================================================================
+   Language Selector
+   ========================================================================== */
+.language-selector {
+  position: relative;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+[dir="rtl"] .language-selector {
+  right: auto;
+  left: 1rem;
+}
+
+.language-selector select {
+  padding: 0.625rem 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  background: var(--bg-primary);
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+  color: var(--text-primary);
+  outline: none;
+  width: 100%;
+  max-width: 300px;
+  min-height: 44px;
+}
+
+.language-selector select:hover {
+  border-color: var(--border-strong);
+}
+
+.language-selector select:focus {
+  border-color: var(--primary-color);
+  box-shadow: var(--shadow-ring);
+}
+
+/* ==========================================================================
+   Navigation Links
+   ========================================================================== */
+.links {
+  margin: 0 0 1rem 0;
+  text-align: center;
+  color: var(--text-secondary);
+
+  a {
+    margin: 0 0.75rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: color 0.15s ease;
+
+    &:hover {
+      color: var(--primary-color);
+    }
+  }
+}
+
+/* ==========================================================================
+   Footer — Dark, matches header
+   ========================================================================== */
+.app-footer {
+  background: var(--bg-dark);
+  padding: 1.25rem 1rem;
+  text-align: center;
+  color: var(--text-on-dark-muted);
+  font-size: 0.85rem;
+
+  a {
+    color: var(--text-on-dark-muted);
+    text-decoration: none;
+    margin: 0 0.5rem;
+    transition: color 0.15s ease;
+
+    &:hover {
+      color: #ffffff;
+    }
+  }
+}
+
+/* ==========================================================================
+   Intro Section
+   ========================================================================== */
 .intro {
   background: var(--bg-primary);
-  border-radius: 8px;
+  border-radius: var(--radius-md);
   padding: 1rem 1.25rem;
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-xs);
   border: 1px solid var(--border-color);
   margin-bottom: 1rem;
 }
@@ -86,6 +257,92 @@ body {
   margin-bottom: 0.25rem;
 }
 
+/* ==========================================================================
+   Ad Container
+   ========================================================================== */
+.ad-container {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-height: 90px;
+  margin: 1rem auto;
+  padding: 0.5rem;
+  border-radius: var(--radius-sm);
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+}
+
+.adslot_1 {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-md);
+  display: block;
+  width: 320px !important;
+  height: 50px !important;
+}
+
+@media (max-width: 400px) {
+  .adslot_1 {
+    visibility: hidden;
+  }
+}
+
+@media (min-width: 500px) {
+  .adslot_1 {
+    width: 468px !important;
+    height: 60px !important;
+  }
+}
+
+@media (min-width: 800px) {
+  .adslot_1 {
+    width: 100% !important;
+    height: 90px !important;
+  }
+}
+
+/* ==========================================================================
+   Main Content — Mobile: single column (default)
+   ========================================================================== */
+.main-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+/* ==========================================================================
+   Form & Preview Sections
+   ========================================================================== */
+.form-section,
+.preview-section {
+  background: var(--bg-primary);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+}
+
+.form-section {
+  overflow-y: auto;
+}
+
+.form-section::-webkit-scrollbar {
+  width: 6px;
+}
+
+.form-section::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.form-section::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 3px;
+}
+
+.form-section::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
 .form-header {
   display: flex;
   justify-content: space-between;
@@ -101,201 +358,12 @@ body {
 
 .auto-save-status {
   font-size: 0.75rem;
-  color: var(--text-muted);
-  font-style: italic;
-}
-
-/* Add a consistent ad container wrapper to prevent layout shift and clarify visuals */
-.ad-container {
-  display: block;
-  width: 100%;
-  max-width: 100%;
-  min-height: 90px;
-  margin: 1rem auto;
-  padding: 0.5rem;
-  border-radius: 6px;
-  background: var(--bg-primary);
-  border: 1px solid var(--border-color);
-}
-
-.adslot_1 {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
-  display: block;
-  width: 320px !important;
-  height: 50px !important;
-}
-
-@media (max-width: 400px) {
-  .adslot_1 {
-    visibility: hidden; /* preserves space, reduces accidental clicks */
-  }
-}
-@media (min-width: 500px) {
-  .adslot_1 {
-    width: 468px !important;
-    height: 60px !important;
-  }
-}
-@media (min-width: 800px) {
-  .adslot_1 {
-    width: 100% !important;
-    height: 90px !important;
-  }
-}
-
-/* Responsive Ad Adjustments */
-@media (max-width: 768px) {
-  .ad-container {
-    padding: 0.5rem;
-    margin: 1rem 0;
-  }
-
-  .ad-sidebar {
-    position: relative;
-    top: 0;
-  }
-}
-
-.app-header {
-  text-align: center;
-  color: var(--text-primary);
-  margin-bottom: 1.5rem;
-  position: relative;
-  padding: 1.5rem 0 1rem;
-}
-
-.app-header h1 {
-  font-size: 1.75rem;
-  font-weight: 600;
-  margin-bottom: 0.25rem;
-  letter-spacing: -0.025em;
-}
-
-/* Language Selector Styling */
-.language-selector {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  z-index: 1000;
-}
-
-[dir="rtl"] .language-selector {
-  right: auto;
-  left: 1rem;
-}
-
-.language-selector select {
-  padding: 0.5rem 0.75rem;
-  border: 1px solid var(--border-color);
-  border-radius: 6px;
-  background: var(--bg-primary);
-  cursor: pointer;
-  font-size: 0.85rem;
+  color: var(--success-color);
   font-weight: 500;
-  transition: border-color 0.15s ease;
-  color: var(--text-primary);
-  outline: none;
-}
-
-.language-selector select:hover {
-  border-color: var(--text-muted);
-}
-
-.language-selector select:focus {
-  border-color: var(--primary-color);
-  box-shadow: 0 0 0 2px rgba(71, 85, 105, 0.08);
-}
-
-@media (max-width: 768px) {
-  .language-selector {
-    position: relative;
-    margin-bottom: 1rem;
-    right: 0;
-    text-align: center;
-  }
-
-  .language-selector select {
-    width: 100%;
-    max-width: 300px;
-  }
-}
-
-.subtitle {
-  font-size: 0.95rem;
-  color: var(--text-secondary);
-  font-weight: 400;
-}
-
-.links,
-.app-footer {
-  margin: 0.5rem 0 1rem 0;
-  text-align: center;
-  color: var(--text-secondary);
-  a {
-    margin: 0 0.75rem;
-    color: var(--text-secondary);
-    text-decoration: none;
-    font-size: 0.85rem;
-    transition: color 0.2s ease;
-
-    &:hover {
-      color: var(--text-primary);
-    }
-  }
-}
-
-.app-footer {
-  background-color: var(--text-primary);
-  margin: 2rem 0 0 0;
-  padding: 1rem;
-  text-align: center;
-  color: var(--text-muted);
-  a {
-    color: var(--text-muted);
-    &:hover {
-      color: #fff;
-    }
-  }
-}
-
-.main-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  align-items: start;
-}
-
-.form-section,
-.preview-section {
-  background: var(--bg-primary);
-  border-radius: 8px;
-  padding: 1.5rem;
-  box-shadow: var(--shadow-md);
-  border: 1px solid var(--border-color);
-}
-
-.form-section {
-  max-height: 85vh;
-  overflow-y: auto;
-}
-
-.form-section::-webkit-scrollbar {
-  width: 8px;
-}
-
-.form-section::-webkit-scrollbar-track {
-  background: var(--bg-secondary);
-  border-radius: 4px;
-}
-
-.form-section::-webkit-scrollbar-thumb {
-  background: var(--text-muted);
-  border-radius: 4px;
-}
-
-.form-section::-webkit-scrollbar-thumb:hover {
-  background: var(--text-secondary);
+  font-style: normal;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
 }
 
 .form-section h2,
@@ -303,9 +371,9 @@ body {
   font-size: 1.125rem;
   margin-bottom: 1.25rem;
   color: var(--text-primary);
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 2px solid var(--primary-color);
   padding-bottom: 0.5rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: -0.01em;
 }
 
@@ -319,15 +387,15 @@ body {
 }
 
 .form-section h3 {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   margin-top: 1.5rem;
   margin-bottom: 0.75rem;
-  color: var(--text-secondary);
+  color: var(--primary-color);
   padding-top: 0.75rem;
   border-top: 1px solid var(--border-color);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  font-weight: 600;
+  letter-spacing: 0.08em;
+  font-weight: 700;
 }
 
 .form-section h3:first-of-type {
@@ -336,6 +404,9 @@ body {
   padding-top: 0;
 }
 
+/* ==========================================================================
+   Form Controls — Mobile-optimized touch targets
+   ========================================================================== */
 .form-group {
   margin-bottom: 1rem;
 }
@@ -343,9 +414,11 @@ body {
 .form-group label {
   display: block;
   font-weight: 600;
-  margin-bottom: 0.5rem;
-  color: var(--text-primary);
-  font-size: 0.9rem;
+  margin-bottom: 0.375rem;
+  color: var(--text-secondary);
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
 }
 
 .form-group input[type="text"],
@@ -353,37 +426,42 @@ body {
 .form-group input[type="date"],
 .form-group select {
   width: 100%;
-  padding: 0.5rem 0.75rem;
+  padding: 0.625rem 0.75rem;
   border: 1px solid var(--border-color);
-  border-radius: 6px;
-  font-size: 0.875rem;
-  transition: border-color 0.15s ease;
+  border-radius: var(--radius-sm);
+  font-size: 0.9375rem;
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
   background: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 44px;
 }
 
 .form-group input:focus,
 select:focus {
   outline: none;
   border-color: var(--primary-color);
-  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+  box-shadow: var(--shadow-ring);
 }
 
 select,
 ::picker(select) {
   appearance: base-select;
 }
-* {
-  box-sizing: border-box;
-}
 
 select::picker-icon {
-  color: #999999;
-  transition: 0.4s rotate;
+  color: var(--text-muted);
+  transition: 0.3s rotate;
 }
+
 select:open::picker-icon {
   rotate: 180deg;
 }
 
+/* ==========================================================================
+   Line Items
+   ========================================================================== */
 #lineItems {
   margin-bottom: 1rem;
 }
@@ -392,11 +470,13 @@ select:open::picker-icon {
   margin-bottom: 0.75rem;
 }
 
+/* Mobile: stack line items vertically */
 .line-item-row {
   display: grid;
-  grid-template-columns: 2fr 1fr auto;
-  gap: 0.75rem;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
   align-items: center;
+  margin-bottom: 1.5rem;
 
   &:last-child {
     width: auto;
@@ -405,41 +485,54 @@ select:open::picker-icon {
 
 .item-description,
 .item-amount {
-  padding: 0.5rem 0.75rem;
+  padding: 0.625rem 0.75rem;
   border: 1px solid var(--border-color);
-  border-radius: 6px;
+  border-radius: var(--radius-sm);
+  font-size: 0.9375rem;
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 44px;
+}
+
+.item-amount {
+  font-family: var(--font-mono);
   font-size: 0.875rem;
-  transition: border-color 0.15s ease;
 }
 
 .item-description:focus,
 .item-amount:focus {
   outline: none;
   border-color: var(--primary-color);
-  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+  box-shadow: var(--shadow-ring);
 }
 
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
 .btn-remove {
   padding: 0.5rem;
   background: transparent;
   color: var(--text-muted);
   border: 1px solid var(--border-color);
-  border-radius: 6px;
+  border-radius: var(--radius-sm);
   cursor: pointer;
   font-size: 0.875rem;
   font-weight: 500;
   transition: all 0.15s ease;
-  width: 36px;
-  height: 36px;
+  width: 100%;
+  min-height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .btn-remove:hover {
-  background: var(--bg-hover);
-  color: var(--text-primary);
-  border-color: var(--text-muted);
+  background: var(--danger-subtle);
+  color: var(--danger-color);
+  border-color: var(--danger-color);
 }
 
 .btn-primary,
@@ -447,11 +540,12 @@ select:open::picker-icon {
 .btn-success {
   padding: 0.625rem 1.25rem;
   border: none;
-  border-radius: 6px;
+  border-radius: var(--radius-sm);
   font-size: 0.875rem;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
   transition: all 0.15s ease;
+  min-height: 44px;
 }
 
 .btn-primary {
@@ -461,6 +555,7 @@ select:open::picker-icon {
 
 .btn-primary:hover {
   background: var(--primary-hover);
+  box-shadow: var(--shadow-sm);
 }
 
 .btn-secondary {
@@ -471,8 +566,8 @@ select:open::picker-icon {
 }
 
 .btn-secondary:hover {
-  background: var(--bg-secondary);
-  border-color: var(--text-muted);
+  background: var(--bg-hover);
+  border-color: var(--border-strong);
 }
 
 .btn-success {
@@ -482,30 +577,32 @@ select:open::picker-icon {
 
 .btn-success:hover {
   background: var(--success-hover);
+  box-shadow: var(--shadow-sm);
 }
 
 .form-actions {
   display: flex;
-  gap: 1rem;
-  height: auto;
-  margin-top: 2rem;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
 }
 
 .form-actions button {
   flex: 1;
 }
 
-/* Invoice Preview Styles */
+/* ==========================================================================
+   Invoice Preview
+   ========================================================================== */
 .invoice-preview {
   background: white;
   overflow: auto;
-  max-height: 800px;
   border: 1px solid var(--border-color);
-  border-radius: 8px;
+  border-radius: var(--radius-md);
 }
 
 .invoice-content {
-  padding: 1rem 1.5rem 1rem 1.5rem;
+  padding: 1rem;
   background: white;
   max-width: 800px;
   margin: 0 auto;
@@ -516,46 +613,49 @@ select:open::picker-icon {
   text-align: center;
   margin-bottom: 1rem;
   padding-bottom: 0.75rem;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 2px solid var(--bg-dark);
   page-break-after: avoid;
 }
 
 .invoice-title {
   font-size: 1.25rem;
-  font-weight: 600;
-  color: var(--text-primary);
+  font-weight: 700;
+  color: var(--bg-dark);
   margin-bottom: 0.25rem;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.15em;
+  font-family: var(--font-mono);
 }
 
 .invoice-number {
   font-size: 1rem;
   color: var(--text-secondary);
   font-weight: 500;
+  font-family: var(--font-mono);
 }
 
+/* Mobile: stack invoice parties */
 .invoice-parties {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 1rem;
   margin-bottom: 1rem;
   page-break-inside: avoid;
 }
 
 .party h3 {
-  font-size: 0.85rem;
+  font-size: 0.7rem;
   font-weight: 700;
   text-transform: uppercase;
-  color: var(--text-secondary);
+  color: var(--primary-color);
   margin-bottom: 0.5rem;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.1em;
 }
 
 .party p {
   margin-bottom: 0.2rem;
   color: var(--text-primary);
   line-height: 1.4;
-  font-size: 0.9rem;
+  font-size: 0.875rem;
 }
 
 .party-name {
@@ -565,14 +665,16 @@ select:open::picker-icon {
   color: var(--text-primary) !important;
 }
 
+/* Mobile: stack dates */
 .invoice-dates {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 0.75rem;
   margin-bottom: 1rem;
   padding: 0.75rem;
   background: var(--bg-secondary);
-  border-radius: 8px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
   page-break-inside: avoid;
 }
 
@@ -582,20 +684,25 @@ select:open::picker-icon {
 }
 
 .date-label {
-  font-size: 0.85rem;
-  font-weight: 600;
+  font-size: 0.7rem;
+  font-weight: 700;
   color: var(--text-secondary);
   text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin-bottom: 0.25rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.125rem;
 }
 
 .date-item span:last-child {
   font-size: 0.9rem;
   color: var(--text-primary);
   font-weight: 500;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
 }
 
+/* ==========================================================================
+   Invoice Table
+   ========================================================================== */
 .invoice-items {
   margin-bottom: 1rem;
 }
@@ -606,23 +713,23 @@ select:open::picker-icon {
 }
 
 .invoice-items thead {
-  background: var(--bg-secondary);
-  color: var(--text-primary);
+  background: var(--bg-dark);
+  color: #ffffff;
 }
 
 .invoice-items th {
-  padding: 0.5rem 0.75rem;
+  padding: 0.625rem 0.75rem;
   text-align: left;
   font-weight: 600;
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.08em;
 }
 
 .invoice-items td {
-  padding: 0.5rem 0.75rem;
+  padding: 0.625rem 0.75rem;
   border-bottom: 1px solid var(--border-color);
-  font-size: 0.9rem;
+  font-size: 0.875rem;
 }
 
 .invoice-items tbody tr {
@@ -630,7 +737,14 @@ select:open::picker-icon {
 }
 
 .invoice-items tbody tr:hover {
-  background: var(--bg-secondary);
+  background: var(--primary-subtle);
+}
+
+/* Amount column — monospace for alignment */
+.invoice-items td.text-right,
+.total-row td.text-right {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
 }
 
 .text-right {
@@ -648,23 +762,24 @@ select:open::picker-icon {
 
 .total-row {
   background: var(--bg-secondary) !important;
-  font-size: 1.1rem;
-}
-
-.total-row {
+  font-size: 1.05rem;
   page-break-inside: avoid;
 }
 
 .total-row td {
   border-bottom: none !important;
   padding: 0.75rem !important;
+  font-weight: 700;
 }
 
+/* ==========================================================================
+   Bank / Payment Details
+   ========================================================================== */
 .bank-details {
   margin-top: 1rem;
   padding: 1rem;
   background: var(--bg-secondary);
-  border-radius: 6px;
+  border-radius: var(--radius-sm);
   border: 1px solid var(--border-color);
   page-break-before: auto;
   page-break-inside: avoid;
@@ -673,7 +788,7 @@ select:open::picker-icon {
 }
 
 .bank-details h3 {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   margin-bottom: 0.5rem;
   color: var(--text-primary);
   font-weight: 700;
@@ -719,29 +834,33 @@ select:open::picker-icon {
   margin-bottom: 0.5rem !important;
 }
 
-/* Dynamic bank detail fields */
+/* Dynamic bank detail fields — Mobile: stacked */
 .bank-field-row {
   display: grid;
-  grid-template-columns: 1fr 2fr auto;
+  grid-template-columns: 1fr;
   gap: 0.5rem;
   align-items: center;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
 }
 
 .bank-field-row input {
-  padding: 0.5rem 0.75rem;
+  padding: 0.625rem 0.75rem;
   border: 1px solid var(--border-color);
-  border-radius: 6px;
-  font-size: 0.875rem;
-  transition: border-color 0.15s ease;
+  border-radius: var(--radius-sm);
+  font-size: 0.9375rem;
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
   background: var(--bg-primary);
+  color: var(--text-primary);
   width: 100%;
+  min-height: 44px;
 }
 
 .bank-field-row input:focus {
   outline: none;
   border-color: var(--primary-color);
-  box-shadow: 0 0 0 2px rgba(71, 85, 105, 0.08);
+  box-shadow: var(--shadow-ring);
 }
 
 #bankDetailFields {
@@ -752,12 +871,9 @@ select:open::picker-icon {
   margin-bottom: 1rem;
 }
 
-@media (max-width: 768px) {
-  .bank-field-row {
-    grid-template-columns: 1fr;
-  }
-}
-
+/* ==========================================================================
+   Invoice Footer
+   ========================================================================== */
 .invoice-footer {
   margin-top: 0.75rem;
   padding-top: 0.75rem;
@@ -766,33 +882,39 @@ select:open::picker-icon {
 }
 
 .footer-note {
-  background: #fef3c7;
-  border-left: 4px solid #f59e0b;
+  background: var(--primary-subtle);
+  border-left: 3px solid var(--primary-color);
   padding: 0.75rem;
   border-radius: 4px;
-  color: #92400e;
+  color: var(--text-primary);
   font-size: 0.85rem;
   font-weight: 500;
 }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
-  .main-content {
-    grid-template-columns: 1fr;
-  }
-
-  .invoice-content {
-    padding: 2rem;
-  }
-}
-
-@media (max-width: 768px) {
-  body {
-    padding: 1rem;
+/* ==========================================================================
+   RESPONSIVE — Tablet (min-width: 768px)
+   ========================================================================== */
+@media (min-width: 768px) {
+  .app-header {
+    margin: 0 -1rem 1.5rem;
+    padding: 1.5rem 2rem;
   }
 
   .app-header h1 {
-    font-size: 2rem;
+    font-size: 1.75rem;
+  }
+
+  .language-selector {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    margin-bottom: 0;
+    text-align: right;
+  }
+
+  .language-selector select {
+    width: auto;
+    max-width: none;
   }
 
   .form-section,
@@ -801,32 +923,93 @@ select:open::picker-icon {
   }
 
   .line-item-row {
-    grid-template-columns: 1fr;
-    margin-bottom: 2rem;
+    grid-template-columns: 2fr 1fr auto;
+    gap: 0.75rem;
+    margin-bottom: 0;
   }
 
   .btn-remove {
-    width: 100%;
+    width: 40px;
+    min-height: 40px;
+  }
+
+  .bank-field-row {
+    grid-template-columns: 1fr 2fr auto;
   }
 
   .form-actions {
-    flex-direction: column;
-  }
-
-  .invoice-dates {
-    grid-template-columns: 1fr;
+    flex-direction: row;
   }
 
   .invoice-content {
-    padding: 1.5rem;
+    padding: 1.5rem 2rem;
+  }
+
+  .invoice-parties {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .invoice-dates {
+    grid-template-columns: 1fr 1fr;
   }
 
   .invoice-title {
-    font-size: 2rem;
+    font-size: 1.375rem;
   }
 }
 
-/* Print Styles */
+/* ==========================================================================
+   RESPONSIVE — Desktop (min-width: 1024px)
+   ========================================================================== */
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 2rem;
+  }
+
+  .app-header {
+    margin: 0 -2rem 2rem;
+    padding: 1.5rem 2rem;
+    border-radius: 0;
+  }
+
+  .main-content {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .form-section {
+    max-height: 85vh;
+    position: sticky;
+    top: 1rem;
+  }
+
+  .form-section,
+  .preview-section {
+    padding: 1.75rem;
+  }
+
+  .invoice-preview {
+    max-height: 800px;
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVE — Wide Desktop (min-width: 1440px)
+   ========================================================================== */
+@media (min-width: 1440px) {
+  .main-content {
+    gap: 2.5rem;
+  }
+
+  .form-section,
+  .preview-section {
+    padding: 2rem;
+  }
+}
+
+/* ==========================================================================
+   Print Styles
+   ========================================================================== */
 @media print {
   body {
     background: white;
@@ -834,7 +1017,10 @@ select:open::picker-icon {
   }
 
   .form-section,
-  .app-header {
+  .app-header,
+  .links,
+  .ad-container,
+  .intro {
     display: none;
   }
 
@@ -845,6 +1031,7 @@ select:open::picker-icon {
   .preview-section {
     box-shadow: none;
     padding: 0;
+    border: none;
   }
 
   .invoice-preview {
@@ -855,27 +1042,7 @@ select:open::picker-icon {
   .invoice-content {
     padding: 1rem 1.5rem;
   }
-}
 
-/* PDF Generation Optimization */
-.invoice-content * {
-  box-sizing: border-box;
-}
-
-/* Ensure no orphaned content creates blank pages */
-.invoice-content > *:last-child {
-  margin-bottom: 0 !important;
-  padding-bottom: 0.5rem !important;
-}
-
-.bank-details:last-child,
-.invoice-footer:last-child {
-  margin-bottom: 0 !important;
-  padding-bottom: 0.5rem !important;
-}
-
-/* Additional PDF-specific rules to prevent content cutoff */
-@media print {
   .bank-details,
   .bank-info,
   .intermediary-bank {
@@ -886,4 +1053,22 @@ select:open::picker-icon {
   .invoice-content {
     padding: 1.5rem 2rem !important;
   }
+}
+
+/* ==========================================================================
+   PDF Generation Optimization
+   ========================================================================== */
+.invoice-content * {
+  box-sizing: border-box;
+}
+
+.invoice-content > *:last-child {
+  margin-bottom: 0 !important;
+  padding-bottom: 0.5rem !important;
+}
+
+.bank-details:last-child,
+.invoice-footer:last-child {
+  margin-bottom: 0 !important;
+  padding-bottom: 0.5rem !important;
 }
