@@ -534,9 +534,9 @@ function updatePreview() {
 // Format date to YYYY-MM-DD
 function formatDate(dateString) {
   const date = new Date(dateString);
-  const year = date.getFullYear();
-  const month = String(date.getMonth() + 1).padStart(2, "0");
-  const day = String(date.getDate() + 1).padStart(2, "0"); // Add 1 to fix date offset
+  const year = date.getUTCFullYear();
+  const month = String(date.getUTCMonth() + 1).padStart(2, "0");
+  const day = String(date.getUTCDate()).padStart(2, "0");
   return `${year}-${month}-${day}`;
 }
 
